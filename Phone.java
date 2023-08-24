@@ -1,5 +1,7 @@
 public class Phone extends Samsung
 {
+	
+	// Hey Guys
 	int batteryCap;
 	int yearReleased;
 
