@@ -37,8 +37,6 @@ D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_F
 D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
 D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
 D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
-C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Data.mdf
-C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Data_log.ldf
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe.config
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.pdb
@@ -51,3 +49,5 @@ C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_F
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
+C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Auto.mdf
+C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Auto_log.ldf
