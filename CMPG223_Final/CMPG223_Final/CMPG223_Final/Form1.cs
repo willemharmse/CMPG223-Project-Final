@@ -73,7 +73,7 @@ namespace CMPG223_Final
                                     {
                                         string cell_number = txtCell.Text;
 
-                                        if (cell_number.Length < 10)
+                                        if (cell_number.Length == 10)
                                         {
                                             if (int.TryParse(txtCell.Text, out int num))
                                             {
