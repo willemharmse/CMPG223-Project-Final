@@ -71,57 +71,66 @@ namespace CMPG223_Final
                                 {
                                     if (txtCell.Text != "")
                                     {
-                                        if (int.TryParse(txtCell.Text, out int num))
+                                        string cell_number = txtCell.Text;
+
+                                        if (cell_number.Length < 10)
                                         {
-                                            if (comboBox1.Text != "")
+                                            if (int.TryParse(txtCell.Text, out int num))
                                             {
-                                                pnlLogin.Visible = true;
-                                                pnlSignUp.Visible = false;
-                                                this.Size = new Size(589, 626);
+                                                if (comboBox1.Text != "")
+                                                {
+                                                    pnlLogin.Visible = true;
+                                                    pnlSignUp.Visible = false;
+                                                    this.Size = new Size(589, 626);
+                                                }
+                                                else
+                                                {
+                                                    showError("No Gender was provided");
+                                                }
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Please provide a Gender !", "Gender Error", MessageBoxButtons.OK);
+                                                showError("The Cellphone Number must only contain digits");
                                             }
                                         }
                                         else
                                         {
-                                            //err message
+                                            showError("Cellphone number must not be loner than 10 digits");
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Please provide a Cellphone Number !", "Cellphone Number Error", MessageBoxButtons.OK);
+                                        showError("No Cellphone Number was provided");
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Please provide an Email Address !", "Email Address Error", MessageBoxButtons.OK);
+                                    showError("No Email Address was provided");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Please provide a Surname !", "Surname Error", MessageBoxButtons.OK);
+                                showError("No Password was provided");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Please provide a Surname !", "Surname Error", MessageBoxButtons.OK);
+                            showError("No Surname was provided");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please provide a Name !", "Name Error", MessageBoxButtons.OK);
+                        showError("No Name was provided");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please provide a Username !", "Username Error", MessageBoxButtons.OK);
+                    showError("No Username was provided");
                 }
             }
             catch (Exception exe)
             {
-                MessageBox.Show("The following errors occured : " + exe.Message);
+                showError(exe.Message);
             }
         }
 
