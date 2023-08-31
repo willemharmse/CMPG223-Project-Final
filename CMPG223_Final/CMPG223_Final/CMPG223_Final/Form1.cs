@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,23 @@ namespace CMPG223_Final
 {
     public partial class frmLogin : Form
     {
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataAdapter adapter;
+        SqlDataReader reader;
+
+        public string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\projData.mdf;Integrated Security=True";
+
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        public void connectDB()
+        {
+            con = new SqlConnection(conString);
+            con.Open();
+            con.Close();
         }
 
         private void lblSingUpLink_Click(object sender, EventArgs e)
@@ -45,9 +60,7 @@ namespace CMPG223_Final
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmDashboard d = new frmDashboard();
-            d.Show();
-            this.Hide();
+            
         }
     }
 }
