@@ -19,7 +19,7 @@ namespace CMPG223_Final
         SqlDataAdapter adapter;
         SqlDataReader reader;
 
-        public string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Auto.mdf;Integrated Security=True";
+        public string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Auto.mdf;Integrated Security=True;User Instance=True";
 
         public frmLogin()
         {
