@@ -1,0 +1,12 @@
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe.config
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.pdb
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.AssemblyReference.cache
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.SuggestedBindingRedirects.cache
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.Properties.Resources.resources
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.GenerateResource.cache
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmLogin.resources
+C:\Users\shald\Documents\VS code projects\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmDashboard.resources
