@@ -60,80 +60,85 @@ namespace CMPG223_Final
             this.Size = new Size(589, 626);
         }
 
+        private void login(string name, string password)
+        {
+            try
+            {
+                con.Open();
+                string sql = "";
+                Boolean userFound = false;
+
+                if (txtUsername.Text[0].ToString() == "_")
+                {
+                    sql = "SELECT admin_id, username, password FROM Admin";
+
+                    cmd = new SqlCommand(sql, con);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read() && userFound != true)
+                    {
+                        if (reader.GetValue(1).ToString() == txtUsername.Text)
+                        {
+                            if (reader.GetValue(2).ToString() == txtPassword.Text)
+                            {
+                                User.setUsername(reader.GetValue(1).ToString());
+                                User.setPassword(reader.GetValue(2).ToString());
+                                User.setID((int)reader.GetValue(0));
+                                User.setAdmin(true);
+
+                                userFound = true;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    sql = "SELECT * FROM [User]";
+
+                    cmd = new SqlCommand(sql, con);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read() && userFound != true)
+                    {
+                        if (reader.GetValue(1).ToString() == txtUsername.Text)
+                        {
+                            if (reader.GetValue(2).ToString() == txtPassword.Text)
+                            {
+                                User.setUsername(reader.GetValue(1).ToString());
+                                User.setPassword(reader.GetValue(2).ToString());
+                                User.setID((int)reader.GetValue(0));
+                                User.setAdmin(false);
+
+                                userFound = true;
+                            }
+                        }
+                    }
+                }
+
+                if (userFound)
+                {
+                    frmDashboard dashboard = new frmDashboard();
+                    dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("This username has not been found or you have entered the wrong ");
+                }
+
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("The following error has occured: \n" + ex.Message);
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text != "" && txtUsername.Text != "")
             {
-                try
-                {
-                    con.Open();
-                    string sql = "";
-                    Boolean userFound = false;
-
-                    if (txtUsername.Text[0].ToString() == "_")
-                    {
-                        sql = "SELECT admin_id, username, password FROM Admin";
-
-                        cmd = new SqlCommand(sql, con);
-                        reader = cmd.ExecuteReader();
-
-                        while (reader.Read() && userFound != true)
-                        {
-                            if (reader.GetValue(1).ToString() == txtUsername.Text)
-                            {
-                                if (reader.GetValue(2).ToString() == txtPassword.Text)
-                                {
-                                    User.setUsername(reader.GetValue(1).ToString());
-                                    User.setPassword(reader.GetValue(2).ToString());
-                                    User.setID((int)reader.GetValue(0));
-                                    User.setAdmin(true);
-
-                                    userFound = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        sql = "SELECT * FROM [User]";
-
-                        cmd = new SqlCommand(sql, con);
-                        reader = cmd.ExecuteReader();
-
-                        while (reader.Read() && userFound != true)
-                        {
-                            if (reader.GetValue(1).ToString() == txtUsername.Text)
-                            {
-                                if (reader.GetValue(2).ToString() == txtPassword.Text)
-                                {
-                                    User.setUsername(reader.GetValue(1).ToString());
-                                    User.setPassword(reader.GetValue(2).ToString());
-                                    User.setID((int)reader.GetValue(0));
-                                    User.setAdmin(false);
-
-                                    userFound = true;
-                                }
-                            }
-                        }
-                    }
-
-                    if (userFound)
-                    {
-                        frmDashboard dashboard = new frmDashboard();
-                        dashboard.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("This username has not been found or you have entered the wrong ");
-                    }
-
-                    con.Close();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("The following error has occured: \n" + ex.Message);
-                }
+                login(txtUsername.Text, txtPassword.Text);
             }
             else
             {
