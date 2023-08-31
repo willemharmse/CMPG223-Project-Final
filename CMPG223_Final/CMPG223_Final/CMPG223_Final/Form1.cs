@@ -192,6 +192,11 @@ namespace CMPG223_Final
             }
         }
 
+        private string showError(string err)
+        {
+            return "Error has occured:\n" + err;
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text != "" && txtUsername.Text != "")
