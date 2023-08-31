@@ -576,9 +576,9 @@
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(579, 819);
+            this.Controls.Add(this.pnlSignUp);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.pnlSignUp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.Text = "Log in";

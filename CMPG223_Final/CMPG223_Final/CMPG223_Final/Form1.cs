@@ -55,9 +55,67 @@ namespace CMPG223_Final
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            pnlLogin.Visible = true;
-            pnlSignUp.Visible = false;
-            this.Size = new Size(589, 626);
+            try
+            {
+                // nested if to check if the user provided input for all the fields
+                
+                if (txtUsernameSU.Text != "")
+                {
+                    if (txtName.Text != "")
+                    {
+                        if (txtSurname.Text != "")
+                        {
+                            if (txtPasswordSU.Text != "")
+                            {
+                                if (txtEmail.Text != "")
+                                {
+                                    if (txtCell.Text != "")
+                                    {
+                                        if (comboBox1.Text != "")
+                                        {
+                                            pnlLogin.Visible = true;
+                                            pnlSignUp.Visible = false;
+                                            this.Size = new Size(589, 626);
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Please provide a Gender !", "Gender Error", MessageBoxButtons.OK);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please provide a Cellphone Number !", "Cellphone Number Error", MessageBoxButtons.OK);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please provide an Email Address !", "Email Address Error", MessageBoxButtons.OK);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please provide a Surname !", "Surname Error", MessageBoxButtons.OK);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please provide a Surname !", "Surname Error", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please provide a Name !", "Name Error", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please provide a Username !", "Username Error", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception exe)
+            {
+                MessageBox.Show("The following errors occured : " + exe.Message);
+            }
         }
 
         private void login(string name, string password)

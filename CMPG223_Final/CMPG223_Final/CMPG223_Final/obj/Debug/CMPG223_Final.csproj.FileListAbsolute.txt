@@ -24,3 +24,16 @@ C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Fina
 C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
 C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Data.mdf
 C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Data_log.ldf
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Data.mdf
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Data_log.ldf
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe.config
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.pdb
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.AssemblyReference.cache
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmDashboard.resources
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmLogin.resources
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.Properties.Resources.resources
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.GenerateResource.cache
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
+D:\Desktop\Project\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
