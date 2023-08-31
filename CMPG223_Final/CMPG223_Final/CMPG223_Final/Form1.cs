@@ -188,20 +188,20 @@ namespace CMPG223_Final
                 }
                 else
                 {
-                    MessageBox.Show("This username has not been found or you have entered the wrong ");
+                    showError("This username has not been found or you have entered the wrong ");
                 }
 
                 con.Close();
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("The following error has occured: \n" + ex.Message);
+                showError(ex.Message);
             }
         }
 
-        private string showError(string err)
+        private void showError(string err)
         {
-            return "Error has occured:\n" + err;
+            MessageBox.Show("Error has occured:\n" + err);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -212,7 +212,7 @@ namespace CMPG223_Final
             }
             else
             {
-                MessageBox.Show("Please ensure that you have entered a username and a password into the fields.");
+                showError("Please ensure that you have entered a username and a password into the fields.");
             }   
         }
     }
