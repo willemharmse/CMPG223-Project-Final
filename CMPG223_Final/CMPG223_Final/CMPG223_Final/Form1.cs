@@ -71,15 +71,22 @@ namespace CMPG223_Final
                                 {
                                     if (txtCell.Text != "")
                                     {
-                                        if (comboBox1.Text != "")
+                                        if (int.TryParse(txtCell.Text, out int num))
                                         {
-                                            pnlLogin.Visible = true;
-                                            pnlSignUp.Visible = false;
-                                            this.Size = new Size(589, 626);
+                                            if (comboBox1.Text != "")
+                                            {
+                                                pnlLogin.Visible = true;
+                                                pnlSignUp.Visible = false;
+                                                this.Size = new Size(589, 626);
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Please provide a Gender !", "Gender Error", MessageBoxButtons.OK);
+                                            }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Please provide a Gender !", "Gender Error", MessageBoxButtons.OK);
+                                            //err message
                                         }
                                     }
                                     else
