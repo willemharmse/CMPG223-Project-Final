@@ -17,5 +17,25 @@ namespace CMPG223_Final
         {
             return id;
         }
+
+        public static void setUsername(string name)
+        {
+            username = name;
+        }
+
+        public static void setPassword(string pass)
+        {
+            password = pass;
+        }
+
+        public static void setID(int num)
+        {
+            id = num;
+        }
+
+        public static void setAdmin(Boolean value)
+        {
+            isAdmin = value;
+        }
     }
 }
