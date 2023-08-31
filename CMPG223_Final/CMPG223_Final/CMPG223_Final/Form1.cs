@@ -144,7 +144,7 @@ namespace CMPG223_Final
 
                 if (txtUsername.Text[0].ToString() == "_")
                 {
-                    sql = "SELECT admin_id, username, password FROM Admin";
+                    sql = "SELECT AdminID, Username, Password FROM Admin";
 
                     cmd = new SqlCommand(sql, con);
                     reader = cmd.ExecuteReader();
