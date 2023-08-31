@@ -8,9 +8,14 @@ namespace CMPG223_Final
 {
     public static class User
     {
-        private static String username;
-        private static String password;
+        private static string username;
+        private static string password;
         private static Boolean isAdmin;
         private static int id;
+
+        public static int getID()
+        {
+            return id;
+        }
     }
 }
