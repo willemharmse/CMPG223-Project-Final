@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace CMPG223_Final
         SqlDataAdapter adapter;
         SqlDataReader reader;
 
-        public string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\projData.mdf;Integrated Security=True";
+        public string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\harms\OneDrive\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\Data.mdf;Integrated Security=True";
 
         public frmLogin()
         {
@@ -63,71 +64,79 @@ namespace CMPG223_Final
         {
             if (txtPassword.Text != "" && txtUsername.Text != "")
             {
-                string sql = "";
-                Boolean userFound = false;
-
-                if (txtUsername.Text[0].ToString() == "_")
+                try
                 {
-                    sql = "SELECT id, username, password FROM Admin";
+                    con.Open();
+                    string sql = "";
+                    Boolean userFound = false;
 
-                    cmd = new SqlCommand(sql, con);
-                    reader = cmd.ExecuteReader();
-
-                    while (reader.Read() && userFound != true)
+                    if (txtUsername.Text[0].ToString() == "_")
                     {
-                        if (reader.GetValue(1).ToString() == txtUsername.Text)
-                        {
-                            if (reader.GetValue(2).ToString() == txtPassword.Text)
-                            {
-                                User.setUsername(reader.GetValue(1).ToString());
-                                User.setPassword(reader.GetValue(2).ToString());
-                                User.setID((int)reader.GetValue(0));
-                                User.setAdmin(true);
+                        sql = "SELECT admin_id, username, password FROM Admin";
 
-                                userFound = true;
+                        cmd = new SqlCommand(sql, con);
+                        reader = cmd.ExecuteReader();
+
+                        while (reader.Read() && userFound != true)
+                        {
+                            if (reader.GetValue(1).ToString() == txtUsername.Text)
+                            {
+                                if (reader.GetValue(2).ToString() == txtPassword.Text)
+                                {
+                                    User.setUsername(reader.GetValue(1).ToString());
+                                    User.setPassword(reader.GetValue(2).ToString());
+                                    User.setID((int)reader.GetValue(0));
+                                    User.setAdmin(true);
+
+                                    userFound = true;
+                                }
                             }
                         }
                     }
-                }
-                else
-                {
-                    sql = "SELECT id, username, password FROM User";
-
-                    cmd = new SqlCommand(sql, con);
-                    reader = cmd.ExecuteReader();
-
-                    while (reader.Read() && userFound != true)
+                    else
                     {
-                        if (reader.GetValue(1).ToString() == txtUsername.Text)
-                        {
-                            if (reader.GetValue(2).ToString() == txtPassword.Text)
-                            {
-                                User.setUsername(reader.GetValue(1).ToString());
-                                User.setPassword(reader.GetValue(2).ToString());
-                                User.setID((int)reader.GetValue(0));
-                                User.setAdmin(false);
+                        sql = "SELECT * FROM User";
 
-                                userFound = true;
+                        cmd = new SqlCommand(sql, con);
+                        reader = cmd.ExecuteReader();
+
+                        while (reader.Read() && userFound != true)
+                        {
+                            if (reader.GetValue(1).ToString() == txtUsername.Text)
+                            {
+                                if (reader.GetValue(2).ToString() == txtPassword.Text)
+                                {
+                                    User.setUsername(reader.GetValue(1).ToString());
+                                    User.setPassword(reader.GetValue(2).ToString());
+                                    User.setID((int)reader.GetValue(0));
+                                    User.setAdmin(false);
+
+                                    userFound = true;
+                                }
                             }
                         }
                     }
-                }
 
-                if (userFound)
-                {
-                    frmDashboard dashboard = new frmDashboard();
-                    dashboard.Show();
-                    this.Hide();
+                    if (userFound)
+                    {
+                        frmDashboard dashboard = new frmDashboard();
+                        dashboard.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("This username has not been found or you have entered the wrong ");
+                    }
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("This username has not been found or you have entered the wrong ");
+                    MessageBox.Show("The following error has occured:" + ex.Message);
                 }
             }
             else
             {
                 MessageBox.Show("Please ensure that you have entered a username and a password into the fields.");
-            }
+            }   
         }
     }
 }
