@@ -37,5 +37,10 @@ namespace CMPG223_Final
         {
             isAdmin = value;
         }
+
+        public static Boolean getAdmin()
+        {
+            return isAdmin;
+        }
     }
 }

@@ -95,7 +95,7 @@ namespace CMPG223_Final
                     }
                     else
                     {
-                        sql = "SELECT * FROM User";
+                        sql = "SELECT * FROM [User]";
 
                         cmd = new SqlCommand(sql, con);
                         reader = cmd.ExecuteReader();
@@ -127,10 +127,12 @@ namespace CMPG223_Final
                     {
                         MessageBox.Show("This username has not been found or you have entered the wrong ");
                     }
+
+                    con.Close();
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("The following error has occured:" + ex.Message);
+                    MessageBox.Show("The following error has occured: \n" + ex.Message);
                 }
             }
             else
