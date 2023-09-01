@@ -58,7 +58,6 @@ namespace CMPG223_Final
             try
             {
                 // nested if to check if the user provided input for all the fields
-                
                 if (txtUsernameSU.Text != "")
                 {
                     if (txtName.Text != "")
