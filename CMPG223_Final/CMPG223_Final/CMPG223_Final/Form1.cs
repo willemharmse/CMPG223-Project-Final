@@ -61,64 +61,71 @@ namespace CMPG223_Final
                 // nested if to check if the user provided input for all the fields
                 if (txtUsernameSU.Text != "")
                 {
-                    if (txtName.Text != "")
+                    if (usernameAvail(txtUsernameSU.Text))
                     {
-                        if (txtSurname.Text != "")
+                        if (txtName.Text != "")
                         {
-                            if (txtPasswordSU.Text != "")
+                            if (txtSurname.Text != "")
                             {
-                                if (txtEmail.Text != "")
+                                if (txtPasswordSU.Text != "")
                                 {
-                                    if (txtCell.Text != "")
+                                    if (txtEmail.Text != "")
                                     {
-                                        string cell_number = txtCell.Text;
-
-                                        if (cell_number.Length == 10)
+                                        if (txtCell.Text != "")
                                         {
-                                            if (int.TryParse(txtCell.Text, out int num))
+                                            string cell_number = txtCell.Text;
+
+                                            if (cell_number.Length == 10)
                                             {
-                                                if (comboBox1.Text != "")
+                                                if (int.TryParse(txtCell.Text, out int num))
                                                 {
-                                                    
+                                                    if (comboBox1.Text != "")
+                                                    {
+                                                        signup();
+                                                    }
+                                                    else
+                                                    {
+                                                        showError("No Gender was provided");
+                                                    }
                                                 }
                                                 else
                                                 {
-                                                    showError("No Gender was provided");
+                                                    showError("The Cellphone Number must only contain digits");
                                                 }
                                             }
                                             else
                                             {
-                                                showError("The Cellphone Number must only contain digits");
+                                                showError("Cellphone number must not be loner than 10 digits");
                                             }
                                         }
                                         else
                                         {
-                                            showError("Cellphone number must not be loner than 10 digits");
+                                            showError("No Cellphone Number was provided");
                                         }
                                     }
                                     else
                                     {
-                                        showError("No Cellphone Number was provided");
+                                        showError("No Email Address was provided");
                                     }
                                 }
                                 else
                                 {
-                                    showError("No Email Address was provided");
+                                    showError("No Password was provided");
                                 }
                             }
                             else
                             {
-                                showError("No Password was provided");
+                                showError("No Surname was provided");
                             }
                         }
                         else
                         {
-                            showError("No Surname was provided");
+                            showError("No Name was provided");
                         }
                     }
                     else
                     {
-                        showError("No Name was provided");
+                        showError("This username has already been taken, please choose another username");
                     }
                 }
                 else
@@ -132,30 +139,72 @@ namespace CMPG223_Final
             }
         }
 
+        private bool usernameAvail(string username)
+        {
+            bool result = false;
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT Username FROM Clients WHERE Username = '{username}'";
+                cmd = new SqlCommand(sql, con);
+
+                reader = cmd.ExecuteReader();
+
+                int counter = 0;
+
+                while (reader.Read())
+                {
+                    counter++;
+                }
+
+                if (counter == 0)
+                {
+                    result = true;
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return result;
+        }
+
         private void signup()
         {
             try
             {
-                string username, firstName, lastName, password, email, cellphoneNumber;
+                string username, firstName, lastName, password, email, cellNumber, gender;
+                int age;
 
                 username = txtUsernameSU.Text;
                 firstName = txtName.Text;
                 lastName = txtSurname.Text;
                 password = txtPassword.Text;
                 email = txtEmail.Text;
-                cellphoneNumber = txtCell.Text;
+                cellNumber = txtCell.Text;
+                gender = comboBox1.Text;
+                age = (int)numericUpDown1.Value;
 
                 con.Open();
 
                 adapter = new SqlDataAdapter();
-                ds = new DataSet();
 
-                string sql = $"INSERT INTO Clients() VALUES()";
+                string sql = $"INSERT INTO Clients(Name, Surname, Age, Gender, Phone_Number, Email, Username, Password) " +
+                             $"VALUES('{firstName}', '{lastName}', {age}, '{gender}', '{cellNumber}', '{email}', '{username}', '{password}')";
 
                 cmd = new SqlCommand(sql, con);
 
+                adapter.InsertCommand = cmd;
+                adapter.InsertCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                showError("YUP YUP");
             }
             catch(Exception ex)
             {
@@ -196,7 +245,7 @@ namespace CMPG223_Final
                 }
                 else
                 {
-                    sql = "SELECT * FROM [User]";
+                    sql = "SELECT ClientID, Username, Password FROM Clients";
 
                     cmd = new SqlCommand(sql, con);
                     reader = cmd.ExecuteReader();
