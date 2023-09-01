@@ -184,7 +184,7 @@ namespace CMPG223_Final
                 username = txtUsernameSU.Text;
                 firstName = txtName.Text;
                 lastName = txtSurname.Text;
-                password = txtPassword.Text;
+                password = txtPasswordSU.Text;
                 email = txtEmail.Text;
                 cellNumber = txtCell.Text;
                 gender = comboBox1.Text;
@@ -204,12 +204,28 @@ namespace CMPG223_Final
 
                 con.Close();
 
-                showError("YUP YUP");
+                MessageBox.Show($"User: {firstName} {lastName}\nUsername: {username}\nHas been successfully added to the system.");
+
+                clearSignUp();
             }
             catch(Exception ex)
             {
                 showError(ex.Message);
             }
+        }
+
+        private void clearSignUp()
+        {
+            txtName.Clear();
+            txtSurname.Clear();
+            txtUsernameSU.Clear();
+            numericUpDown1.Value = 0;
+            comboBox1.SelectedIndex = -1;
+            txtPasswordSU.Clear();
+            txtCell.Clear();
+            txtEmail.Clear();
+
+            lblLoginlbl_Click(new object(), new EventArgs());
         }
 
         private void login(string name, string password)
@@ -275,7 +291,7 @@ namespace CMPG223_Final
                 }
                 else
                 {
-                    showError("This username has not been found or you have entered the wrong ");
+                    showError("This username has not been found or you have entered the wrong password");
                 }
 
                 con.Close();
@@ -286,7 +302,7 @@ namespace CMPG223_Final
             }
         }
 
-        private void showError(string err)
+        public void showError(string err)
         {
             MessageBox.Show("Error has occured:\n" + err);
         }

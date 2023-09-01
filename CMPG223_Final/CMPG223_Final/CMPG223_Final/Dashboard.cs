@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,21 @@ namespace CMPG223_Final
 {
     public partial class frmDashboard : Form
     {
+        SqlConnection con;
+        SqlDataAdapter adapter;
+        DataSet ds;
+        SqlCommand cmd;
+
         public frmDashboard()
         {
             InitializeComponent();
+        }
+
+        public void connectDB(string conString)
+        {
+            con = new SqlConnection(conString);
+            con.Open();
+            con.Close();
         }
 
         private void ResetAll()
@@ -54,6 +67,36 @@ namespace CMPG223_Final
             ResetAll();
             lblMaintain.BackColor = Color.FromArgb(45, 45, 45);
             pnlMaintain.Visible = true;
+        }
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            connectDB(login.conString);
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT * FROM Clients";
+
+                ds = new DataSet();
+
+                adapter = new SqlDataAdapter();
+
+                cmd = new SqlCommand(sql, con);
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "Clients");
+
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "Clients";
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                login.showError(ex.Message);
+            }
         }
     }
 }
