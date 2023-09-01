@@ -18,6 +18,7 @@ namespace CMPG223_Final
         SqlCommand cmd;
         SqlDataAdapter adapter;
         SqlDataReader reader;
+        DataSet ds;
 
         public string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Auto.mdf;Integrated Security=True;User Instance=True";
 
@@ -135,12 +136,30 @@ namespace CMPG223_Final
         {
             try
             {
+                string username, firstName, lastName, password, email, cellphoneNumber;
 
+                username = txtUsernameSU.Text;
+                firstName = txtName.Text;
+                lastName = txtSurname.Text;
+                password = txtPassword.Text;
+                email = txtEmail.Text;
+                cellphoneNumber = txtCell.Text;
+
+                con.Open();
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+
+                string sql = $"INSERT INTO Clients() VALUES()";
+
+                cmd = new SqlCommand(sql, con);
+
+
+                con.Close();
             }
-            catch
-            (Exception ex)
+            catch(Exception ex)
             {
-                
+                showError(ex.Message);
             }
         }
 
