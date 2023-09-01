@@ -78,9 +78,7 @@ namespace CMPG223_Final
                                             {
                                                 if (comboBox1.Text != "")
                                                 {
-                                                    pnlLogin.Visible = true;
-                                                    pnlSignUp.Visible = false;
-                                                    this.Size = new Size(589, 626);
+                                                    
                                                 }
                                                 else
                                                 {
@@ -130,6 +128,19 @@ namespace CMPG223_Final
             catch (Exception exe)
             {
                 showError(exe.Message);
+            }
+        }
+
+        private void signup()
+        {
+            try
+            {
+
+            }
+            catch
+            (Exception ex)
+            {
+                
             }
         }
 
