@@ -223,5 +223,44 @@ namespace CMPG223_Final
             fillCarColours();
             fillServiceTypes();
         }
+
+        private void btnAddServiceType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbxServiceType.SelectedIndex != -1)
+                {
+                    if (serviceChosenAlready(cbxServiceType.Text))
+                    {
+                        if (MessageBox.Show("This item will be added to the list of services to the vehicle.\nAre you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            lstListServiceTypes.Items.Add(cbxServiceType.);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The service was not added to the list");
+                        }
+                    }
+                    else
+                    {
+                        showError("This service type has already been chosen. Please select a different type of service");
+                    }
+                }
+                else
+                {
+                    showError("Please select a valid service type");
+                    cbxServiceType.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private bool serviceChosenAlready(string service)
+        {
+
+        }
     }
 }
