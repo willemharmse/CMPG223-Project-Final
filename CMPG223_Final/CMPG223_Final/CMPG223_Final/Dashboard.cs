@@ -353,6 +353,8 @@ namespace CMPG223_Final
             {
                 if (MessageBox.Show("If you want to proceed with this action your car details will be captured and saved", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
+                    lstQuote.Items.Clear();
+
                     decimal totalcost = determineTotalCost();
 
                     lstQuote.Items.Add("PRO TECH AUTO");
