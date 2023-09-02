@@ -135,6 +135,7 @@
             this.btnRemoveServiceType.TabIndex = 46;
             this.btnRemoveServiceType.Text = "Remove";
             this.btnRemoveServiceType.UseVisualStyleBackColor = false;
+            this.btnRemoveServiceType.Click += new System.EventHandler(this.btnRemoveServiceType_Click);
             // 
             // btnAddServiceType
             // 

@@ -18,6 +18,10 @@ namespace CMPG223_Final
         DataSet ds;
         SqlCommand cmd;
 
+        private string[] services = new string[100];
+        private int[] serviceIDs = new int[100];
+        private int counter = 0;
+
         public frmDashboard()
         {
             InitializeComponent();
@@ -230,11 +234,12 @@ namespace CMPG223_Final
             {
                 if (cbxServiceType.SelectedIndex != -1)
                 {
-                    if (serviceChosenAlready(cbxServiceType.Text))
+                    if (!serviceChosenAlready(cbxServiceType.Text))
                     {
                         if (MessageBox.Show("This item will be added to the list of services to the vehicle.\nAre you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
-                            lstListServiceTypes.Items.Add(cbxServiceType.);
+                            lstListServiceTypes.Items.Add(cbxServiceType.Text);
+                            services[counter++] = cbxServiceType.Text;
                         }
                         else
                         {
@@ -248,7 +253,7 @@ namespace CMPG223_Final
                 }
                 else
                 {
-                    showError("Please select a valid service type");
+                    showError("Please select a valid service type to add");
                     cbxServiceType.Focus();
                 }
             }
@@ -260,7 +265,84 @@ namespace CMPG223_Final
 
         private bool serviceChosenAlready(string service)
         {
+            bool result = false;
 
+            for (int i = 0; i < counter; i++)
+            {
+                if (services[i] == service)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
+        private int determineIndex(string service)
+        {
+            int result = -1;
+
+            for (int i = 0; i < counter; i++)
+            {
+                if (services[i] == service)
+                {
+                    result = i;
+                }
+            }
+
+            return result;
+        }
+
+        private void removeServiceType(int index)
+        {
+            for (int i = index; i < counter - 1; i++)
+            {
+                services[i] = services[i + 1];
+            }
+
+            counter--;
+
+            services[counter - 1] = null;
+
+            for (int i = 0; i < counter; i++)
+            {
+                MessageBox.Show(services[i]);
+            }
+        }
+
+        private void btnRemoveServiceType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbxServiceType.SelectedIndex != -1)
+                {
+                    if (serviceChosenAlready(cbxServiceType.Text))
+                    {
+                        if (MessageBox.Show("This item will be removed from the list of services to the vehicle.\nAre you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            int index = determineIndex(cbxServiceType.Text);
+                            removeServiceType(index);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The service was not removed from the list");
+                        }
+                    }
+                    else
+                    {
+                        showError("This service type has not been chosen. Please select a different type of service that has been chosen to remove form the list");
+                    }
+                }
+                else
+                {
+                    showError("Please select a valid service type to remove");
+                    cbxServiceType.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
         }
     }
 }
