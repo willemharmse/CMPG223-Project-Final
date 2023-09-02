@@ -212,6 +212,7 @@
             this.btnQuote.TabIndex = 40;
             this.btnQuote.Text = "Generate Quote";
             this.btnQuote.UseVisualStyleBackColor = false;
+            this.btnQuote.Click += new System.EventHandler(this.btnQuote_Click);
             // 
             // lstQuote
             // 

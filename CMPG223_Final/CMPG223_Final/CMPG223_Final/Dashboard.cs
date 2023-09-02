@@ -15,6 +15,7 @@ namespace CMPG223_Final
     {
         SqlConnection con;
         SqlDataAdapter adapter;
+        SqlDataReader reader;
         DataSet ds;
         SqlCommand cmd;
 
@@ -344,6 +345,58 @@ namespace CMPG223_Final
             {
                 showError(ex.Message);
             }
+        }
+
+        private void btnQuote_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal totalcost = determineTotalCost();
+
+                MessageBox.Show(totalcost + "");
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private decimal determineTotalCost()
+        {
+            decimal cost = 0.0m;
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT * FROM Service";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+                int innerCounter = 0;
+
+                while (reader.Read())
+                {
+                    for (int i = 0; i < counter; i++)
+                    {
+                        if (reader.GetValue(1).ToString() == services[i])
+                        {
+                            cost += (decimal)reader.GetValue(2);
+                            serviceIDs[innerCounter++] = (int)reader.GetInt32(0);
+                        }
+                    }
+                }
+
+                reader.Close();
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return cost;
         }
     }
 }
