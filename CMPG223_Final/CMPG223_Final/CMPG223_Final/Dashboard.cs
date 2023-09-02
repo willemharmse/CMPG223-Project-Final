@@ -128,6 +128,38 @@ namespace CMPG223_Final
             }
         }
 
+
+        private void fillServiceTypes()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string sql = "SELECT Service FROM Service";
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+                cmd = new SqlCommand(sql, con);
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "Services");
+
+                cbxServiceType.DataSource = ds.Tables[0];
+                cbxServiceType.DisplayMember = "Service";
+                cbxServiceType.ValueMember = "Service";
+                cbxServiceType.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
         private void ResetAll()
         {
             lblQuotes.BackColor = Color.Transparent;
@@ -189,6 +221,7 @@ namespace CMPG223_Final
             fillCarMakes();
             fillCarModels();
             fillCarColours();
+            fillServiceTypes();
         }
     }
 }
