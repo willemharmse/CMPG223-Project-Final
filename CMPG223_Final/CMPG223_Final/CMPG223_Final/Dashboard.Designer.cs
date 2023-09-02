@@ -32,6 +32,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlQuotes = new System.Windows.Forms.Panel();
+            this.cbxServiceType = new System.Windows.Forms.ComboBox();
+            this.lblServiceType = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnQuote = new System.Windows.Forms.Button();
             this.lstQuote = new System.Windows.Forms.ListBox();
@@ -40,7 +42,6 @@
             this.lblCarModel = new System.Windows.Forms.Label();
             this.cmbCarColour = new System.Windows.Forms.ComboBox();
             this.cmbCarMakes = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.lblService = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblColour = new System.Windows.Forms.Label();
@@ -62,8 +63,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblMaintainData = new System.Windows.Forms.Label();
-            this.cbxServiceType = new System.Windows.Forms.ComboBox();
-            this.lblServiceType = new System.Windows.Forms.Label();
+            this.lstListServiceTypes = new System.Windows.Forms.ListBox();
+            this.btnAddServiceType = new System.Windows.Forms.Button();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.pnlMaintain.SuspendLayout();
@@ -97,6 +98,8 @@
             // pnlQuotes
             // 
             this.pnlQuotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlQuotes.Controls.Add(this.btnAddServiceType);
+            this.pnlQuotes.Controls.Add(this.lstListServiceTypes);
             this.pnlQuotes.Controls.Add(this.cbxServiceType);
             this.pnlQuotes.Controls.Add(this.lblServiceType);
             this.pnlQuotes.Controls.Add(this.btnPrint);
@@ -107,7 +110,6 @@
             this.pnlQuotes.Controls.Add(this.lblCarModel);
             this.pnlQuotes.Controls.Add(this.cmbCarColour);
             this.pnlQuotes.Controls.Add(this.cmbCarMakes);
-            this.pnlQuotes.Controls.Add(this.textBox4);
             this.pnlQuotes.Controls.Add(this.lblService);
             this.pnlQuotes.Controls.Add(this.label10);
             this.pnlQuotes.Controls.Add(this.lblColour);
@@ -117,6 +119,29 @@
             this.pnlQuotes.Size = new System.Drawing.Size(949, 486);
             this.pnlQuotes.TabIndex = 2;
             this.pnlQuotes.Visible = false;
+            // 
+            // cbxServiceType
+            // 
+            this.cbxServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cbxServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxServiceType.ForeColor = System.Drawing.Color.White;
+            this.cbxServiceType.FormattingEnabled = true;
+            this.cbxServiceType.Location = new System.Drawing.Point(92, 223);
+            this.cbxServiceType.Name = "cbxServiceType";
+            this.cbxServiceType.Size = new System.Drawing.Size(161, 20);
+            this.cbxServiceType.TabIndex = 43;
+            // 
+            // lblServiceType
+            // 
+            this.lblServiceType.AutoSize = true;
+            this.lblServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceType.ForeColor = System.Drawing.Color.White;
+            this.lblServiceType.Location = new System.Drawing.Point(90, 205);
+            this.lblServiceType.Name = "lblServiceType";
+            this.lblServiceType.Size = new System.Drawing.Size(77, 12);
+            this.lblServiceType.TabIndex = 42;
+            this.lblServiceType.Text = "Service Type";
             // 
             // btnPrint
             // 
@@ -175,7 +200,7 @@
             this.cmbCarModel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarModel.ForeColor = System.Drawing.Color.White;
             this.cmbCarModel.FormattingEnabled = true;
-            this.cmbCarModel.Location = new System.Drawing.Point(92, 146);
+            this.cmbCarModel.Location = new System.Drawing.Point(92, 135);
             this.cmbCarModel.Name = "cmbCarModel";
             this.cmbCarModel.Size = new System.Drawing.Size(161, 20);
             this.cmbCarModel.TabIndex = 37;
@@ -185,7 +210,7 @@
             this.lblCarModel.AutoSize = true;
             this.lblCarModel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCarModel.ForeColor = System.Drawing.Color.White;
-            this.lblCarModel.Location = new System.Drawing.Point(90, 128);
+            this.lblCarModel.Location = new System.Drawing.Point(90, 117);
             this.lblCarModel.Name = "lblCarModel";
             this.lblCarModel.Size = new System.Drawing.Size(61, 12);
             this.lblCarModel.TabIndex = 36;
@@ -198,7 +223,7 @@
             this.cmbCarColour.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarColour.ForeColor = System.Drawing.Color.White;
             this.cmbCarColour.FormattingEnabled = true;
-            this.cmbCarColour.Location = new System.Drawing.Point(92, 189);
+            this.cmbCarColour.Location = new System.Drawing.Point(92, 178);
             this.cmbCarColour.Name = "cmbCarColour";
             this.cmbCarColour.Size = new System.Drawing.Size(161, 20);
             this.cmbCarColour.TabIndex = 35;
@@ -210,29 +235,17 @@
             this.cmbCarMakes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarMakes.ForeColor = System.Drawing.Color.White;
             this.cmbCarMakes.FormattingEnabled = true;
-            this.cmbCarMakes.Location = new System.Drawing.Point(92, 101);
+            this.cmbCarMakes.Location = new System.Drawing.Point(92, 90);
             this.cmbCarMakes.Name = "cmbCarMakes";
             this.cmbCarMakes.Size = new System.Drawing.Size(161, 20);
             this.cmbCarMakes.TabIndex = 34;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(91, 276);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 119);
-            this.textBox4.TabIndex = 27;
             // 
             // lblService
             // 
             this.lblService.AutoSize = true;
             this.lblService.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblService.ForeColor = System.Drawing.Color.White;
-            this.lblService.Location = new System.Drawing.Point(90, 261);
+            this.lblService.Location = new System.Drawing.Point(90, 289);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(147, 12);
             this.lblService.TabIndex = 26;
@@ -243,7 +256,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(90, 385);
+            this.label10.Location = new System.Drawing.Point(90, 413);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(163, 13);
             this.label10.TabIndex = 31;
@@ -254,7 +267,7 @@
             this.lblColour.AutoSize = true;
             this.lblColour.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColour.ForeColor = System.Drawing.Color.White;
-            this.lblColour.Location = new System.Drawing.Point(90, 171);
+            this.lblColour.Location = new System.Drawing.Point(90, 160);
             this.lblColour.Name = "lblColour";
             this.lblColour.Size = new System.Drawing.Size(65, 12);
             this.lblColour.TabIndex = 16;
@@ -265,7 +278,7 @@
             this.lblCarMake.AutoSize = true;
             this.lblCarMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCarMake.ForeColor = System.Drawing.Color.White;
-            this.lblCarMake.Location = new System.Drawing.Point(90, 82);
+            this.lblCarMake.Location = new System.Drawing.Point(90, 71);
             this.lblCarMake.Name = "lblCarMake";
             this.lblCarMake.Size = new System.Drawing.Size(57, 12);
             this.lblCarMake.TabIndex = 14;
@@ -485,28 +498,31 @@
             this.lblMaintainData.TabIndex = 50;
             this.lblMaintainData.Text = "Maintain Data";
             // 
-            // cbxServiceType
+            // lstListServiceTypes
             // 
-            this.cbxServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cbxServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxServiceType.ForeColor = System.Drawing.Color.White;
-            this.cbxServiceType.FormattingEnabled = true;
-            this.cbxServiceType.Location = new System.Drawing.Point(92, 234);
-            this.cbxServiceType.Name = "cbxServiceType";
-            this.cbxServiceType.Size = new System.Drawing.Size(161, 20);
-            this.cbxServiceType.TabIndex = 43;
+            this.lstListServiceTypes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lstListServiceTypes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstListServiceTypes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F);
+            this.lstListServiceTypes.ForeColor = System.Drawing.Color.White;
+            this.lstListServiceTypes.FormattingEnabled = true;
+            this.lstListServiceTypes.ItemHeight = 12;
+            this.lstListServiceTypes.Location = new System.Drawing.Point(92, 304);
+            this.lstListServiceTypes.Name = "lstListServiceTypes";
+            this.lstListServiceTypes.Size = new System.Drawing.Size(161, 122);
+            this.lstListServiceTypes.TabIndex = 44;
             // 
-            // lblServiceType
+            // btnAddServiceType
             // 
-            this.lblServiceType.AutoSize = true;
-            this.lblServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServiceType.ForeColor = System.Drawing.Color.White;
-            this.lblServiceType.Location = new System.Drawing.Point(90, 216);
-            this.lblServiceType.Name = "lblServiceType";
-            this.lblServiceType.Size = new System.Drawing.Size(77, 12);
-            this.lblServiceType.TabIndex = 42;
-            this.lblServiceType.Text = "Service Type";
+            this.btnAddServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnAddServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddServiceType.ForeColor = System.Drawing.Color.White;
+            this.btnAddServiceType.Location = new System.Drawing.Point(193, 252);
+            this.btnAddServiceType.Name = "btnAddServiceType";
+            this.btnAddServiceType.Size = new System.Drawing.Size(60, 27);
+            this.btnAddServiceType.TabIndex = 45;
+            this.btnAddServiceType.Text = "Add";
+            this.btnAddServiceType.UseVisualStyleBackColor = false;
             // 
             // frmDashboard
             // 
@@ -545,7 +561,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlQuotes;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblColour;
@@ -577,5 +592,7 @@
         private System.Windows.Forms.Label lblMaintainData;
         private System.Windows.Forms.ComboBox cbxServiceType;
         private System.Windows.Forms.Label lblServiceType;
+        private System.Windows.Forms.Button btnAddServiceType;
+        private System.Windows.Forms.ListBox lstListServiceTypes;
     }
 }
