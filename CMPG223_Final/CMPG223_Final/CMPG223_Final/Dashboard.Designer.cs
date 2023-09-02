@@ -217,6 +217,7 @@
             this.btnEmail.TabIndex = 41;
             this.btnEmail.Text = "Email Quote";
             this.btnEmail.UseVisualStyleBackColor = false;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnQuote
             // 
@@ -577,10 +578,10 @@
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pnlQuotes);
             this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlPayments);
-            this.Controls.Add(this.pnlQuotes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
             this.Text = "Dashboard";

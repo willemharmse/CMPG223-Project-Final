@@ -267,7 +267,7 @@ namespace CMPG223_Final
 
                 if (txtUsername.Text[0].ToString() == "_")
                 {
-                    sql = "SELECT AdminID, Username, Password FROM Admin";
+                    sql = "SELECT AdminID, Username, Password, Email FROM Admin";
 
                     cmd = new SqlCommand(sql, con);
                     reader = cmd.ExecuteReader();
@@ -282,6 +282,7 @@ namespace CMPG223_Final
                                 User.setPassword(reader.GetValue(2).ToString());
                                 User.setID((int)reader.GetValue(0));
                                 User.setAdmin(true);
+                                User.setEmail(reader.GetValue(3).ToString());
 
                                 userFound = true;
                             }
@@ -290,7 +291,7 @@ namespace CMPG223_Final
                 }
                 else
                 {
-                    sql = "SELECT ClientID, Username, Password FROM Clients";
+                    sql = "SELECT ClientID, Username, Password, Email FROM Clients";
 
                     cmd = new SqlCommand(sql, con);
                     reader = cmd.ExecuteReader();
@@ -305,6 +306,7 @@ namespace CMPG223_Final
                                 User.setPassword(reader.GetValue(2).ToString());
                                 User.setID((int)reader.GetValue(0));
                                 User.setAdmin(false);
+                                User.setEmail(reader.GetValue(3).ToString());
 
                                 userFound = true;
                             }

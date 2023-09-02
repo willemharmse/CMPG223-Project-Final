@@ -10,12 +10,23 @@ namespace CMPG223_Final
     {
         private static string username;
         private static string password;
+        private static string email;
         private static Boolean isAdmin;
         private static int id;
 
         public static int getID()
         {
             return id;
+        }
+
+        public static string getEmail()
+        {
+            return email;
+        }
+
+        public static void setEmail(string mail)
+        {
+            email = mail;
         }
 
         public static void setUsername(string name)

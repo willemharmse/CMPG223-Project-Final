@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace CMPG223_Final
 {
@@ -610,13 +611,13 @@ namespace CMPG223_Final
                         adapter.InsertCommand = cmd;
                         adapter.InsertCommand.ExecuteNonQuery();
 
-                        MessageBox.Show("Your vehicle has been assigned to a mechanic for the service. You can proceed to the payment tab to enter payment details.");
-
                         lblPayments.Enabled = true;
                         lblPayments.Visible = true;
 
                         con.Close();
                     }
+
+                    MessageBox.Show("Your vehicle has been assigned to a mechanic for the service. You can proceed to the payment tab to enter payment details.");
                 }
                 else
                 {
@@ -697,9 +698,9 @@ namespace CMPG223_Final
         {
             string result = "";
 
-            for (int i = 0; i < counter; i++)
+            for (int i = 0; i < counter + 8; i++)
             {
-                result += lstQuote.Items[i].ToString();
+                result += lstQuote.Items[i].ToString() + "\n";
             }
 
             return result;
@@ -724,6 +725,38 @@ namespace CMPG223_Final
                 dataGridView1.DataMember = cbxTable.Text;
 
                 con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient smpt = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("protechauto.mechanicshop@gmail.com");
+               // mail.To.Add(User.getEmail());
+                mail.To.Add("shaldon60@gmail.com");
+                mail.Subject = "QUOTE FOR VEHICLE SERVICE";
+                mail.Body = "";
+
+                for (int i = 0; i < counter + 8; i++)
+                {
+                    mail.Body += lstQuote.Items[i].ToString() + "\n";
+                }
+                
+                smpt.Port = 587;
+                smpt.Credentials = new System.Net.NetworkCredential("protechauto.mechanicshop@gmail.com", "jbycypjrtmiybfsr");
+                smpt.EnableSsl = true;
+
+                smpt.Send(mail);
+
+                MessageBox.Show("The quote has been sent to your email address provided.");
             }
             catch (Exception ex)
             {

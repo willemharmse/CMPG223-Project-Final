@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblError2 = new System.Windows.Forms.Label();
             this.lblLoginlbl = new System.Windows.Forms.Label();
@@ -71,13 +70,11 @@
             this.lblAge = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlLogin.SuspendLayout();
             this.pnlSignUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblError2
@@ -593,7 +590,6 @@
             this.pnlSignUp.ResumeLayout(false);
             this.pnlSignUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,7 +638,6 @@
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.BindingSource clientsBindingSource;
     }
 }
 
