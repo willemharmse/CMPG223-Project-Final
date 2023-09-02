@@ -295,14 +295,13 @@ namespace CMPG223_Final
 
         private void removeServiceType(int index)
         {
-            for (int i = index; i < counter - 1; i++)
+            for (int i = index; i <= counter - 1; i++)
             {
                 services[i] = services[i + 1];
             }
 
-            counter--;
-
             services[counter - 1] = null;
+            counter--;
 
             for (int i = 0; i < counter; i++)
             {
