@@ -351,14 +351,58 @@ namespace CMPG223_Final
         {
             try
             {
-                decimal totalcost = determineTotalCost();
+                if (MessageBox.Show("If you want to proceed with this action your car details will be captured and saved", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    decimal totalcost = determineTotalCost();
 
-                MessageBox.Show(totalcost + "");
+                    lstQuote.Items.Add("PRO TECH AUTO");
+                    lstQuote.Items.Add("QUOTE FOR SERVICE");
+                    lstQuote.Items.Add("__________________________________________________");
+
+                    for (int i = 0; i < counter; i++)
+                    {
+                        lstQuote.Items.Add(services[i] + " R" + getServiceCost(serviceIDs[i]));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No data was captured");
+                }
             }
             catch (Exception ex)
             {
                 showError(ex.Message);
             }
+        }
+
+        private decimal getServiceCost(int serviceid)
+        {
+            decimal cost = 0.0m;
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT Cost FROM Service WHERE ServiceID = {serviceid}";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cost = (decimal)reader.GetValue(0);
+                }
+
+                reader.Close();
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return cost;
         }
 
         private decimal determineTotalCost()
