@@ -223,6 +223,16 @@ namespace CMPG223_Final
 
                 lblQuotes_Click(new object(), new EventArgs());
             }
+            else
+            {
+                lblPayments.Enabled = false;
+                lblPayments.Visible = false;
+
+                lblQuotes.Enabled = false;
+                lblQuotes.Visible = false;
+
+                lblReports_Click(new object(), new EventArgs());
+            }
 
             fillCarMakes();
             fillCarModels();
@@ -693,6 +703,32 @@ namespace CMPG223_Final
             }
 
             return result;
+        }
+
+        private void cbxTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = $"SELECT * FROM {cbxTable.Text}";
+
+                con.Open();
+
+                cmd = new SqlCommand(sql, con);
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, cbxTable.Text);
+
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = cbxTable.Text;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
         }
     }
 }

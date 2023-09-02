@@ -530,6 +530,7 @@
             this.cbxTable.Name = "cbxTable";
             this.cbxTable.Size = new System.Drawing.Size(247, 20);
             this.cbxTable.TabIndex = 54;
+            this.cbxTable.SelectedIndexChanged += new System.EventHandler(this.cbxTable_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
