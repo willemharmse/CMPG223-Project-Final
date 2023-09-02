@@ -303,9 +303,11 @@ namespace CMPG223_Final
             services[counter - 1] = null;
             counter--;
 
+            lstListServiceTypes.Items.Clear();
+
             for (int i = 0; i < counter; i++)
             {
-                MessageBox.Show(services[i]);
+                lstListServiceTypes.Items.Add(services[i]);
             }
         }
 
