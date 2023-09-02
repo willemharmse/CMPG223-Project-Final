@@ -116,6 +116,7 @@
             this.pnlQuotes.Controls.Add(this.label10);
             this.pnlQuotes.Controls.Add(this.lblColour);
             this.pnlQuotes.Controls.Add(this.lblCarMake);
+            this.pnlQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlQuotes.Location = new System.Drawing.Point(75, 99);
             this.pnlQuotes.Name = "pnlQuotes";
             this.pnlQuotes.Size = new System.Drawing.Size(949, 486);
@@ -517,7 +518,7 @@
             // 
             this.btnAddServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnAddServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddServiceType.ForeColor = System.Drawing.Color.White;
             this.btnAddServiceType.Location = new System.Drawing.Point(173, 252);
             this.btnAddServiceType.Name = "btnAddServiceType";
@@ -530,7 +531,7 @@
             // 
             this.btnRemoveServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnRemoveServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveServiceType.ForeColor = System.Drawing.Color.White;
             this.btnRemoveServiceType.Location = new System.Drawing.Point(91, 252);
             this.btnRemoveServiceType.Name = "btnRemoveServiceType";
