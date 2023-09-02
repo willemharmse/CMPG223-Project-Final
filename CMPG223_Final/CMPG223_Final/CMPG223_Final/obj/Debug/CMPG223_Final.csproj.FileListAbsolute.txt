@@ -77,3 +77,17 @@ C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223
 C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe.config
 C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe
 C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.pdb
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Auto.mdf
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\Auto_log.ldf
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe.config
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.exe
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Debug\CMPG223_Final.pdb
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.AssemblyReference.cache
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.SuggestedBindingRedirects.cache
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmDashboard.resources
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmLogin.resources
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.Properties.Resources.resources
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.GenerateResource.cache
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
+C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
