@@ -740,8 +740,7 @@ namespace CMPG223_Final
                 SmtpClient smpt = new SmtpClient("smtp.gmail.com");
 
                 mail.From = new MailAddress("protechauto.mechanicshop@gmail.com");
-               // mail.To.Add(User.getEmail());
-                mail.To.Add("shaldon60@gmail.com");
+                mail.To.Add(User.getEmail());
                 mail.Subject = "QUOTE FOR VEHICLE SERVICE";
                 mail.Body = "";
 
