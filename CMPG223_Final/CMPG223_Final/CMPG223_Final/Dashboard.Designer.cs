@@ -65,6 +65,7 @@
             this.lblMaintainData = new System.Windows.Forms.Label();
             this.lstListServiceTypes = new System.Windows.Forms.ListBox();
             this.btnAddServiceType = new System.Windows.Forms.Button();
+            this.btnRemoveServiceType = new System.Windows.Forms.Button();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.pnlMaintain.SuspendLayout();
@@ -98,6 +99,7 @@
             // pnlQuotes
             // 
             this.pnlQuotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlQuotes.Controls.Add(this.btnRemoveServiceType);
             this.pnlQuotes.Controls.Add(this.btnAddServiceType);
             this.pnlQuotes.Controls.Add(this.lstListServiceTypes);
             this.pnlQuotes.Controls.Add(this.cbxServiceType);
@@ -517,12 +519,25 @@
             this.btnAddServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddServiceType.ForeColor = System.Drawing.Color.White;
-            this.btnAddServiceType.Location = new System.Drawing.Point(193, 252);
+            this.btnAddServiceType.Location = new System.Drawing.Point(173, 252);
             this.btnAddServiceType.Name = "btnAddServiceType";
-            this.btnAddServiceType.Size = new System.Drawing.Size(60, 27);
+            this.btnAddServiceType.Size = new System.Drawing.Size(80, 27);
             this.btnAddServiceType.TabIndex = 45;
             this.btnAddServiceType.Text = "Add";
             this.btnAddServiceType.UseVisualStyleBackColor = false;
+            // 
+            // btnRemoveServiceType
+            // 
+            this.btnRemoveServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnRemoveServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveServiceType.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveServiceType.Location = new System.Drawing.Point(91, 252);
+            this.btnRemoveServiceType.Name = "btnRemoveServiceType";
+            this.btnRemoveServiceType.Size = new System.Drawing.Size(76, 27);
+            this.btnRemoveServiceType.TabIndex = 46;
+            this.btnRemoveServiceType.Text = "Remove";
+            this.btnRemoveServiceType.UseVisualStyleBackColor = false;
             // 
             // frmDashboard
             // 
@@ -594,5 +609,6 @@
         private System.Windows.Forms.Label lblServiceType;
         private System.Windows.Forms.Button btnAddServiceType;
         private System.Windows.Forms.ListBox lstListServiceTypes;
+        private System.Windows.Forms.Button btnRemoveServiceType;
     }
 }
