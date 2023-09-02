@@ -66,6 +66,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblMaintainData = new System.Windows.Forms.Label();
+            this.btnAcceptQuote = new System.Windows.Forms.Button();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.pnlMaintain.SuspendLayout();
@@ -99,6 +100,7 @@
             // pnlQuotes
             // 
             this.pnlQuotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlQuotes.Controls.Add(this.btnAcceptQuote);
             this.pnlQuotes.Controls.Add(this.btnRemoveServiceType);
             this.pnlQuotes.Controls.Add(this.btnAddServiceType);
             this.pnlQuotes.Controls.Add(this.lstListServiceTypes);
@@ -543,6 +545,19 @@
             this.lblMaintainData.TabIndex = 50;
             this.lblMaintainData.Text = "Maintain Data";
             // 
+            // btnAcceptQuote
+            // 
+            this.btnAcceptQuote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnAcceptQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceptQuote.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceptQuote.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptQuote.Location = new System.Drawing.Point(610, 443);
+            this.btnAcceptQuote.Name = "btnAcceptQuote";
+            this.btnAcceptQuote.Size = new System.Drawing.Size(162, 31);
+            this.btnAcceptQuote.TabIndex = 47;
+            this.btnAcceptQuote.Text = "Accept Quote";
+            this.btnAcceptQuote.UseVisualStyleBackColor = false;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,5 +629,6 @@
         private System.Windows.Forms.Button btnAddServiceType;
         private System.Windows.Forms.ListBox lstListServiceTypes;
         private System.Windows.Forms.Button btnRemoveServiceType;
+        private System.Windows.Forms.Button btnAcceptQuote;
     }
 }
