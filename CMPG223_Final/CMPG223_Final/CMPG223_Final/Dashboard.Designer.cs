@@ -32,12 +32,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlQuotes = new System.Windows.Forms.Panel();
+            this.btnAcceptQuote = new System.Windows.Forms.Button();
             this.btnRemoveServiceType = new System.Windows.Forms.Button();
             this.btnAddServiceType = new System.Windows.Forms.Button();
             this.lstListServiceTypes = new System.Windows.Forms.ListBox();
             this.cbxServiceType = new System.Windows.Forms.ComboBox();
             this.lblServiceType = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.btnQuote = new System.Windows.Forms.Button();
             this.lstQuote = new System.Windows.Forms.ListBox();
             this.lblCar = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblMaintainData = new System.Windows.Forms.Label();
-            this.btnAcceptQuote = new System.Windows.Forms.Button();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.pnlMaintain.SuspendLayout();
@@ -106,7 +106,7 @@
             this.pnlQuotes.Controls.Add(this.lstListServiceTypes);
             this.pnlQuotes.Controls.Add(this.cbxServiceType);
             this.pnlQuotes.Controls.Add(this.lblServiceType);
-            this.pnlQuotes.Controls.Add(this.btnPrint);
+            this.pnlQuotes.Controls.Add(this.btnEmail);
             this.pnlQuotes.Controls.Add(this.btnQuote);
             this.pnlQuotes.Controls.Add(this.lstQuote);
             this.pnlQuotes.Controls.Add(this.lblCar);
@@ -125,13 +125,28 @@
             this.pnlQuotes.TabIndex = 2;
             this.pnlQuotes.Visible = false;
             // 
+            // btnAcceptQuote
+            // 
+            this.btnAcceptQuote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnAcceptQuote.Enabled = false;
+            this.btnAcceptQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceptQuote.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceptQuote.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptQuote.Location = new System.Drawing.Point(610, 443);
+            this.btnAcceptQuote.Name = "btnAcceptQuote";
+            this.btnAcceptQuote.Size = new System.Drawing.Size(162, 31);
+            this.btnAcceptQuote.TabIndex = 47;
+            this.btnAcceptQuote.Text = "Accept Quote";
+            this.btnAcceptQuote.UseVisualStyleBackColor = false;
+            this.btnAcceptQuote.Click += new System.EventHandler(this.btnAcceptQuote_Click);
+            // 
             // btnRemoveServiceType
             // 
             this.btnRemoveServiceType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnRemoveServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveServiceType.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveServiceType.Location = new System.Drawing.Point(91, 252);
+            this.btnRemoveServiceType.Location = new System.Drawing.Point(177, 252);
             this.btnRemoveServiceType.Name = "btnRemoveServiceType";
             this.btnRemoveServiceType.Size = new System.Drawing.Size(76, 27);
             this.btnRemoveServiceType.TabIndex = 46;
@@ -145,7 +160,7 @@
             this.btnAddServiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddServiceType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddServiceType.ForeColor = System.Drawing.Color.White;
-            this.btnAddServiceType.Location = new System.Drawing.Point(173, 252);
+            this.btnAddServiceType.Location = new System.Drawing.Point(91, 252);
             this.btnAddServiceType.Name = "btnAddServiceType";
             this.btnAddServiceType.Size = new System.Drawing.Size(80, 27);
             this.btnAddServiceType.TabIndex = 45;
@@ -189,18 +204,19 @@
             this.lblServiceType.TabIndex = 42;
             this.lblServiceType.Text = "Service Type";
             // 
-            // btnPrint
+            // btnEmail
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(790, 443);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(115, 31);
-            this.btnPrint.TabIndex = 41;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnEmail.Enabled = false;
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmail.ForeColor = System.Drawing.Color.White;
+            this.btnEmail.Location = new System.Drawing.Point(790, 443);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(115, 31);
+            this.btnEmail.TabIndex = 41;
+            this.btnEmail.Text = "Email Quote";
+            this.btnEmail.UseVisualStyleBackColor = false;
             // 
             // btnQuote
             // 
@@ -294,9 +310,9 @@
             this.lblService.ForeColor = System.Drawing.Color.White;
             this.lblService.Location = new System.Drawing.Point(90, 289);
             this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(147, 12);
+            this.lblService.Size = new System.Drawing.Size(80, 12);
             this.lblService.TabIndex = 26;
-            this.lblService.Text = "Additional Service Details";
+            this.lblService.Text = "Service Items";
             // 
             // label10
             // 
@@ -502,12 +518,14 @@
             this.cbxTable.ForeColor = System.Drawing.Color.White;
             this.cbxTable.FormattingEnabled = true;
             this.cbxTable.Items.AddRange(new object[] {
-            "Name",
-            "Description",
-            "Date",
-            "Time",
-            "Venue",
-            "Capacity"});
+            "Admin",
+            "CarColour",
+            "CarMake",
+            "CarModel",
+            "Clients",
+            "Mechanic",
+            "Service",
+            "Vehicle"});
             this.cbxTable.Location = new System.Drawing.Point(46, 94);
             this.cbxTable.Name = "cbxTable";
             this.cbxTable.Size = new System.Drawing.Size(247, 20);
@@ -545,19 +563,6 @@
             this.lblMaintainData.TabIndex = 50;
             this.lblMaintainData.Text = "Maintain Data";
             // 
-            // btnAcceptQuote
-            // 
-            this.btnAcceptQuote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnAcceptQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceptQuote.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceptQuote.ForeColor = System.Drawing.Color.White;
-            this.btnAcceptQuote.Location = new System.Drawing.Point(610, 443);
-            this.btnAcceptQuote.Name = "btnAcceptQuote";
-            this.btnAcceptQuote.Size = new System.Drawing.Size(162, 31);
-            this.btnAcceptQuote.TabIndex = 47;
-            this.btnAcceptQuote.Text = "Accept Quote";
-            this.btnAcceptQuote.UseVisualStyleBackColor = false;
-            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,10 +576,10 @@
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnlQuotes);
             this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlPayments);
+            this.Controls.Add(this.pnlQuotes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
             this.Text = "Dashboard";
@@ -612,7 +617,7 @@
         private System.Windows.Forms.Panel pnlPayments;
         private System.Windows.Forms.Button btnQuote;
         private System.Windows.Forms.Panel pnlReports;
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lblMakeReports;
