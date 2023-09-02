@@ -488,16 +488,16 @@
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 639);
-            this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.lblMaintain);
             this.Controls.Add(this.lblReports);
             this.Controls.Add(this.lblPayments);
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pnlQuotes);
+            this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlPayments);
-            this.Controls.Add(this.pnlQuotes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
             this.Text = "Dashboard";

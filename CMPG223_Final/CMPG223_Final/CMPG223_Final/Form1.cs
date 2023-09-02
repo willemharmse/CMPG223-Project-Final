@@ -18,7 +18,6 @@ namespace CMPG223_Final
         SqlCommand cmd;
         SqlDataAdapter adapter;
         SqlDataReader reader;
-        DataSet ds;
 
         public string conString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Auto.mdf;Integrated Security=True;User Instance=True";
 
@@ -71,36 +70,44 @@ namespace CMPG223_Final
                                 {
                                     if (txtEmail.Text != "")
                                     {
-                                        if (txtCell.Text != "")
+                                        if (validEmail(txtEmail.Text))
                                         {
-                                            string cell_number = txtCell.Text;
 
-                                            if (cell_number.Length == 10)
+                                            if (txtCell.Text != "")
                                             {
-                                                if (int.TryParse(txtCell.Text, out int num))
+                                                string cell_number = txtCell.Text;
+
+                                                if (cell_number.Length == 10)
                                                 {
-                                                    if (comboBox1.Text != "")
+                                                    if (int.TryParse(txtCell.Text, out int num))
                                                     {
-                                                        signup();
+                                                        if (comboBox1.Text != "")
+                                                        {
+                                                            signup();
+                                                        }
+                                                        else
+                                                        {
+                                                            showError("No Gender was provided");
+                                                        }
                                                     }
                                                     else
                                                     {
-                                                        showError("No Gender was provided");
+                                                        showError("The Cellphone Number must only contain digits");
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    showError("The Cellphone Number must only contain digits");
+                                                    showError("Cellphone number must not be loner than 10 digits");
                                                 }
                                             }
                                             else
                                             {
-                                                showError("Cellphone number must not be loner than 10 digits");
+                                                showError("No Cellphone Number was provided");
                                             }
                                         }
                                         else
                                         {
-                                            showError("No Cellphone Number was provided");
+                                            showError("The email address provided is not valid it should have the format example@provider.com");
                                         }
                                     }
                                     else
@@ -137,6 +144,28 @@ namespace CMPG223_Final
             {
                 showError(exe.Message);
             }
+        }
+
+        private bool validEmail(string email)
+        {
+            bool result = false;
+
+            try
+            {
+                if (email.IndexOf("@") != -1)
+                {
+                    if (email.IndexOf(".com") != -1)
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return result;
         }
 
         private bool usernameAvail(string username)

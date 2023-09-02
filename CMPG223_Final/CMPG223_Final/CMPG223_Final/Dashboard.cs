@@ -30,6 +30,104 @@ namespace CMPG223_Final
             con.Close();
         }
 
+        public void showError(string err)
+        {
+            MessageBox.Show("Error has occured:\n" + err);
+        }
+
+        private void fillCarMakes()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string sql = "SELECT Make FROM CarMake";
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+                cmd = new SqlCommand(sql, con);
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "CarMakes");
+
+                cmbCarMakes.DataSource = ds.Tables[0];
+                cmbCarMakes.DisplayMember = "Make";
+                cmbCarMakes.ValueMember = "Make";
+                cmbCarMakes.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void fillCarModels()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string sql = "SELECT Model FROM CarModel";
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+                cmd = new SqlCommand(sql, con);
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "CarModel");
+
+                cmbCarModel.DataSource = ds.Tables[0];
+                cmbCarModel.DisplayMember = "Model";
+                cmbCarModel.ValueMember = "Model";
+                cmbCarModel.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void fillCarColours()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string sql = "SELECT Colour FROM CarColour";
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+                cmd = new SqlCommand(sql, con);
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "CarColour");
+
+                cmbCarColour.DataSource = ds.Tables[0];
+                cmbCarColour.DisplayMember = "Colour";
+                cmbCarColour.ValueMember = "Colour";
+                cmbCarColour.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
         private void ResetAll()
         {
             lblQuotes.BackColor = Color.Transparent;
@@ -74,29 +172,23 @@ namespace CMPG223_Final
             frmLogin login = new frmLogin();
             connectDB(login.conString);
 
-            try
+            if (!User.getAdmin())
             {
-                con.Open();
+                lblPayments.Enabled = false;
+                lblPayments.Visible = false;
 
-                string sql = $"SELECT * FROM Clients";
+                lblReports.Enabled = false;
+                lblReports.Visible = false;
 
-                ds = new DataSet();
+                lblMaintain.Enabled = false;
+                lblMaintain.Visible = false;
 
-                adapter = new SqlDataAdapter();
-
-                cmd = new SqlCommand(sql, con);
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds, "Clients");
-
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "Clients";
-
-                con.Close();
+                lblQuotes_Click(new object(), new EventArgs());
             }
-            catch (Exception ex)
-            {
-                login.showError(ex.Message);
-            }
+
+            fillCarMakes();
+            fillCarModels();
+            fillCarColours();
         }
     }
 }
