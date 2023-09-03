@@ -792,6 +792,7 @@ namespace CMPG223_Final
                     break;
 
                 case "Mechanic":
+                    deleteMechanic();
                     break;
 
                 case "Service":
@@ -845,6 +846,11 @@ namespace CMPG223_Final
             frmDelete deleteForm = new frmDelete();
             deleteForm.ShowDialog();
 
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
+
             try
             {
                 if (!inVehicleTable("Model", deleteForm.id))
@@ -883,6 +889,11 @@ namespace CMPG223_Final
             frmDelete deleteForm = new frmDelete();
             deleteForm.ShowDialog();
 
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
+
             try
             {
                 if (!inVehicleTable("Colour", deleteForm.id))
@@ -920,6 +931,11 @@ namespace CMPG223_Final
         {
             frmDelete deleteForm = new frmDelete();
             deleteForm.ShowDialog();
+
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
 
             try
             {
@@ -993,6 +1009,11 @@ namespace CMPG223_Final
             frmDelete deleteForm = new frmDelete();
             deleteForm.ShowDialog();
 
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
+
             try
             {
                 if (!clientHasVehicle(deleteForm.id))
@@ -1030,6 +1051,11 @@ namespace CMPG223_Final
         {
             frmDelete deleteForm = new frmDelete();
             deleteForm.ShowDialog();
+
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
 
             try
             {
@@ -1096,6 +1122,11 @@ namespace CMPG223_Final
             frmDelete deleteForm = new frmDelete();
             deleteForm.ShowDialog();
 
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
+
             try
             {
                 if (!inServiceVechile("Vehicle", deleteForm.id))
@@ -1121,6 +1152,49 @@ namespace CMPG223_Final
                 else
                 {
                     showError("Please ensure that this vehicle does not have any services being done to it. Delete all the values of this vehicle from the Service_on_Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void deleteMechanic()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
+
+            try
+            {
+                if (!inServiceVechile("Mechanic", deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the mechanic will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM Mechanic WHERE MechanicID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The mechanic was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this mechanic is not doing any services. Delete all the values of this mechanic from the Service_on_Vehicle table.");
                 }
             }
             catch (Exception ex)

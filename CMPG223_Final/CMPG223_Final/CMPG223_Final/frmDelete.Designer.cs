@@ -58,6 +58,7 @@
             this.btnDelete.TabIndex = 56;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // btnCancel
             // 
@@ -71,6 +72,7 @@
             this.btnCancel.TabIndex = 57;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // lblDeleteID
             // 
@@ -96,6 +98,7 @@
             this.Controls.Add(this.nudDeleteID);
             this.Name = "frmDelete";
             this.Text = "frmDelete";
+            this.Load += new System.EventHandler(this.frmDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudDeleteID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

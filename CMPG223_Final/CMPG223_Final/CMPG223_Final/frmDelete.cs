@@ -18,25 +18,30 @@ namespace CMPG223_Final
             InitializeComponent();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            if (txtID.Text != "")
+            if (nudDeleteID.Value != 0)
             {
-                id = Convert.ToInt32(txtID.Text);
+                id = (int)nudDeleteID.Value;
 
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Please enter a valid value into the text field");
+                MessageBox.Show("Please ensure the value is not 0");
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             id = -1;
 
             this.Close();
+        }
+
+        private void frmDelete_Load(object sender, EventArgs e)
+        {
+            id = -1;
         }
     }
 }
