@@ -1,6 +1,6 @@
 ﻿namespace CMPG223_Final
 {
-    partial class frmInsert
+    partial class Insert
     {
         /// <summary>
         /// Required designer variable.
@@ -145,6 +145,7 @@
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.pnlAddAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeAdmin)).BeginInit();
             this.pnlAddColour.SuspendLayout();
@@ -1573,12 +1574,26 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // frmInsert
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.White;
+            this.btnHelp.Location = new System.Drawing.Point(12, 370);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(98, 31);
+            this.btnHelp.TabIndex = 68;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = false;
+            // 
+            // Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(453, 405);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pnlAddVehicle);
             this.Controls.Add(this.pnlAddService);
@@ -1588,7 +1603,8 @@
             this.Controls.Add(this.pnlAddColour);
             this.Controls.Add(this.pnlAddAdmin);
             this.Controls.Add(this.pnlAddClient);
-            this.Name = "frmInsert";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Insert";
             this.Text = "frmInsert";
             this.Load += new System.EventHandler(this.frmInsert_Load);
             this.pnlAddAdmin.ResumeLayout(false);
@@ -1735,5 +1751,6 @@
         private System.Windows.Forms.NumericUpDown nudAgeMech;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

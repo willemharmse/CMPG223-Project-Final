@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace CMPG223_Final
 {
-    public partial class frmInsert : Form
+    public partial class Insert : Form
     {
         SqlConnection con;
         SqlDataAdapter adapter;
@@ -22,7 +22,7 @@ namespace CMPG223_Final
 
         public string table;
 
-        public frmInsert()
+        public Insert()
         {
             InitializeComponent();
         }

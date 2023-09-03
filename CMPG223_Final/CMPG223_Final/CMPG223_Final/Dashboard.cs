@@ -1365,7 +1365,7 @@ namespace CMPG223_Final
             {
                 if (cbxTable.Text != "Service_on_Vehicle")
                 {
-                    frmInsert insert = new frmInsert();
+                    Insert insert = new Insert();
                     insert.table = cbxTable.Text;
 
                     insert.ShowDialog();
