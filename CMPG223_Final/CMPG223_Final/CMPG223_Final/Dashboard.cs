@@ -762,5 +762,129 @@ namespace CMPG223_Final
                 showError(ex.Message);
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            switch (cbxTable.Text)
+            {
+                case "Client":
+                    deleteClient();
+                    break;
+
+                case "Admin":
+                    break;
+
+                case "Vehicle":
+                    break;
+
+                case "CarModel":
+                    break;
+
+                case "CarMake":
+                    break;
+
+                case "CarColour":
+                    break;
+
+                case "Mechanic":
+                    break;
+
+                case "Service":
+                    break;
+
+                case "Service_on_Vehicle":
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private bool inServiceVechile(string value, int id)
+        {
+            int counter = 0;
+            bool result = false;
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT * FROM Service_on_Vehicle WHERE {value}ID = {id}";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    counter++;
+                }
+
+                con.Close();
+
+                if (counter != 0)
+                {
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return result;
+        }
+
+        private void deleteClient()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (!inServiceVechile("Client", deleteForm.id));
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void deleteVehicle()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (!inServiceVechile("Vehicle", deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the vehicle will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM Vehicle WHERE VehicleID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The vehicle was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this vehicle does not have any services being done to it. Delete all the values of this vehicle form the Service_on_Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
     }
 }

@@ -493,12 +493,13 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(193, 132);
+            this.btnDelete.Location = new System.Drawing.Point(193, 133);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 31);
             this.btnDelete.TabIndex = 56;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblChooseTable
             // 
@@ -526,7 +527,8 @@
             "Clients",
             "Mechanic",
             "Service",
-            "Vehicle"});
+            "Vehicle",
+            "Service_on_Vehicle"});
             this.cbxTable.Location = new System.Drawing.Point(46, 94);
             this.cbxTable.Name = "cbxTable";
             this.cbxTable.Size = new System.Drawing.Size(247, 20);
@@ -578,10 +580,10 @@
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnlQuotes);
             this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlPayments);
+            this.Controls.Add(this.pnlQuotes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
             this.Text = "Dashboard";
