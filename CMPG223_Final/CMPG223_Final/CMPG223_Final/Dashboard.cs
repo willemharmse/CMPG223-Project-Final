@@ -769,7 +769,7 @@ namespace CMPG223_Final
             {
                 switch (cbxTable.Text)
                 {
-                    case "Client":
+                    case "Clients":
                         deleteClient();
                         cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;

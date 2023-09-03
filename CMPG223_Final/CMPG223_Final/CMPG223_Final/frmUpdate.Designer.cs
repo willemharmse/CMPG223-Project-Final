@@ -362,6 +362,7 @@
             this.btnChooseMech.TabIndex = 62;
             this.btnChooseMech.Text = "Choose ID";
             this.btnChooseMech.UseVisualStyleBackColor = false;
+            this.btnChooseMech.Click += new System.EventHandler(this.btnChooseMech_Click);
             // 
             // label31
             // 
@@ -456,6 +457,7 @@
             this.btnUpdateMechanic.TabIndex = 44;
             this.btnUpdateMechanic.Text = "Update Details";
             this.btnUpdateMechanic.UseVisualStyleBackColor = false;
+            this.btnUpdateMechanic.Click += new System.EventHandler(this.btnUpdateMechanic_Click);
             // 
             // lblUpdateMechanic
             // 
@@ -570,6 +572,7 @@
             this.btnChooseClient.TabIndex = 62;
             this.btnChooseClient.Text = "Choose ID";
             this.btnChooseClient.UseVisualStyleBackColor = false;
+            this.btnChooseClient.Click += new System.EventHandler(this.btnChooseClient_Click);
             // 
             // cmbClientID
             // 
@@ -795,6 +798,7 @@
             this.btnUpdateClient.TabIndex = 44;
             this.btnUpdateClient.Text = "Update Details";
             this.btnUpdateClient.UseVisualStyleBackColor = false;
+            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
             // lblAddClient
             // 
@@ -918,6 +922,7 @@
             this.btnUpdateService.TabIndex = 44;
             this.btnUpdateService.Text = "Update Details";
             this.btnUpdateService.UseVisualStyleBackColor = false;
+            this.btnUpdateService.Click += new System.EventHandler(this.btnUpdateService_Click);
             // 
             // label37
             // 
@@ -983,6 +988,7 @@
             this.btnChooseService.TabIndex = 64;
             this.btnChooseService.Text = "Choose ID";
             this.btnChooseService.UseVisualStyleBackColor = false;
+            this.btnChooseService.Click += new System.EventHandler(this.btnChooseService_Click);
             // 
             // cmbServiceID
             // 
@@ -1073,6 +1079,7 @@
             this.btnChooseVehicle.TabIndex = 69;
             this.btnChooseVehicle.Text = "Choose ID";
             this.btnChooseVehicle.UseVisualStyleBackColor = false;
+            this.btnChooseVehicle.Click += new System.EventHandler(this.btnChooseVehicle_Click);
             // 
             // cmbVehicleID
             // 
@@ -1230,6 +1237,7 @@
             this.btnUpdateVehicle.TabIndex = 44;
             this.btnUpdateVehicle.Text = "Update Details";
             this.btnUpdateVehicle.UseVisualStyleBackColor = false;
+            this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
             // 
             // txtUsernameAdmin
             // 
@@ -1314,6 +1322,7 @@
             this.btnUpdateAdmin.TabIndex = 44;
             this.btnUpdateAdmin.Text = "Update Details";
             this.btnUpdateAdmin.UseVisualStyleBackColor = false;
+            this.btnUpdateAdmin.Click += new System.EventHandler(this.btnUpdateAdmin_Click);
             // 
             // lblAddAdmin
             // 
@@ -1407,6 +1416,7 @@
             this.btnChooseAdmin.TabIndex = 62;
             this.btnChooseAdmin.Text = "Choose ID";
             this.btnChooseAdmin.UseVisualStyleBackColor = false;
+            this.btnChooseAdmin.Click += new System.EventHandler(this.btnChooseAdmin_Click);
             // 
             // cmbAdminID
             // 
@@ -1626,6 +1636,7 @@
             this.btnUpdateMake.TabIndex = 44;
             this.btnUpdateMake.Text = "Update Make";
             this.btnUpdateMake.UseVisualStyleBackColor = false;
+            this.btnUpdateMake.Click += new System.EventHandler(this.btnUpdateMake_Click);
             // 
             // lblAddMake
             // 
@@ -1678,6 +1689,7 @@
             this.btnChooseMake.TabIndex = 61;
             this.btnChooseMake.Text = "Choose ID";
             this.btnChooseMake.UseVisualStyleBackColor = false;
+            this.btnChooseMake.Click += new System.EventHandler(this.btnChooseMake_Click);
             // 
             // cmbMakeID
             // 
@@ -1745,6 +1757,7 @@
             this.btnChooseModel.TabIndex = 61;
             this.btnChooseModel.Text = "Choose ID";
             this.btnChooseModel.UseVisualStyleBackColor = false;
+            this.btnChooseModel.Click += new System.EventHandler(this.btnChooseModel_Click);
             // 
             // cmbModelID
             // 
@@ -1806,6 +1819,7 @@
             this.btnUpdateModel.TabIndex = 44;
             this.btnUpdateModel.Text = "Update Model";
             this.btnUpdateModel.UseVisualStyleBackColor = false;
+            this.btnUpdateModel.Click += new System.EventHandler(this.btnUpdateModel_Click);
             // 
             // lblAddModel
             // 
@@ -1896,6 +1910,7 @@
             this.btnUpdateColour.TabIndex = 44;
             this.btnUpdateColour.Text = "Update Details";
             this.btnUpdateColour.UseVisualStyleBackColor = false;
+            this.btnUpdateColour.Click += new System.EventHandler(this.btnUpdateColour_Click);
             // 
             // pnlUpdateColour
             // 
@@ -1926,6 +1941,7 @@
             this.btnChooseColour.TabIndex = 61;
             this.btnChooseColour.Text = "Choose ID";
             this.btnChooseColour.UseVisualStyleBackColor = false;
+            this.btnChooseColour.Click += new System.EventHandler(this.btnChooseColour_Click);
             // 
             // cmbColourID
             // 
@@ -1983,16 +1999,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(450, 407);
+            this.Controls.Add(this.pnlUpdateMechanic);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.pnlUpdateMake);
+            this.Controls.Add(this.pnlUpdateModel);
+            this.Controls.Add(this.pnlUpdateColour);
             this.Controls.Add(this.pnlUpdateClient);
             this.Controls.Add(this.pnlUpdateService);
             this.Controls.Add(this.pnlUpdateVehicle);
             this.Controls.Add(this.pnlUpdateAdmin);
-            this.Controls.Add(this.pnlUpdateMake);
-            this.Controls.Add(this.pnlUpdateModel);
-            this.Controls.Add(this.pnlUpdateColour);
-            this.Controls.Add(this.pnlUpdateMechanic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Update";
             this.Text = "Update";
