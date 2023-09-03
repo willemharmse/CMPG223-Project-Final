@@ -111,6 +111,8 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.pnlAddMechanic = new System.Windows.Forms.Panel();
+            this.nudAgeMech = new System.Windows.Forms.NumericUpDown();
+            this.label50 = new System.Windows.Forms.Label();
             this.nudSallaryMech = new System.Windows.Forms.NumericUpDown();
             this.cmbGenderMech = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -142,8 +144,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
-            this.nudAgeMech = new System.Windows.Forms.NumericUpDown();
-            this.label50 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlAddAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeAdmin)).BeginInit();
             this.pnlAddColour.SuspendLayout();
@@ -154,9 +155,9 @@
             this.pnlAddClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeClient)).BeginInit();
             this.pnlAddMechanic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSallaryMech)).BeginInit();
             this.pnlAddVehicle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddAdmin
@@ -676,7 +677,7 @@
             this.btnAddMake.Name = "btnAddMake";
             this.btnAddMake.Size = new System.Drawing.Size(106, 31);
             this.btnAddMake.TabIndex = 44;
-            this.btnAddMake.Text = "Add Model";
+            this.btnAddMake.Text = "Add Make";
             this.btnAddMake.UseVisualStyleBackColor = false;
             this.btnAddMake.Click += new System.EventHandler(this.btnAddMake_Click);
             // 
@@ -1162,6 +1163,26 @@
             this.pnlAddMechanic.Size = new System.Drawing.Size(429, 295);
             this.pnlAddMechanic.TabIndex = 64;
             // 
+            // nudAgeMech
+            // 
+            this.nudAgeMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.nudAgeMech.ForeColor = System.Drawing.Color.White;
+            this.nudAgeMech.Location = new System.Drawing.Point(43, 237);
+            this.nudAgeMech.Name = "nudAgeMech";
+            this.nudAgeMech.Size = new System.Drawing.Size(161, 20);
+            this.nudAgeMech.TabIndex = 61;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(41, 211);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(27, 12);
+            this.label50.TabIndex = 60;
+            this.label50.Text = "Age";
+            // 
             // nudSallaryMech
             // 
             this.nudSallaryMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -1538,32 +1559,28 @@
             this.label46.TabIndex = 41;
             this.label46.Text = "Add a New Record to Vehicle";
             // 
-            // nudAgeMech
+            // btnCancel
             // 
-            this.nudAgeMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.nudAgeMech.ForeColor = System.Drawing.Color.White;
-            this.nudAgeMech.Location = new System.Drawing.Point(43, 237);
-            this.nudAgeMech.Name = "nudAgeMech";
-            this.nudAgeMech.Size = new System.Drawing.Size(161, 20);
-            this.nudAgeMech.TabIndex = 61;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(41, 211);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(27, 12);
-            this.label50.TabIndex = 60;
-            this.label50.Text = "Age";
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(329, 370);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 31);
+            this.btnCancel.TabIndex = 67;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
-            this.ClientSize = new System.Drawing.Size(453, 384);
+            this.ClientSize = new System.Drawing.Size(453, 405);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.pnlAddVehicle);
             this.Controls.Add(this.pnlAddService);
             this.Controls.Add(this.pnlAddMechanic);
             this.Controls.Add(this.pnlAddMake);
@@ -1571,7 +1588,6 @@
             this.Controls.Add(this.pnlAddColour);
             this.Controls.Add(this.pnlAddAdmin);
             this.Controls.Add(this.pnlAddClient);
-            this.Controls.Add(this.pnlAddVehicle);
             this.Name = "frmInsert";
             this.Text = "frmInsert";
             this.Load += new System.EventHandler(this.frmInsert_Load);
@@ -1592,10 +1608,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeClient)).EndInit();
             this.pnlAddMechanic.ResumeLayout(false);
             this.pnlAddMechanic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSallaryMech)).EndInit();
             this.pnlAddVehicle.ResumeLayout(false);
             this.pnlAddVehicle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1718,5 +1734,6 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.NumericUpDown nudAgeMech;
         private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

@@ -110,3 +110,4 @@ C:\Users\shald\source\repos\New folder (2)\CMPG223_Final\CMPG223_Final\CMPG223_F
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmDelete.resources
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmInsert.resources
 C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmInsert.resources
+C:\Users\shald\source\repos\New folder (2)\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmInsert.resources
