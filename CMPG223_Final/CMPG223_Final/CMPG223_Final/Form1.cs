@@ -83,7 +83,14 @@ namespace CMPG223_Final
                                                     {
                                                         if (comboBox1.Text != "")
                                                         {
-                                                            signup();
+                                                            if (numericUpDown1.Value >= 18)
+                                                            {
+                                                                signup();
+                                                            }
+                                                            else
+                                                            {
+                                                                showError("You should be at least 18 to have an account");
+                                                            }
                                                         }
                                                         else
                                                         {

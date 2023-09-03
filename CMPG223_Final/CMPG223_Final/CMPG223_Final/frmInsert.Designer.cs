@@ -69,6 +69,12 @@
             this.lblModel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.pnlAddMake = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtAddMake = new System.Windows.Forms.TextBox();
+            this.btnAddMake = new System.Windows.Forms.Button();
+            this.lblAddMake = new System.Windows.Forms.Label();
+            this.lblMake = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnlAddService = new System.Windows.Forms.Panel();
             this.nudPriceService = new System.Windows.Forms.NumericUpDown();
             this.label43 = new System.Windows.Forms.Label();
@@ -78,12 +84,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtAddMake = new System.Windows.Forms.TextBox();
-            this.btnAddMake = new System.Windows.Forms.Button();
-            this.lblAddMake = new System.Windows.Forms.Label();
-            this.lblMake = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.pnlAddClient = new System.Windows.Forms.Panel();
             this.nudAgeClient = new System.Windows.Forms.NumericUpDown();
             this.cmbGenderClient = new System.Windows.Forms.ComboBox();
@@ -111,7 +111,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.pnlAddMechanic = new System.Windows.Forms.Panel();
-            this.nudAgeMech = new System.Windows.Forms.NumericUpDown();
+            this.nudSallaryMech = new System.Windows.Forms.NumericUpDown();
             this.cmbGenderMech = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -142,6 +142,8 @@
             this.label45 = new System.Windows.Forms.Label();
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
+            this.nudAgeMech = new System.Windows.Forms.NumericUpDown();
+            this.label50 = new System.Windows.Forms.Label();
             this.pnlAddAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeAdmin)).BeginInit();
             this.pnlAddColour.SuspendLayout();
@@ -152,8 +154,9 @@
             this.pnlAddClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeClient)).BeginInit();
             this.pnlAddMechanic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSallaryMech)).BeginInit();
             this.pnlAddVehicle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddAdmin
@@ -643,6 +646,73 @@
             this.pnlAddMake.Size = new System.Drawing.Size(302, 234);
             this.pnlAddMake.TabIndex = 62;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(405, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 55;
+            // 
+            // txtAddMake
+            // 
+            this.txtAddMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtAddMake.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddMake.ForeColor = System.Drawing.Color.White;
+            this.txtAddMake.Location = new System.Drawing.Point(80, 93);
+            this.txtAddMake.Name = "txtAddMake";
+            this.txtAddMake.Size = new System.Drawing.Size(160, 13);
+            this.txtAddMake.TabIndex = 35;
+            // 
+            // btnAddMake
+            // 
+            this.btnAddMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnAddMake.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMake.ForeColor = System.Drawing.Color.White;
+            this.btnAddMake.Location = new System.Drawing.Point(103, 148);
+            this.btnAddMake.Name = "btnAddMake";
+            this.btnAddMake.Size = new System.Drawing.Size(106, 31);
+            this.btnAddMake.TabIndex = 44;
+            this.btnAddMake.Text = "Add Model";
+            this.btnAddMake.UseVisualStyleBackColor = false;
+            this.btnAddMake.Click += new System.EventHandler(this.btnAddMake_Click);
+            // 
+            // lblAddMake
+            // 
+            this.lblAddMake.AutoSize = true;
+            this.lblAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddMake.ForeColor = System.Drawing.Color.White;
+            this.lblAddMake.Location = new System.Drawing.Point(55, 25);
+            this.lblAddMake.Name = "lblAddMake";
+            this.lblAddMake.Size = new System.Drawing.Size(201, 22);
+            this.lblAddMake.TabIndex = 41;
+            this.lblAddMake.Text = "Add a New Car Make";
+            // 
+            // lblMake
+            // 
+            this.lblMake.AutoSize = true;
+            this.lblMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMake.ForeColor = System.Drawing.Color.White;
+            this.lblMake.Location = new System.Drawing.Point(77, 76);
+            this.lblMake.Name = "lblMake";
+            this.lblMake.Size = new System.Drawing.Size(34, 12);
+            this.lblMake.TabIndex = 37;
+            this.lblMake.Text = "Make";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(77, 98);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(163, 13);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "                                       ";
+            // 
             // pnlAddService
             // 
             this.pnlAddService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -662,8 +732,14 @@
             // nudPriceService
             // 
             this.nudPriceService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.nudPriceService.DecimalPlaces = 2;
             this.nudPriceService.ForeColor = System.Drawing.Color.White;
             this.nudPriceService.Location = new System.Drawing.Point(73, 142);
+            this.nudPriceService.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.nudPriceService.Name = "nudPriceService";
             this.nudPriceService.Size = new System.Drawing.Size(161, 20);
             this.nudPriceService.TabIndex = 61;
@@ -745,73 +821,6 @@
             this.label40.Size = new System.Drawing.Size(163, 13);
             this.label40.TabIndex = 47;
             this.label40.Text = "                                       ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(405, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 55;
-            // 
-            // txtAddMake
-            // 
-            this.txtAddMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtAddMake.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddMake.ForeColor = System.Drawing.Color.White;
-            this.txtAddMake.Location = new System.Drawing.Point(80, 93);
-            this.txtAddMake.Name = "txtAddMake";
-            this.txtAddMake.Size = new System.Drawing.Size(160, 13);
-            this.txtAddMake.TabIndex = 35;
-            // 
-            // btnAddMake
-            // 
-            this.btnAddMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnAddMake.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMake.ForeColor = System.Drawing.Color.White;
-            this.btnAddMake.Location = new System.Drawing.Point(103, 148);
-            this.btnAddMake.Name = "btnAddMake";
-            this.btnAddMake.Size = new System.Drawing.Size(106, 31);
-            this.btnAddMake.TabIndex = 44;
-            this.btnAddMake.Text = "Add Model";
-            this.btnAddMake.UseVisualStyleBackColor = false;
-            this.btnAddMake.Click += new System.EventHandler(this.btnAddMake_Click);
-            // 
-            // lblAddMake
-            // 
-            this.lblAddMake.AutoSize = true;
-            this.lblAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddMake.ForeColor = System.Drawing.Color.White;
-            this.lblAddMake.Location = new System.Drawing.Point(55, 25);
-            this.lblAddMake.Name = "lblAddMake";
-            this.lblAddMake.Size = new System.Drawing.Size(201, 22);
-            this.lblAddMake.TabIndex = 41;
-            this.lblAddMake.Text = "Add a New Car Make";
-            // 
-            // lblMake
-            // 
-            this.lblMake.AutoSize = true;
-            this.lblMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMake.ForeColor = System.Drawing.Color.White;
-            this.lblMake.Location = new System.Drawing.Point(77, 76);
-            this.lblMake.Name = "lblMake";
-            this.lblMake.Size = new System.Drawing.Size(34, 12);
-            this.lblMake.TabIndex = 37;
-            this.lblMake.Text = "Make";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(77, 98);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(163, 13);
-            this.label13.TabIndex = 47;
-            this.label13.Text = "                                       ";
             // 
             // pnlAddClient
             // 
@@ -1128,6 +1137,8 @@
             // 
             this.pnlAddMechanic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.pnlAddMechanic.Controls.Add(this.nudAgeMech);
+            this.pnlAddMechanic.Controls.Add(this.label50);
+            this.pnlAddMechanic.Controls.Add(this.nudSallaryMech);
             this.pnlAddMechanic.Controls.Add(this.cmbGenderMech);
             this.pnlAddMechanic.Controls.Add(this.label22);
             this.pnlAddMechanic.Controls.Add(this.label29);
@@ -1151,14 +1162,20 @@
             this.pnlAddMechanic.Size = new System.Drawing.Size(429, 295);
             this.pnlAddMechanic.TabIndex = 64;
             // 
-            // nudAgeMech
+            // nudSallaryMech
             // 
-            this.nudAgeMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.nudAgeMech.ForeColor = System.Drawing.Color.White;
-            this.nudAgeMech.Location = new System.Drawing.Point(230, 172);
-            this.nudAgeMech.Name = "nudAgeMech";
-            this.nudAgeMech.Size = new System.Drawing.Size(161, 20);
-            this.nudAgeMech.TabIndex = 59;
+            this.nudSallaryMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.nudSallaryMech.DecimalPlaces = 2;
+            this.nudSallaryMech.ForeColor = System.Drawing.Color.White;
+            this.nudSallaryMech.Location = new System.Drawing.Point(230, 172);
+            this.nudSallaryMech.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudSallaryMech.Name = "nudSallaryMech";
+            this.nudSallaryMech.Size = new System.Drawing.Size(161, 20);
+            this.nudSallaryMech.TabIndex = 59;
             // 
             // cmbGenderMech
             // 
@@ -1182,9 +1199,9 @@
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(228, 146);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(27, 12);
+            this.label22.Size = new System.Drawing.Size(43, 12);
             this.label22.TabIndex = 57;
-            this.label22.Text = "Age";
+            this.label22.Text = "Sallary";
             // 
             // label29
             // 
@@ -1311,7 +1328,7 @@
             this.btnAddMechanic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMechanic.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMechanic.ForeColor = System.Drawing.Color.White;
-            this.btnAddMechanic.Location = new System.Drawing.Point(154, 229);
+            this.btnAddMechanic.Location = new System.Drawing.Point(265, 229);
             this.btnAddMechanic.Name = "btnAddMechanic";
             this.btnAddMechanic.Size = new System.Drawing.Size(124, 31);
             this.btnAddMechanic.TabIndex = 44;
@@ -1521,20 +1538,40 @@
             this.label46.TabIndex = 41;
             this.label46.Text = "Add a New Record to Vehicle";
             // 
+            // nudAgeMech
+            // 
+            this.nudAgeMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.nudAgeMech.ForeColor = System.Drawing.Color.White;
+            this.nudAgeMech.Location = new System.Drawing.Point(43, 237);
+            this.nudAgeMech.Name = "nudAgeMech";
+            this.nudAgeMech.Size = new System.Drawing.Size(161, 20);
+            this.nudAgeMech.TabIndex = 61;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(41, 211);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(27, 12);
+            this.label50.TabIndex = 60;
+            this.label50.Text = "Age";
+            // 
             // frmInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(453, 384);
-            this.Controls.Add(this.pnlAddVehicle);
             this.Controls.Add(this.pnlAddService);
+            this.Controls.Add(this.pnlAddMechanic);
             this.Controls.Add(this.pnlAddMake);
             this.Controls.Add(this.pnlAddModel);
             this.Controls.Add(this.pnlAddColour);
             this.Controls.Add(this.pnlAddAdmin);
             this.Controls.Add(this.pnlAddClient);
-            this.Controls.Add(this.pnlAddMechanic);
+            this.Controls.Add(this.pnlAddVehicle);
             this.Name = "frmInsert";
             this.Text = "frmInsert";
             this.Load += new System.EventHandler(this.frmInsert_Load);
@@ -1555,9 +1592,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeClient)).EndInit();
             this.pnlAddMechanic.ResumeLayout(false);
             this.pnlAddMechanic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSallaryMech)).EndInit();
             this.pnlAddVehicle.ResumeLayout(false);
             this.pnlAddVehicle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1647,7 +1685,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel pnlAddMechanic;
-        private System.Windows.Forms.NumericUpDown nudAgeMech;
+        private System.Windows.Forms.NumericUpDown nudSallaryMech;
         private System.Windows.Forms.ComboBox cmbGenderMech;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label29;
@@ -1678,5 +1716,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Button btnAddVehicle;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.NumericUpDown nudAgeMech;
+        private System.Windows.Forms.Label label50;
     }
 }

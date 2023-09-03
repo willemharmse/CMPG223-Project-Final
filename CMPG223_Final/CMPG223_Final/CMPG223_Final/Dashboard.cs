@@ -771,38 +771,47 @@ namespace CMPG223_Final
                 {
                     case "Client":
                         deleteClient();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "Admin":
                         deleteAdmin();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "Vehicle":
                         deleteVehicle();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "CarModel":
                         deleteCarModel();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "CarMake":
                         deleteCarMake();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "CarColour":
                         deleteCarColour();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "Mechanic":
                         deleteMechanic();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "Service":
                         deleteService();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     case "Service_on_Vehicle":
                         deleteVehicleService();
+                        cbxTable.SelectedIndex = cbxTable.SelectedIndex;
                         break;
 
                     default:
@@ -1348,6 +1357,31 @@ namespace CMPG223_Final
             login.Show();
 
             this.Close();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            if (cbxTable.Text != "" )
+            {
+                if (cbxTable.Text != "Service_on_Vehicle")
+                {
+                    frmInsert insert = new frmInsert();
+                    insert.table = cbxTable.Text;
+
+                    insert.ShowDialog();
+
+                    cbxTable.SelectedIndex = cbxTable.SelectedIndex;
+                }
+                else
+                {
+                    showError("You cannot add values to this table only the system may.");
+                }
+            }
+            else
+            {
+                showError("Please select a valid table");
+                cbxTable.Focus();
+            }
         }
     }
 }

@@ -629,6 +629,7 @@
             this.btnInsert.TabIndex = 52;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // lblMaintainData
             // 
@@ -683,10 +684,10 @@
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlPayments);
             this.Controls.Add(this.pnlQuotes);
-            this.Controls.Add(this.pnlMaintain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
