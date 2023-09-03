@@ -765,45 +765,54 @@ namespace CMPG223_Final
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            switch (cbxTable.Text)
+            if (cbxTable.Text != "")
             {
-                case "Client":
-                    deleteClient();
-                    break;
+                switch (cbxTable.Text)
+                {
+                    case "Client":
+                        deleteClient();
+                        break;
 
-                case "Admin":
-                    deleteAdmin();
-                    break;
+                    case "Admin":
+                        deleteAdmin();
+                        break;
 
-                case "Vehicle":
-                    deleteVehicle();
-                    break;
+                    case "Vehicle":
+                        deleteVehicle();
+                        break;
 
-                case "CarModel":
-                    deleteCarModel();
-                    break;
+                    case "CarModel":
+                        deleteCarModel();
+                        break;
 
-                case "CarMake":
-                    deleteCarMake();
-                    break;
+                    case "CarMake":
+                        deleteCarMake();
+                        break;
 
-                case "CarColour":
-                    deleteCarColour();
-                    break;
+                    case "CarColour":
+                        deleteCarColour();
+                        break;
 
-                case "Mechanic":
-                    deleteMechanic();
-                    break;
+                    case "Mechanic":
+                        deleteMechanic();
+                        break;
 
-                case "Service":
-                    break;
+                    case "Service":
+                        deleteService();
+                        break;
 
-                case "Service_on_Vehicle":
-                    deleteVehicleService();
-                    break;
+                    case "Service_on_Vehicle":
+                        deleteVehicleService();
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                showError("Please select a valid table");
+                cbxTable.Focus();
             }
         }
 
@@ -1203,6 +1212,49 @@ namespace CMPG223_Final
             }
         }
 
+        private void deleteService()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            if (deleteForm.id == -1)
+            {
+                return;
+            }
+
+            try
+            {
+                if (!inServiceVechile("Service", deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the service will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM Service WHERE ServiceID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The service was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this service is not doing any services. Delete all the values of this service from the Service_on_Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
         private void deleteVehicleService()
         {
             frmDelete deleteForm = new frmDelete();
@@ -1249,7 +1301,7 @@ namespace CMPG223_Final
                 adapter = new SqlDataAdapter();
                 ds = new DataSet();
 
-                if (!rbtnPopularMake.Checked || !rbtnPopularService.Checked)
+                if (!(rbtnPopularMake.Checked || rbtnPopularService.Checked))
                 {
                     showError("No Report Type Was Selected");
                 }
