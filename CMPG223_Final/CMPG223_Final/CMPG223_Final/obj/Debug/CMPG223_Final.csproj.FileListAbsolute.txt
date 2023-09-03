@@ -91,3 +91,4 @@ C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final
 C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
 C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
 C:\Users\shald\source\repos\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
+C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmDelete.resources

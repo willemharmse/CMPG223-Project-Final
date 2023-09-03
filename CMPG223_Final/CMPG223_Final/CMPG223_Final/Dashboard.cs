@@ -775,6 +775,7 @@ namespace CMPG223_Final
                     break;
 
                 case "Vehicle":
+                    deleteVehicle();
                     break;
 
                 case "CarModel":
@@ -793,6 +794,7 @@ namespace CMPG223_Final
                     break;
 
                 case "Service_on_Vehicle":
+                    deleteVehicleService();
                     break;
 
                 default:
@@ -841,7 +843,7 @@ namespace CMPG223_Final
 
             try
             {
-                if (!inServiceVechile("Client", deleteForm.id));
+                if (!inServiceVechile("Vehicle", deleteForm.id));
             }
             catch (Exception ex)
             {
@@ -878,7 +880,38 @@ namespace CMPG223_Final
                 }
                 else
                 {
-                    showError("Please ensure that this vehicle does not have any services being done to it. Delete all the values of this vehicle form the Service_on_Vehicle table.");
+                    showError("Please ensure that this vehicle does not have any services being done to it. Delete all the values of this vehicle from the Service_on_Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void deleteVehicleService()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (MessageBox.Show("If you want to proceed with this action the service on the vehicle will be deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    string sql = $"DELETE FROM Service_on_Vehicle WHERE ServiceNumber = {deleteForm.id}";
+
+                    con.Open();
+
+                    cmd = new SqlCommand(sql, con);
+                    adapter = new SqlDataAdapter();
+                    adapter.DeleteCommand = cmd;
+                    adapter.DeleteCommand.ExecuteNonQuery();
+
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The service on the vehicle was not deleted from the table.");
                 }
             }
             catch (Exception ex)
