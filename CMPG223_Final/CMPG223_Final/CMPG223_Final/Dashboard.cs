@@ -1383,5 +1383,30 @@ namespace CMPG223_Final
                 cbxTable.Focus();
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (cbxTable.Text != "")
+            {
+                if (cbxTable.Text != "Service_on_Vehicle")
+                {
+                    Update update = new Update();
+                    update.table = cbxTable.Text;
+
+                    update.ShowDialog();
+
+                    cbxTable.SelectedIndex = cbxTable.SelectedIndex;
+                }
+                else
+                {
+                    showError("You cannot add values to this table only the system may.");
+                }
+            }
+            else
+            {
+                showError("Please select a valid table");
+                cbxTable.Focus();
+            }
+        }
     }
 }

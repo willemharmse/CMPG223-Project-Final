@@ -122,6 +122,9 @@
             this.lblSUUsername = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlUpdateAdmin = new System.Windows.Forms.Panel();
+            this.btnChooseAdmin = new System.Windows.Forms.Button();
+            this.cmbAdminID = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.nudAgeAdmin = new System.Windows.Forms.NumericUpDown();
             this.cbxGenderAdmin = new System.Windows.Forms.ComboBox();
             this.lblAge = new System.Windows.Forms.Label();
@@ -142,8 +145,14 @@
             this.lblAddMake = new System.Windows.Forms.Label();
             this.lblMake = new System.Windows.Forms.Label();
             this.pnlUpdateMake = new System.Windows.Forms.Panel();
+            this.btnChooseMake = new System.Windows.Forms.Button();
+            this.cmbMakeID = new System.Windows.Forms.ComboBox();
+            this.label56 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlUpdateModel = new System.Windows.Forms.Panel();
+            this.btnChooseModel = new System.Windows.Forms.Button();
+            this.cmbModelID = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddModel = new System.Windows.Forms.TextBox();
             this.btnAddModel = new System.Windows.Forms.Button();
@@ -156,20 +165,11 @@
             this.txtAddColour = new System.Windows.Forms.TextBox();
             this.btnUpdateColour = new System.Windows.Forms.Button();
             this.pnlUpdateColour = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnHelp = new System.Windows.Forms.Button();
-            this.cmbAdminID = new System.Windows.Forms.ComboBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.btnChooseAdmin = new System.Windows.Forms.Button();
-            this.cmbMakeID = new System.Windows.Forms.ComboBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.btnChooseMake = new System.Windows.Forms.Button();
-            this.cmbModelID = new System.Windows.Forms.ComboBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.btnChooseModel = new System.Windows.Forms.Button();
+            this.btnChooseColour = new System.Windows.Forms.Button();
             this.cmbColourID = new System.Windows.Forms.ComboBox();
             this.label58 = new System.Windows.Forms.Label();
-            this.btnChooseColour = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSallaryMech)).BeginInit();
             this.pnlUpdateMechanic.SuspendLayout();
@@ -1395,6 +1395,45 @@
             this.pnlUpdateAdmin.Size = new System.Drawing.Size(429, 352);
             this.pnlUpdateAdmin.TabIndex = 68;
             // 
+            // btnChooseAdmin
+            // 
+            this.btnChooseAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnChooseAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseAdmin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnChooseAdmin.Location = new System.Drawing.Point(254, 63);
+            this.btnChooseAdmin.Name = "btnChooseAdmin";
+            this.btnChooseAdmin.Size = new System.Drawing.Size(106, 31);
+            this.btnChooseAdmin.TabIndex = 62;
+            this.btnChooseAdmin.Text = "Add Admin";
+            this.btnChooseAdmin.UseVisualStyleBackColor = false;
+            // 
+            // cmbAdminID
+            // 
+            this.cmbAdminID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cmbAdminID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbAdminID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAdminID.ForeColor = System.Drawing.Color.White;
+            this.cmbAdminID.FormattingEnabled = true;
+            this.cmbAdminID.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbAdminID.Location = new System.Drawing.Point(43, 70);
+            this.cmbAdminID.Name = "cmbAdminID";
+            this.cmbAdminID.Size = new System.Drawing.Size(161, 20);
+            this.cmbAdminID.TabIndex = 61;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.ForeColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(41, 49);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(54, 12);
+            this.label55.TabIndex = 60;
+            this.label55.Text = "Admin ID";
+            // 
             // nudAgeAdmin
             // 
             this.nudAgeAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -1627,6 +1666,46 @@
             this.pnlUpdateMake.Size = new System.Drawing.Size(302, 234);
             this.pnlUpdateMake.TabIndex = 71;
             // 
+            // btnChooseMake
+            // 
+            this.btnChooseMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnChooseMake.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseMake.ForeColor = System.Drawing.Color.White;
+            this.btnChooseMake.Location = new System.Drawing.Point(164, 69);
+            this.btnChooseMake.Name = "btnChooseMake";
+            this.btnChooseMake.Size = new System.Drawing.Size(106, 31);
+            this.btnChooseMake.TabIndex = 61;
+            this.btnChooseMake.Text = "Choose ID";
+            this.btnChooseMake.UseVisualStyleBackColor = false;
+            // 
+            // cmbMakeID
+            // 
+            this.cmbMakeID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cmbMakeID.Enabled = false;
+            this.cmbMakeID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMakeID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMakeID.ForeColor = System.Drawing.Color.White;
+            this.cmbMakeID.FormattingEnabled = true;
+            this.cmbMakeID.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbMakeID.Location = new System.Drawing.Point(37, 80);
+            this.cmbMakeID.Name = "cmbMakeID";
+            this.cmbMakeID.Size = new System.Drawing.Size(107, 20);
+            this.cmbMakeID.TabIndex = 60;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(35, 59);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(71, 12);
+            this.label56.TabIndex = 59;
+            this.label56.Text = "Car Make ID";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -1654,6 +1733,46 @@
             this.pnlUpdateModel.Name = "pnlUpdateModel";
             this.pnlUpdateModel.Size = new System.Drawing.Size(302, 251);
             this.pnlUpdateModel.TabIndex = 70;
+            // 
+            // btnChooseModel
+            // 
+            this.btnChooseModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnChooseModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseModel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseModel.ForeColor = System.Drawing.Color.White;
+            this.btnChooseModel.Location = new System.Drawing.Point(176, 74);
+            this.btnChooseModel.Name = "btnChooseModel";
+            this.btnChooseModel.Size = new System.Drawing.Size(96, 31);
+            this.btnChooseModel.TabIndex = 61;
+            this.btnChooseModel.Text = "Choose ID";
+            this.btnChooseModel.UseVisualStyleBackColor = false;
+            // 
+            // cmbModelID
+            // 
+            this.cmbModelID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cmbModelID.Enabled = false;
+            this.cmbModelID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbModelID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbModelID.ForeColor = System.Drawing.Color.White;
+            this.cmbModelID.FormattingEnabled = true;
+            this.cmbModelID.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbModelID.Location = new System.Drawing.Point(31, 85);
+            this.cmbModelID.Name = "cmbModelID";
+            this.cmbModelID.Size = new System.Drawing.Size(130, 20);
+            this.cmbModelID.TabIndex = 60;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.ForeColor = System.Drawing.Color.White;
+            this.label57.Location = new System.Drawing.Point(29, 64);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(52, 12);
+            this.label57.TabIndex = 59;
+            this.label57.Text = "Model ID";
             // 
             // label1
             // 
@@ -1797,148 +1916,18 @@
             this.pnlUpdateColour.Size = new System.Drawing.Size(302, 234);
             this.pnlUpdateColour.TabIndex = 69;
             // 
-            // label19
+            // btnChooseColour
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(77, 141);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(163, 13);
-            this.label19.TabIndex = 47;
-            this.label19.Text = "                                       ";
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelp.ForeColor = System.Drawing.Color.White;
-            this.btnHelp.Location = new System.Drawing.Point(12, 368);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(98, 31);
-            this.btnHelp.TabIndex = 77;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = false;
-            // 
-            // cmbAdminID
-            // 
-            this.cmbAdminID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbAdminID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbAdminID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAdminID.ForeColor = System.Drawing.Color.White;
-            this.cmbAdminID.FormattingEnabled = true;
-            this.cmbAdminID.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cmbAdminID.Location = new System.Drawing.Point(43, 70);
-            this.cmbAdminID.Name = "cmbAdminID";
-            this.cmbAdminID.Size = new System.Drawing.Size(161, 20);
-            this.cmbAdminID.TabIndex = 61;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(41, 49);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(54, 12);
-            this.label55.TabIndex = 60;
-            this.label55.Text = "Admin ID";
-            // 
-            // btnChooseAdmin
-            // 
-            this.btnChooseAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChooseAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseAdmin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnChooseAdmin.Location = new System.Drawing.Point(254, 63);
-            this.btnChooseAdmin.Name = "btnChooseAdmin";
-            this.btnChooseAdmin.Size = new System.Drawing.Size(106, 31);
-            this.btnChooseAdmin.TabIndex = 62;
-            this.btnChooseAdmin.Text = "Add Admin";
-            this.btnChooseAdmin.UseVisualStyleBackColor = false;
-            // 
-            // cmbMakeID
-            // 
-            this.cmbMakeID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbMakeID.Enabled = false;
-            this.cmbMakeID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbMakeID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMakeID.ForeColor = System.Drawing.Color.White;
-            this.cmbMakeID.FormattingEnabled = true;
-            this.cmbMakeID.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cmbMakeID.Location = new System.Drawing.Point(37, 80);
-            this.cmbMakeID.Name = "cmbMakeID";
-            this.cmbMakeID.Size = new System.Drawing.Size(107, 20);
-            this.cmbMakeID.TabIndex = 60;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(35, 59);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(71, 12);
-            this.label56.TabIndex = 59;
-            this.label56.Text = "Car Make ID";
-            // 
-            // btnChooseMake
-            // 
-            this.btnChooseMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChooseMake.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseMake.ForeColor = System.Drawing.Color.White;
-            this.btnChooseMake.Location = new System.Drawing.Point(164, 69);
-            this.btnChooseMake.Name = "btnChooseMake";
-            this.btnChooseMake.Size = new System.Drawing.Size(106, 31);
-            this.btnChooseMake.TabIndex = 61;
-            this.btnChooseMake.Text = "Choose ID";
-            this.btnChooseMake.UseVisualStyleBackColor = false;
-            // 
-            // cmbModelID
-            // 
-            this.cmbModelID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbModelID.Enabled = false;
-            this.cmbModelID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbModelID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModelID.ForeColor = System.Drawing.Color.White;
-            this.cmbModelID.FormattingEnabled = true;
-            this.cmbModelID.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cmbModelID.Location = new System.Drawing.Point(31, 85);
-            this.cmbModelID.Name = "cmbModelID";
-            this.cmbModelID.Size = new System.Drawing.Size(130, 20);
-            this.cmbModelID.TabIndex = 60;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.ForeColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(29, 64);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(52, 12);
-            this.label57.TabIndex = 59;
-            this.label57.Text = "Model ID";
-            // 
-            // btnChooseModel
-            // 
-            this.btnChooseModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChooseModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseModel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseModel.ForeColor = System.Drawing.Color.White;
-            this.btnChooseModel.Location = new System.Drawing.Point(176, 74);
-            this.btnChooseModel.Name = "btnChooseModel";
-            this.btnChooseModel.Size = new System.Drawing.Size(96, 31);
-            this.btnChooseModel.TabIndex = 61;
-            this.btnChooseModel.Text = "Choose ID";
-            this.btnChooseModel.UseVisualStyleBackColor = false;
+            this.btnChooseColour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnChooseColour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseColour.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseColour.ForeColor = System.Drawing.Color.White;
+            this.btnChooseColour.Location = new System.Drawing.Point(178, 69);
+            this.btnChooseColour.Name = "btnChooseColour";
+            this.btnChooseColour.Size = new System.Drawing.Size(94, 31);
+            this.btnChooseColour.TabIndex = 61;
+            this.btnChooseColour.Text = "Choose ID";
+            this.btnChooseColour.UseVisualStyleBackColor = false;
             // 
             // cmbColourID
             // 
@@ -1967,18 +1956,29 @@
             this.label58.TabIndex = 59;
             this.label58.Text = "Car Colour ID";
             // 
-            // btnChooseColour
+            // label19
             // 
-            this.btnChooseColour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnChooseColour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseColour.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseColour.ForeColor = System.Drawing.Color.White;
-            this.btnChooseColour.Location = new System.Drawing.Point(178, 69);
-            this.btnChooseColour.Name = "btnChooseColour";
-            this.btnChooseColour.Size = new System.Drawing.Size(94, 31);
-            this.btnChooseColour.TabIndex = 61;
-            this.btnChooseColour.Text = "Choose ID";
-            this.btnChooseColour.UseVisualStyleBackColor = false;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(77, 141);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(163, 13);
+            this.label19.TabIndex = 47;
+            this.label19.Text = "                                       ";
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.White;
+            this.btnHelp.Location = new System.Drawing.Point(12, 368);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(98, 31);
+            this.btnHelp.TabIndex = 77;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = false;
             // 
             // Update
             // 
@@ -1999,6 +1999,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Update";
             this.Text = "Update";
+            this.Load += new System.EventHandler(this.Update_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudAgeMech)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSallaryMech)).EndInit();
             this.pnlUpdateMechanic.ResumeLayout(false);
