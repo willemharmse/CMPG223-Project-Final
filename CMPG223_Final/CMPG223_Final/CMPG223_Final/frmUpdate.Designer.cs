@@ -141,7 +141,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAddMake = new System.Windows.Forms.TextBox();
-            this.btnAddMake = new System.Windows.Forms.Button();
+            this.btnUpdateMake = new System.Windows.Forms.Button();
             this.lblAddMake = new System.Windows.Forms.Label();
             this.lblMake = new System.Windows.Forms.Label();
             this.pnlUpdateMake = new System.Windows.Forms.Panel();
@@ -155,7 +155,7 @@
             this.label57 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddModel = new System.Windows.Forms.TextBox();
-            this.btnAddModel = new System.Windows.Forms.Button();
+            this.btnUpdateModel = new System.Windows.Forms.Button();
             this.lblAddModel = new System.Windows.Forms.Label();
             this.lblModel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -553,7 +553,7 @@
             this.pnlUpdateClient.Controls.Add(this.label26);
             this.pnlUpdateClient.Controls.Add(this.label27);
             this.pnlUpdateClient.Controls.Add(this.label28);
-            this.pnlUpdateClient.Location = new System.Drawing.Point(12, 10);
+            this.pnlUpdateClient.Location = new System.Drawing.Point(9, 10);
             this.pnlUpdateClient.Name = "pnlUpdateClient";
             this.pnlUpdateClient.Size = new System.Drawing.Size(429, 352);
             this.pnlUpdateClient.TabIndex = 72;
@@ -1405,7 +1405,7 @@
             this.btnChooseAdmin.Name = "btnChooseAdmin";
             this.btnChooseAdmin.Size = new System.Drawing.Size(106, 31);
             this.btnChooseAdmin.TabIndex = 62;
-            this.btnChooseAdmin.Text = "Add Admin";
+            this.btnChooseAdmin.Text = "Choose ID";
             this.btnChooseAdmin.UseVisualStyleBackColor = false;
             // 
             // cmbAdminID
@@ -1613,19 +1613,19 @@
             this.txtAddMake.Size = new System.Drawing.Size(160, 13);
             this.txtAddMake.TabIndex = 35;
             // 
-            // btnAddMake
+            // btnUpdateMake
             // 
-            this.btnAddMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnAddMake.Enabled = false;
-            this.btnAddMake.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMake.ForeColor = System.Drawing.Color.White;
-            this.btnAddMake.Location = new System.Drawing.Point(100, 176);
-            this.btnAddMake.Name = "btnAddMake";
-            this.btnAddMake.Size = new System.Drawing.Size(106, 31);
-            this.btnAddMake.TabIndex = 44;
-            this.btnAddMake.Text = "Add Make";
-            this.btnAddMake.UseVisualStyleBackColor = false;
+            this.btnUpdateMake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnUpdateMake.Enabled = false;
+            this.btnUpdateMake.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateMake.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateMake.Location = new System.Drawing.Point(93, 176);
+            this.btnUpdateMake.Name = "btnUpdateMake";
+            this.btnUpdateMake.Size = new System.Drawing.Size(118, 31);
+            this.btnUpdateMake.TabIndex = 44;
+            this.btnUpdateMake.Text = "Update Make";
+            this.btnUpdateMake.UseVisualStyleBackColor = false;
             // 
             // lblAddMake
             // 
@@ -1657,7 +1657,7 @@
             this.pnlUpdateMake.Controls.Add(this.label56);
             this.pnlUpdateMake.Controls.Add(this.label2);
             this.pnlUpdateMake.Controls.Add(this.txtAddMake);
-            this.pnlUpdateMake.Controls.Add(this.btnAddMake);
+            this.pnlUpdateMake.Controls.Add(this.btnUpdateMake);
             this.pnlUpdateMake.Controls.Add(this.lblAddMake);
             this.pnlUpdateMake.Controls.Add(this.lblMake);
             this.pnlUpdateMake.Controls.Add(this.label13);
@@ -1682,7 +1682,6 @@
             // cmbMakeID
             // 
             this.cmbMakeID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbMakeID.Enabled = false;
             this.cmbMakeID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbMakeID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMakeID.ForeColor = System.Drawing.Color.White;
@@ -1725,7 +1724,7 @@
             this.pnlUpdateModel.Controls.Add(this.label57);
             this.pnlUpdateModel.Controls.Add(this.label1);
             this.pnlUpdateModel.Controls.Add(this.txtAddModel);
-            this.pnlUpdateModel.Controls.Add(this.btnAddModel);
+            this.pnlUpdateModel.Controls.Add(this.btnUpdateModel);
             this.pnlUpdateModel.Controls.Add(this.lblAddModel);
             this.pnlUpdateModel.Controls.Add(this.lblModel);
             this.pnlUpdateModel.Controls.Add(this.label11);
@@ -1750,7 +1749,6 @@
             // cmbModelID
             // 
             this.cmbModelID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbModelID.Enabled = false;
             this.cmbModelID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbModelID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModelID.ForeColor = System.Drawing.Color.White;
@@ -1795,19 +1793,19 @@
             this.txtAddModel.Size = new System.Drawing.Size(160, 13);
             this.txtAddModel.TabIndex = 35;
             // 
-            // btnAddModel
+            // btnUpdateModel
             // 
-            this.btnAddModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnAddModel.Enabled = false;
-            this.btnAddModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddModel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddModel.ForeColor = System.Drawing.Color.White;
-            this.btnAddModel.Location = new System.Drawing.Point(100, 203);
-            this.btnAddModel.Name = "btnAddModel";
-            this.btnAddModel.Size = new System.Drawing.Size(106, 31);
-            this.btnAddModel.TabIndex = 44;
-            this.btnAddModel.Text = "Add Model";
-            this.btnAddModel.UseVisualStyleBackColor = false;
+            this.btnUpdateModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnUpdateModel.Enabled = false;
+            this.btnUpdateModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateModel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateModel.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateModel.Location = new System.Drawing.Point(94, 203);
+            this.btnUpdateModel.Name = "btnUpdateModel";
+            this.btnUpdateModel.Size = new System.Drawing.Size(118, 31);
+            this.btnUpdateModel.TabIndex = 44;
+            this.btnUpdateModel.Text = "Update Model";
+            this.btnUpdateModel.UseVisualStyleBackColor = false;
             // 
             // lblAddModel
             // 
@@ -1932,7 +1930,6 @@
             // cmbColourID
             // 
             this.cmbColourID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbColourID.Enabled = false;
             this.cmbColourID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbColourID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbColourID.ForeColor = System.Drawing.Color.White;
@@ -1988,7 +1985,6 @@
             this.ClientSize = new System.Drawing.Size(450, 407);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.pnlUpdateMechanic);
             this.Controls.Add(this.pnlUpdateClient);
             this.Controls.Add(this.pnlUpdateService);
             this.Controls.Add(this.pnlUpdateVehicle);
@@ -1996,6 +1992,7 @@
             this.Controls.Add(this.pnlUpdateMake);
             this.Controls.Add(this.pnlUpdateModel);
             this.Controls.Add(this.pnlUpdateColour);
+            this.Controls.Add(this.pnlUpdateMechanic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Update";
             this.Text = "Update";
@@ -2125,7 +2122,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAddMake;
-        private System.Windows.Forms.Button btnAddMake;
+        private System.Windows.Forms.Button btnUpdateMake;
         private System.Windows.Forms.Label lblAddMake;
         private System.Windows.Forms.Label lblMake;
         private System.Windows.Forms.Panel pnlUpdateMake;
@@ -2133,7 +2130,7 @@
         private System.Windows.Forms.Panel pnlUpdateModel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddModel;
-        private System.Windows.Forms.Button btnAddModel;
+        private System.Windows.Forms.Button btnUpdateModel;
         private System.Windows.Forms.Label lblAddModel;
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label label11;

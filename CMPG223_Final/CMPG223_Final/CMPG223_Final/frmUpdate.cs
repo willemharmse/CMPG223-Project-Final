@@ -42,7 +42,7 @@ namespace CMPG223_Final
             connectDB(login.conString);
 
             pnlUpdateAdmin.Hide();
-            pnlUpdateClient.Visible = false;
+            pnlUpdateClient.Hide();
             pnlUpdateColour.Hide();
             pnlUpdateMake.Hide();
             pnlUpdateMechanic.Hide();
@@ -57,8 +57,8 @@ namespace CMPG223_Final
         {
             switch (table)
             {
-                case "Client":
-                    pnlUpdateClient.Visible = true;
+                case "Clients":
+                    pnlUpdateClient.Show();
                     break;
 
                 case "Admin":

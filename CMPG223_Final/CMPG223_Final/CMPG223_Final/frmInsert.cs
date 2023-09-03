@@ -693,7 +693,7 @@ namespace CMPG223_Final
         {
             switch (table)
             {
-                case "Client":
+                case "Clients":
                     pnlAddClient.Visible = true;
                     break;
 
