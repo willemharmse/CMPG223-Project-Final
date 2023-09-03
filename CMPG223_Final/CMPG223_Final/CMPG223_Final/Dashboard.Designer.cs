@@ -56,8 +56,9 @@
             this.lblReports = new System.Windows.Forms.Label();
             this.lblMaintain = new System.Windows.Forms.Label();
             this.pnlReports = new System.Windows.Forms.Panel();
+            this.gbReports = new System.Windows.Forms.GroupBox();
             this.btnReport = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstReportOutput = new System.Windows.Forms.ListBox();
             this.lblMakeReports = new System.Windows.Forms.Label();
             this.pnlMaintain = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -67,8 +68,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblMaintainData = new System.Windows.Forms.Label();
+            this.rbtnPopularMake = new System.Windows.Forms.RadioButton();
+            this.rbtnPopularService = new System.Windows.Forms.RadioButton();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
+            this.gbReports.SuspendLayout();
             this.pnlMaintain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -412,8 +416,9 @@
             // pnlReports
             // 
             this.pnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlReports.Controls.Add(this.gbReports);
             this.pnlReports.Controls.Add(this.btnReport);
-            this.pnlReports.Controls.Add(this.listBox1);
+            this.pnlReports.Controls.Add(this.lstReportOutput);
             this.pnlReports.Controls.Add(this.lblMakeReports);
             this.pnlReports.Location = new System.Drawing.Point(71, 102);
             this.pnlReports.Name = "pnlReports";
@@ -421,31 +426,41 @@
             this.pnlReports.TabIndex = 42;
             this.pnlReports.Visible = false;
             // 
+            // gbReports
+            // 
+            this.gbReports.Controls.Add(this.rbtnPopularService);
+            this.gbReports.Controls.Add(this.rbtnPopularMake);
+            this.gbReports.Location = new System.Drawing.Point(83, 113);
+            this.gbReports.Name = "gbReports";
+            this.gbReports.Size = new System.Drawing.Size(210, 151);
+            this.gbReports.TabIndex = 53;
+            this.gbReports.TabStop = false;
+            // 
             // btnReport
             // 
             this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.Location = new System.Drawing.Point(83, 411);
+            this.btnReport.Location = new System.Drawing.Point(100, 411);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(162, 31);
             this.btnReport.TabIndex = 52;
             this.btnReport.Text = "Generate Report";
             this.btnReport.UseVisualStyleBackColor = false;
             // 
-            // listBox1
+            // lstReportOutput
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(377, 44);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(520, 398);
-            this.listBox1.TabIndex = 51;
+            this.lstReportOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.lstReportOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstReportOutput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstReportOutput.ForeColor = System.Drawing.Color.White;
+            this.lstReportOutput.FormattingEnabled = true;
+            this.lstReportOutput.ItemHeight = 18;
+            this.lstReportOutput.Location = new System.Drawing.Point(377, 44);
+            this.lstReportOutput.Name = "lstReportOutput";
+            this.lstReportOutput.Size = new System.Drawing.Size(520, 398);
+            this.lstReportOutput.TabIndex = 51;
             // 
             // lblMakeReports
             // 
@@ -567,6 +582,30 @@
             this.lblMaintainData.TabIndex = 50;
             this.lblMaintainData.Text = "Maintain Data";
             // 
+            // rbtnPopularMake
+            // 
+            this.rbtnPopularMake.AutoSize = true;
+            this.rbtnPopularMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnPopularMake.Location = new System.Drawing.Point(27, 40);
+            this.rbtnPopularMake.Name = "rbtnPopularMake";
+            this.rbtnPopularMake.Size = new System.Drawing.Size(147, 19);
+            this.rbtnPopularMake.TabIndex = 0;
+            this.rbtnPopularMake.TabStop = true;
+            this.rbtnPopularMake.Text = "Most Popular Make";
+            this.rbtnPopularMake.UseVisualStyleBackColor = true;
+            // 
+            // rbtnPopularService
+            // 
+            this.rbtnPopularService.AutoSize = true;
+            this.rbtnPopularService.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnPopularService.Location = new System.Drawing.Point(27, 104);
+            this.rbtnPopularService.Name = "rbtnPopularService";
+            this.rbtnPopularService.Size = new System.Drawing.Size(163, 19);
+            this.rbtnPopularService.TabIndex = 1;
+            this.rbtnPopularService.TabStop = true;
+            this.rbtnPopularService.Text = "Most Popular Service";
+            this.rbtnPopularService.UseVisualStyleBackColor = true;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,6 +631,8 @@
             this.pnlQuotes.PerformLayout();
             this.pnlReports.ResumeLayout(false);
             this.pnlReports.PerformLayout();
+            this.gbReports.ResumeLayout(false);
+            this.gbReports.PerformLayout();
             this.pnlMaintain.ResumeLayout(false);
             this.pnlMaintain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -623,7 +664,7 @@
         private System.Windows.Forms.Panel pnlReports;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstReportOutput;
         private System.Windows.Forms.Label lblMakeReports;
         private System.Windows.Forms.Panel pnlMaintain;
         private System.Windows.Forms.Button btnUpdate;
@@ -639,5 +680,8 @@
         private System.Windows.Forms.ListBox lstListServiceTypes;
         private System.Windows.Forms.Button btnRemoveServiceType;
         private System.Windows.Forms.Button btnAcceptQuote;
+        private System.Windows.Forms.GroupBox gbReports;
+        private System.Windows.Forms.RadioButton rbtnPopularMake;
+        private System.Windows.Forms.RadioButton rbtnPopularService;
     }
 }
