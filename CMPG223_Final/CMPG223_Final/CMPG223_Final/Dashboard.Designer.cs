@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.lblTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +60,8 @@
             this.lblMaintain = new System.Windows.Forms.Label();
             this.pnlReports = new System.Windows.Forms.Panel();
             this.gbReports = new System.Windows.Forms.GroupBox();
+            this.rbtnPopularService = new System.Windows.Forms.RadioButton();
+            this.rbtnPopularMake = new System.Windows.Forms.RadioButton();
             this.btnReport = new System.Windows.Forms.Button();
             this.lstReportOutput = new System.Windows.Forms.ListBox();
             this.lblMakeReports = new System.Windows.Forms.Label();
@@ -68,8 +73,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblMaintainData = new System.Windows.Forms.Label();
-            this.rbtnPopularMake = new System.Windows.Forms.RadioButton();
-            this.rbtnPopularService = new System.Windows.Forms.RadioButton();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.gbReports.SuspendLayout();
@@ -430,11 +435,37 @@
             // 
             this.gbReports.Controls.Add(this.rbtnPopularService);
             this.gbReports.Controls.Add(this.rbtnPopularMake);
-            this.gbReports.Location = new System.Drawing.Point(83, 113);
+            this.gbReports.Location = new System.Drawing.Point(83, 94);
             this.gbReports.Name = "gbReports";
-            this.gbReports.Size = new System.Drawing.Size(210, 151);
+            this.gbReports.Size = new System.Drawing.Size(210, 170);
             this.gbReports.TabIndex = 53;
             this.gbReports.TabStop = false;
+            // 
+            // rbtnPopularService
+            // 
+            this.rbtnPopularService.AutoSize = true;
+            this.rbtnPopularService.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnPopularService.ForeColor = System.Drawing.Color.White;
+            this.rbtnPopularService.Location = new System.Drawing.Point(27, 104);
+            this.rbtnPopularService.Name = "rbtnPopularService";
+            this.rbtnPopularService.Size = new System.Drawing.Size(163, 19);
+            this.rbtnPopularService.TabIndex = 1;
+            this.rbtnPopularService.TabStop = true;
+            this.rbtnPopularService.Text = "Most Popular Service";
+            this.rbtnPopularService.UseVisualStyleBackColor = true;
+            // 
+            // rbtnPopularMake
+            // 
+            this.rbtnPopularMake.AutoSize = true;
+            this.rbtnPopularMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnPopularMake.ForeColor = System.Drawing.Color.White;
+            this.rbtnPopularMake.Location = new System.Drawing.Point(27, 40);
+            this.rbtnPopularMake.Name = "rbtnPopularMake";
+            this.rbtnPopularMake.Size = new System.Drawing.Size(147, 19);
+            this.rbtnPopularMake.TabIndex = 0;
+            this.rbtnPopularMake.TabStop = true;
+            this.rbtnPopularMake.Text = "Most Popular Make";
+            this.rbtnPopularMake.UseVisualStyleBackColor = true;
             // 
             // btnReport
             // 
@@ -484,7 +515,7 @@
             this.pnlMaintain.Controls.Add(this.dataGridView1);
             this.pnlMaintain.Controls.Add(this.btnInsert);
             this.pnlMaintain.Controls.Add(this.lblMaintainData);
-            this.pnlMaintain.Location = new System.Drawing.Point(84, 609);
+            this.pnlMaintain.Location = new System.Drawing.Point(71, 102);
             this.pnlMaintain.Name = "pnlMaintain";
             this.pnlMaintain.Size = new System.Drawing.Size(949, 486);
             this.pnlMaintain.TabIndex = 43;
@@ -553,9 +584,36 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(401, 23);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(523, 437);
             this.dataGridView1.TabIndex = 53;
             // 
@@ -583,29 +641,31 @@
             this.lblMaintainData.TabIndex = 50;
             this.lblMaintainData.Text = "Maintain Data";
             // 
-            // rbtnPopularMake
+            // btnLogOut
             // 
-            this.rbtnPopularMake.AutoSize = true;
-            this.rbtnPopularMake.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnPopularMake.Location = new System.Drawing.Point(27, 40);
-            this.rbtnPopularMake.Name = "rbtnPopularMake";
-            this.rbtnPopularMake.Size = new System.Drawing.Size(147, 19);
-            this.rbtnPopularMake.TabIndex = 0;
-            this.rbtnPopularMake.TabStop = true;
-            this.rbtnPopularMake.Text = "Most Popular Make";
-            this.rbtnPopularMake.UseVisualStyleBackColor = true;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(902, 596);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(122, 31);
+            this.btnLogOut.TabIndex = 54;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
             // 
-            // rbtnPopularService
+            // btnHelp
             // 
-            this.rbtnPopularService.AutoSize = true;
-            this.rbtnPopularService.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnPopularService.Location = new System.Drawing.Point(27, 104);
-            this.rbtnPopularService.Name = "rbtnPopularService";
-            this.rbtnPopularService.Size = new System.Drawing.Size(163, 19);
-            this.rbtnPopularService.TabIndex = 1;
-            this.rbtnPopularService.TabStop = true;
-            this.rbtnPopularService.Text = "Most Popular Service";
-            this.rbtnPopularService.UseVisualStyleBackColor = true;
+            this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.White;
+            this.btnHelp.Location = new System.Drawing.Point(71, 596);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(98, 31);
+            this.btnHelp.TabIndex = 55;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = false;
             // 
             // frmDashboard
             // 
@@ -614,16 +674,18 @@
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 639);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblMaintain);
             this.Controls.Add(this.lblReports);
             this.Controls.Add(this.lblPayments);
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnlMaintain);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlPayments);
             this.Controls.Add(this.pnlQuotes);
+            this.Controls.Add(this.pnlMaintain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
             this.Text = "Dashboard";
@@ -684,5 +746,7 @@
         private System.Windows.Forms.GroupBox gbReports;
         private System.Windows.Forms.RadioButton rbtnPopularMake;
         private System.Windows.Forms.RadioButton rbtnPopularService;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
