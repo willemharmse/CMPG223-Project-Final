@@ -772,6 +772,7 @@ namespace CMPG223_Final
                     break;
 
                 case "Admin":
+                    deleteAdmin();
                     break;
 
                 case "Vehicle":
@@ -843,12 +844,100 @@ namespace CMPG223_Final
 
             try
             {
-                if (!inServiceVechile("Vehicle", deleteForm.id));
+                if (!clientHasVehicle(deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the client will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM Client WHERE ClientID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The client was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this client does not have any vehicles. Delete all the values of this clients vehicles from the Vehicle table.");
+                }
             }
             catch (Exception ex)
             {
                 showError(ex.Message);
             }
+        }
+
+        private void deleteAdmin()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (MessageBox.Show("If you want to proceed with this action the admin will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    string sql = $"DELETE FROM Admin WHERE AdminID = {deleteForm.id}";
+
+                    con.Open();
+
+                    cmd = new SqlCommand(sql, con);
+                    adapter = new SqlDataAdapter();
+                    adapter.DeleteCommand = cmd;
+                    adapter.DeleteCommand.ExecuteNonQuery();
+
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The admin was not deleted from the table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private bool clientHasVehicle(int id)
+        {
+            bool result = false;
+            int counter = 0;
+
+            try
+            {
+                con.Open();
+
+                string sql = $"SELECT * FROM Vehicle WHERE ClientID = {id}";
+                cmd = new SqlCommand(sql, con);
+
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    counter++; 
+                }
+
+                if (counter != 0)
+                {
+                    result = true;
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return result;
         }
 
         private void deleteVehicle()
