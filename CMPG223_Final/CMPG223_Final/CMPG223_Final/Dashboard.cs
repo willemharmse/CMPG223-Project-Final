@@ -784,9 +784,11 @@ namespace CMPG223_Final
                     break;
 
                 case "CarMake":
+                    deleteCarMake();
                     break;
 
                 case "CarColour":
+                    deleteCarColour();
                     break;
 
                 case "Mechanic":
@@ -847,9 +849,9 @@ namespace CMPG223_Final
             {
                 if (!inVehicleTable("Model", deleteForm.id))
                 {
-                    if (MessageBox.Show("If you want to proceed with this action the vehicle will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("If you want to proceed with this action the model will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        string sql = $"DELETE FROM Vehicle WHERE VehicleID = {deleteForm.id}";
+                        string sql = $"DELETE FROM CarModel WHERE ModelID = {deleteForm.id}";
 
                         con.Open();
 
@@ -862,12 +864,88 @@ namespace CMPG223_Final
                     }
                     else
                     {
-                        MessageBox.Show("The vehicle was not deleted from the table.");
+                        MessageBox.Show("The model was not deleted from the table.");
                     }
                 }
                 else
                 {
                     showError("Please ensure that this model is not used by any vehicle in the vehicle table. Delete all the values of this model from the Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void deleteCarColour()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (!inVehicleTable("Colour", deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the colour will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM CarColour WHERE ColourID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The colour was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this colour is not used by any vehicle in the vehicle table. Delete all the values of this colour from the Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void deleteCarMake()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (!inVehicleTable("Make", deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the make will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM CarMake WHERE MakeID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The make was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this make is not used by any vehicle in the vehicle table. Delete all the values of this make from the Vehicle table.");
                 }
             }
             catch (Exception ex)
