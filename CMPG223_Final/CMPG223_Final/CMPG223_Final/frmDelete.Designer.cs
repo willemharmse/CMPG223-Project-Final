@@ -96,6 +96,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.nudDeleteID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDelete";
             this.Text = "frmDelete";
             this.Load += new System.EventHandler(this.frmDelete_Load);

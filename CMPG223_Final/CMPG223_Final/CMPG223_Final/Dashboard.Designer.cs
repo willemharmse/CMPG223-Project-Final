@@ -686,6 +686,7 @@
             this.Controls.Add(this.pnlPayments);
             this.Controls.Add(this.pnlQuotes);
             this.Controls.Add(this.pnlMaintain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDashboard";
             this.Text = "Dashboard";
