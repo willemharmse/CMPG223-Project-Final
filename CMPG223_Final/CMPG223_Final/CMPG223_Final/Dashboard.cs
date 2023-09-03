@@ -1185,7 +1185,7 @@ namespace CMPG223_Final
                     cmd = new SqlCommand(sql, con);
                     result = cmd.ExecuteScalar().ToString();
 
-                    sql = "SELECT Service FROM Service WHERE ServiceID == '" + result + "'";
+                    sql = "SELECT Service FROM Service WHERE ServiceID = " + result;
                     cmd = new SqlCommand(sql, con);
                     fin_result = cmd.ExecuteScalar().ToString();
 
@@ -1199,7 +1199,7 @@ namespace CMPG223_Final
                     cmd = new SqlCommand(sql, con);
                     result = cmd.ExecuteScalar().ToString();
 
-                    sql = "SELECT Make FROM CarMake WHERE MakeID == '" + result + "'";
+                    sql = "SELECT Make FROM CarMake WHERE MakeID = " + result;
                     cmd = new SqlCommand(sql, con);
                     fin_result = cmd.ExecuteScalar().ToString();
 
