@@ -780,6 +780,7 @@ namespace CMPG223_Final
                     break;
 
                 case "CarModel":
+                    deleteCarModel();
                     break;
 
                 case "CarMake":
@@ -813,6 +814,78 @@ namespace CMPG223_Final
                 con.Open();
 
                 string sql = $"SELECT * FROM Service_on_Vehicle WHERE {value}ID = {id}";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    counter++;
+                }
+
+                con.Close();
+
+                if (counter != 0)
+                {
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+
+            return result;
+        }
+
+        private void deleteCarModel()
+        {
+            frmDelete deleteForm = new frmDelete();
+            deleteForm.ShowDialog();
+
+            try
+            {
+                if (!inVehicleTable("Model", deleteForm.id))
+                {
+                    if (MessageBox.Show("If you want to proceed with this action the vehicle will deleted from the table.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        string sql = $"DELETE FROM Vehicle WHERE VehicleID = {deleteForm.id}";
+
+                        con.Open();
+
+                        cmd = new SqlCommand(sql, con);
+                        adapter = new SqlDataAdapter();
+                        adapter.DeleteCommand = cmd;
+                        adapter.DeleteCommand.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The vehicle was not deleted from the table.");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that this model is not used by any vehicle in the vehicle table. Delete all the values of this model from the Vehicle table.");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private bool inVehicleTable(string value, int id)
+        {
+            bool result = false;
+            int counter = 0;
+
+            try
+            {
+                string sql = $"SELECT * FROM Vehicle WHERE {value}ID = {id}";
+
+                con.Open();
 
                 cmd = new SqlCommand(sql, con);
                 reader = cmd.ExecuteReader();
