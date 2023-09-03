@@ -448,6 +448,7 @@
             this.btnReport.TabIndex = 52;
             this.btnReport.Text = "Generate Report";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // lstReportOutput
             // 
@@ -483,7 +484,7 @@
             this.pnlMaintain.Controls.Add(this.dataGridView1);
             this.pnlMaintain.Controls.Add(this.btnInsert);
             this.pnlMaintain.Controls.Add(this.lblMaintainData);
-            this.pnlMaintain.Location = new System.Drawing.Point(71, 102);
+            this.pnlMaintain.Location = new System.Drawing.Point(84, 609);
             this.pnlMaintain.Name = "pnlMaintain";
             this.pnlMaintain.Size = new System.Drawing.Size(949, 486);
             this.pnlMaintain.TabIndex = 43;

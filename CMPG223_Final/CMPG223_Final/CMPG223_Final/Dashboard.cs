@@ -1159,5 +1159,61 @@ namespace CMPG223_Final
                 showError(ex.Message);
             }
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            string sql = "", result = "", fin_result = "";
+            lstReportOutput.Items.Clear();
+
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+
+                if (!rbtnPopularMake.Checked || !rbtnPopularService.Checked)
+                {
+                    showError("No Report Type Was Selected");
+                }
+                else if (rbtnPopularService.Checked)
+                {
+                    sql = "SELECT TOP 1 ServiceID, COUNT(ServiceID) AS count_service FROM Service_on_Vehicle GROUP BY ServiceID ORDER BY count_service DESC";
+                    cmd = new SqlCommand(sql, con);
+                    result = cmd.ExecuteScalar().ToString();
+
+                    sql = "SELECT Service FROM Service WHERE ServiceID == '" + result + "'";
+                    cmd = new SqlCommand(sql, con);
+                    fin_result = cmd.ExecuteScalar().ToString();
+
+                    lstReportOutput.Items.Add("Report Request: Most Popular Service");
+                    lstReportOutput.Items.Add("");
+                    lstReportOutput.Items.Add("The most popular service was " + fin_result);
+                }
+                else if (rbtnPopularMake.Checked)
+                {
+                    sql = "SELECT TOP 1 MakeID, COUNT(MakeID) AS count_make FROM Vehicle GROUP BY MakeID ORDER BY count_make DESC";
+                    cmd = new SqlCommand(sql, con);
+                    result = cmd.ExecuteScalar().ToString();
+
+                    sql = "SELECT Make FROM CarMake WHERE MakeID == '" + result + "'";
+                    cmd = new SqlCommand(sql, con);
+                    fin_result = cmd.ExecuteScalar().ToString();
+
+                    lstReportOutput.Items.Add("Report Request: Most Popular Service");
+                    lstReportOutput.Items.Add("");
+                    lstReportOutput.Items.Add("The most popular Make was " + fin_result);
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
     }
 }
