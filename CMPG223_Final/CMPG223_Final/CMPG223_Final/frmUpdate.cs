@@ -567,85 +567,78 @@ namespace CMPG223_Final
         {
             if (txtAddUsernameClient.Text != "")
             {
-                if (usernameAvail(txtAddUsernameClient.Text, "Clients"))
+                if (txtNameClient.Text != "")
                 {
-                    if (txtNameClient.Text != "")
+                    if (txtSurnameClient.Text != "")
                     {
-                        if (txtSurnameClient.Text != "")
+                        if (txtPasswordClient.Text != "")
                         {
-                            if (txtPasswordClient.Text != "")
+                            if (txtEmailClient.Text != "")
                             {
-                                if (txtEmailClient.Text != "")
+                                if (validEmail(txtEmailClient.Text))
                                 {
-                                    if (validEmail(txtEmailClient.Text))
+                                    if (txtNumberClient.Text != "")
                                     {
-                                        if (txtNumberClient.Text != "")
-                                        {
-                                            string cell_number = txtNumberClient.Text;
+                                        string cell_number = txtNumberClient.Text;
 
-                                            if (cell_number.Length == 10)
+                                        if (cell_number.Length == 10)
+                                        {
+                                            if (int.TryParse(txtNumberClient.Text, out int num))
                                             {
-                                                if (int.TryParse(txtNumberClient.Text, out int num))
+                                                if (cmbGenderClient.Text != "")
                                                 {
-                                                    if (cmbGenderClient.Text != "")
+                                                    if (nudAgeClient.Value >= 18)
                                                     {
-                                                        if (nudAgeClient.Value >= 18)
-                                                        {
-                                                            updateClient();
-                                                        }
-                                                        else
-                                                        {
-                                                            showError("Age should be at least 18");
-                                                        }
+                                                        updateClient();
                                                     }
                                                     else
                                                     {
-                                                        showError("No Gender was provided");
+                                                        showError("Age should be at least 18");
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    showError("The Cellphone Number must only contain digits");
+                                                    showError("No Gender was provided");
                                                 }
                                             }
                                             else
                                             {
-                                                showError("Cellphone number must not be loner than 10 digits");
+                                                showError("The Cellphone Number must only contain digits");
                                             }
                                         }
                                         else
                                         {
-                                            showError("No Cellphone Number was provided");
+                                            showError("Cellphone number must not be loner than 10 digits");
                                         }
                                     }
                                     else
                                     {
-                                        showError("The email address provided is not valid it should have the format example@provider.com");
+                                        showError("No Cellphone Number was provided");
                                     }
                                 }
                                 else
                                 {
-                                    showError("No Email Address was provided");
+                                    showError("The email address provided is not valid it should have the format example@provider.com");
                                 }
                             }
                             else
                             {
-                                showError("No Password was provided");
+                                showError("No Email Address was provided");
                             }
                         }
                         else
                         {
-                            showError("No Surname was provided");
+                            showError("No Password was provided");
                         }
                     }
                     else
                     {
-                        showError("No Name was provided");
+                        showError("No Surname was provided");
                     }
                 }
                 else
                 {
-                    showError("This username has already been taken, please choose another username");
+                    showError("No Name was provided");
                 }
             }
             else
@@ -986,86 +979,79 @@ namespace CMPG223_Final
             {
                 if (txtUsernameAdmin.Text[0].ToString() == "_")
                 {
-                    if (usernameAvail(txtUsernameAdmin.Text, "Admin"))
+                    if (txtNameAdmin.Text != "")
                     {
-                        if (txtNameAdmin.Text != "")
+                        if (txtSurnameAdmin.Text != "")
                         {
-                            if (txtSurnameAdmin.Text != "")
+                            if (txtPasswordAdmin.Text != "")
                             {
-                                if (txtPasswordAdmin.Text != "")
+                                if (txtEmailAdmin.Text != "")
                                 {
-                                    if (txtEmailAdmin.Text != "")
+                                    if (validEmail(txtEmailAdmin.Text))
                                     {
-                                        if (validEmail(txtEmailAdmin.Text))
+
+                                        if (txtCellAdmin.Text != "")
                                         {
+                                            string cell_number = txtCellAdmin.Text;
 
-                                            if (txtCellAdmin.Text != "")
+                                            if (cell_number.Length == 10)
                                             {
-                                                string cell_number = txtCellAdmin.Text;
-
-                                                if (cell_number.Length == 10)
+                                                if (int.TryParse(txtCellAdmin.Text, out int num))
                                                 {
-                                                    if (int.TryParse(txtCellAdmin.Text, out int num))
+                                                    if (cbxGenderAdmin.Text != "")
                                                     {
-                                                        if (cbxGenderAdmin.Text != "")
+                                                        if (nudAgeAdmin.Value >= 18)
                                                         {
-                                                            if (nudAgeAdmin.Value >= 18)
-                                                            {
-                                                                updateAdmin();
-                                                            }
-                                                            else
-                                                            {
-                                                                showError("Age should be at least 18");
-                                                            }
+                                                            updateAdmin();
                                                         }
                                                         else
                                                         {
-                                                            showError("No Gender was provided");
+                                                            showError("Age should be at least 18");
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        showError("The Cellphone Number must only contain digits");
+                                                        showError("No Gender was provided");
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    showError("Cellphone number must not be loner than 10 digits");
+                                                    showError("The Cellphone Number must only contain digits");
                                                 }
                                             }
                                             else
                                             {
-                                                showError("No Cellphone Number was provided");
+                                                showError("Cellphone number must not be loner than 10 digits");
                                             }
                                         }
                                         else
                                         {
-                                            showError("The email address provided is not valid it should have the format example@provider.com");
+                                            showError("No Cellphone Number was provided");
                                         }
                                     }
                                     else
                                     {
-                                        showError("No Email Address was provided");
+                                        showError("The email address provided is not valid it should have the format example@provider.com");
                                     }
                                 }
                                 else
                                 {
-                                    showError("No Password was provided");
+                                    showError("No Email Address was provided");
                                 }
                             }
                             else
                             {
-                                showError("No Surname was provided");
+                                showError("No Password was provided");
                             }
                         }
                         else
                         {
-                            showError("No Name was provided");
+                            showError("No Surname was provided");
                         }
                     }
                     else
                     {
-                        showError("This username has already been taken, please choose another username");
+                        showError("No Name was provided");
                     }
                 }
                 else

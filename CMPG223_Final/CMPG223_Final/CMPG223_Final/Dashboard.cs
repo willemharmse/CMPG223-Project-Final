@@ -734,6 +734,11 @@ namespace CMPG223_Final
 
         private void btnEmail_Click(object sender, EventArgs e)
         {
+            sendEmail(getQuote(), "QUOTE FOR VEHICLE SERVICE", "The quote has been sent to your email address provided.");
+        }
+
+        private void sendEmail(string text, string subject, string success)
+        {
             try
             {
                 MailMessage mail = new MailMessage();
@@ -741,21 +746,21 @@ namespace CMPG223_Final
 
                 mail.From = new MailAddress("protechauto.mechanicshop@gmail.com");
                 mail.To.Add(User.getEmail());
-                mail.Subject = "QUOTE FOR VEHICLE SERVICE";
-                mail.Body = "";
+                mail.Subject = subject;
+                mail.Body = text;
 
-                for (int i = 0; i < counter + 8; i++)
-                {
-                    mail.Body += lstQuote.Items[i].ToString() + "\n";
-                }
-                
+               // for (int i = 0; i < counter + 8; i++)
+               // {
+                  //  mail.Body += lstQuote.Items[i].ToString() + "\n";
+                //}
+
                 smpt.Port = 587;
                 smpt.Credentials = new System.Net.NetworkCredential("protechauto.mechanicshop@gmail.com", "jbycypjrtmiybfsr");
                 smpt.EnableSsl = true;
 
                 smpt.Send(mail);
 
-                MessageBox.Show("The quote has been sent to your email address provided.");
+                MessageBox.Show(success);
             }
             catch (Exception ex)
             {
@@ -1422,7 +1427,7 @@ namespace CMPG223_Final
         {
             try
             {
-                string sql = getSQL(cbxTable.Text, txtSearch.Text);
+                string sql = getSQLText(cbxTable.Text, txtSearch.Text);
 
                 if (sql != "")
                 {
@@ -1452,7 +1457,7 @@ namespace CMPG223_Final
             }
         }
 
-        private string getSQL(string table, string value)
+        private string getSQLText(string table, string value)
         {
             string sql = $"SELECT * FROM {table} WHERE ";
 
@@ -1499,6 +1504,211 @@ namespace CMPG223_Final
 
                     case "Service_on_Vehicle":
                         showError("There cannot be searched within this table based on text.");
+                        return "";
+
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                showError("Please select a valid table");
+                cbxTable.Focus();
+                return "";
+            }
+
+            return sql;
+        }
+
+        private void btnProcessPay_Click(object sender, EventArgs e)
+        {
+            if (txtCard.Text != "")
+            {
+                string card = txtCard.Text;
+                if (card.Length == 16)
+                {
+                    if (long.TryParse(card, out long cardNum))
+                    {
+                        if (txtCVV.Text != "")
+                        {
+                            string cvv = txtCVV.Text;
+                            if (cvv.Length == 3)
+                            {
+                                if (int.TryParse(txtCVV.Text, out int CVV))
+                                {
+                                    if (txtExpireDate.Text != "")
+                                    {
+                                        string expire = txtExpireDate.Text;
+                                        if (expire.Length == 5)
+                                        {
+                                            if (expire[2].ToString() == "/")
+                                            {
+                                                if (int.TryParse(expire.Substring(0, 2), out int expire1))
+                                                {
+                                                    if (expire1 >= 01 && expire1 <= 12)
+                                                    {
+                                                        if (int.TryParse(expire.Substring(3, 2), out int expire2))
+                                                        {
+                                                            if (MessageBox.Show("You are about to pay for the service requested. Continue?", "Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                                            {
+                                                                sendEmail(getPayment(card, cvv, expire), "CONFIRMATION FOR PAYMENT", "The transaction details have been sent to your email address");
+                                                            }
+                                                            else
+                                                            {
+                                                                MessageBox.Show("Transaction Cancelled","Cancelled");
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            showError("Please ensure that the yy part of the date does not contain any characters");
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        showError("Please ensure that the mm is not larger than 12 or smaller than 01");
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    showError("Please ensure that the expiration date does not have any characters in it");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                showError("Please ensure that the expiration date is in the format mm/yy");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            showError("Please ensure that the lenght of the expire date is 5");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        showError("Please enter a value for the expiration date");
+                                    }
+                                }
+                                else
+                                {
+                                    showError("Please ensure that you do not enter characters into the cvv");
+                                }
+                            }
+                            else
+                            {
+                                showError("Please ensure that the lenght of CVV is 3");
+                            }
+                        }
+                        else
+                        {
+                            showError("Please enter a cvv number");
+                        }
+                    }
+                    else
+                    {
+                        showError("Please ensure that you do not enter characters into the card number");
+                    }
+                }
+                else
+                {
+                    showError("Please ensure that the lenght of the card number is 16");
+                }
+            }
+            else
+            {
+                showError("Please enter a card number");
+            }
+        }
+
+        private string getPayment(string card, string cvv, string expire)
+        {
+            string result = "";
+            result += "Transaction has been processed\n";
+            result += "\nCard Number: " + card;
+            result += "\nCVV: " + cvv;
+            result += "\nExpire Date: " + expire;
+
+            result += "\n\nThank you for your payment your vehicle will be serviced.";
+            result += "\nThe team at PRO-TECH Auto";
+
+            return result;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = getSQLNumber(cbxTable.Text, (int)nudSearchValue.Value);
+
+                if (sql != "")
+                {
+                    con.Open();
+
+                    cmd = new SqlCommand(sql, con);
+                    adapter = new SqlDataAdapter();
+
+                    adapter.SelectCommand = cmd;
+
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Values");
+
+                    dataGridView1.DataSource = ds;
+                    dataGridView1.DataMember = "Values";
+
+                    con.Close();
+                }
+                else
+                {
+                    cbxTable.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private string getSQLNumber(string table, int value)
+        {
+            string sql = $"SELECT * FROM {table} WHERE ";
+
+            if (cbxTable.Text != "")
+            {
+                switch (cbxTable.Text)
+                {
+                    case "Clients":
+                        sql += $"Age = {value} OR ClientID = {value}";
+                        break;
+
+                    case "Admin":
+                        sql += $"Age = {value} OR AdminID = {value}";
+                        break;
+
+                    case "Vehicle":
+                        sql += $"VehicleID = {value} OR  ClientID = {value} OR ModelID = {value} OR MakeID = {value}";
+                        break;
+
+                    case "CarModel":
+                        sql += $"ModelID = {value}";
+                        break;
+
+                    case "CarMake":
+                        sql += $"MakeID = {value}";
+                        break;
+
+                    case "CarColour":
+                        sql += $"ColourID = {value}";
+                        break;
+
+                    case "Mechanic":
+                        sql += $"Age = {value} OR Salary = {value} OR MechanicID = {value}";
+                        break;
+
+                    case "Service":
+                        sql += $"ServiceID = {value}";
+                        break;
+
+                    case "Service_on_Vehicle":
+                        sql += $"ServiceNumber = {value} OR VehicleID = {value} OR ServiceID = {value} OR MechanicID = {value}";
                         return "";
 
                     default:
