@@ -1,0 +1,30 @@
+Reports Tab
+On this tab you can select a radiobutton option for which report to generate
+you must the press the button for the report to be created. The report will
+then be displayed in the box next to the radiobuttons.
+
+Maintain Data
+On this tab you have to choose within the combobox a table to be displayed in
+the grid. You then have a choice between insert, update, and delete(this will
+be explained later). You can then enter any text value into the search by 
+text field, this will filter the selected table based on the text value you
+have entered into the field. You can then enter any numeric value into the 
+search by number field and it will filter the table selected based on this 
+value.
+
+Insert Form
+On this form you will insert a record into the selected table on the previous 
+form. This will then determine which values you have to enter to be able to
+add the record to the specific table. The fields will be validated to ensure
+that no incorrect values can be added.
+
+Update Form
+On this form you will update a record in the selected table on the previous 
+form. This will then determine which values you have to enter to be able to
+update the record to the specific table. This will then auto fill the values
+and out of the table so the value you want to change can be changed. The 
+fields will be validated to ensure that no incorrect values can be added.
+
+Delete Form
+On this form you will delete a record in the selected table on the previous 
+form. On this form you will only select a ID of a record to delete.

@@ -16,3 +16,21 @@ C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223
 C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.csproj.CoreCompileInputs.cache
 C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.exe
 C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.pdb
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Release\Auto.mdf
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Release\Auto_log.ldf
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Release\CMPG223_Final.exe.config
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Release\CMPG223_Final.exe
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\bin\Release\CMPG223_Final.pdb
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.csproj.AssemblyReference.cache
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.csproj.SuggestedBindingRedirects.cache
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.frmDashboard.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.frmLogin.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.frmDelete.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.frmHelp.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.Insert.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.Update.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.Properties.Resources.resources
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.csproj.GenerateResource.cache
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.csproj.CoreCompileInputs.cache
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.exe
+C:\Users\harms\OneDrive\Desktop\CMPG223_GROUP40_FINAL\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Release\CMPG223_Final.pdb
