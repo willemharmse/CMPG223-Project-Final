@@ -1708,7 +1708,7 @@ namespace CMPG223_Final
 
                     case "Service_on_Vehicle":
                         sql += $"ServiceNumber = {value} OR VehicleID = {value} OR ServiceID = {value} OR MechanicID = {value}";
-                        return "";
+                        break;
 
                     default:
                         break;

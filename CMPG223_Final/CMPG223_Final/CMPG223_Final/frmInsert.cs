@@ -119,7 +119,7 @@ namespace CMPG223_Final
 
                 if (txtServiceName.Text != "")
                 {
-                    if (validateService(serviceName))
+                    if (!validateService(serviceName))
                     {
                         if (servicePrice != 0)
                         {
@@ -157,7 +157,7 @@ namespace CMPG223_Final
                 String carMake = txtAddMake.Text;
                 if (txtAddMake.Text != "")
                 {
-                    if (validateValues(carMake, "Make"))
+                    if (!validateValues(carMake, "Make"))
                     {
                         con.Open();
 
@@ -190,7 +190,7 @@ namespace CMPG223_Final
                 String carModel = txtAddModel.Text;
                 if (txtAddModel.Text != "")
                 {
-                    if (validateValues(carModel, "Model"))
+                    if (!validateValues(carModel, "Model"))
                     {
                         con.Open();
 
@@ -222,9 +222,9 @@ namespace CMPG223_Final
             try
             {
                 String carColour = txtAddColour.Text;
-                if (txtAddModel.Text != "")
+                if (txtAddColour.Text != "")
                 {
-                    if (validateValues(carColour, "Colour"))
+                    if (!validateValues(carColour, "Colour"))
                     {
                         con.Open();
 

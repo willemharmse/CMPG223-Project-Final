@@ -1596,14 +1596,14 @@
             this.ClientSize = new System.Drawing.Size(453, 405);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.pnlAddColour);
+            this.Controls.Add(this.pnlAddAdmin);
+            this.Controls.Add(this.pnlAddClient);
             this.Controls.Add(this.pnlAddVehicle);
             this.Controls.Add(this.pnlAddService);
             this.Controls.Add(this.pnlAddMechanic);
             this.Controls.Add(this.pnlAddMake);
             this.Controls.Add(this.pnlAddModel);
-            this.Controls.Add(this.pnlAddColour);
-            this.Controls.Add(this.pnlAddAdmin);
-            this.Controls.Add(this.pnlAddClient);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Insert";
             this.Text = "frmInsert";
