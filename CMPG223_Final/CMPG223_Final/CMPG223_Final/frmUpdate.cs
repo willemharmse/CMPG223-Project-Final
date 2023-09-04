@@ -528,41 +528,6 @@ namespace CMPG223_Final
             return result;
         }
 
-        private bool usernameAvail(string username, string user)
-        {
-            bool result = false;
-
-            try
-            {
-                con.Open();
-
-                string sql = $"SELECT Username FROM {user} WHERE Username = '{username}'";
-                cmd = new SqlCommand(sql, con);
-
-                reader = cmd.ExecuteReader();
-
-                int counter = 0;
-
-                while (reader.Read())
-                {
-                    counter++;
-                }
-
-                if (counter == 0)
-                {
-                    result = true;
-                }
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                showError(ex.Message);
-            }
-
-            return result;
-        }
-
         private void btnUpdateClient_Click(object sender, EventArgs e)
         {
             if (txtAddUsernameClient.Text != "")
