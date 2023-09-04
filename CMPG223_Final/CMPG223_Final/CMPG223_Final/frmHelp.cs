@@ -44,7 +44,7 @@ namespace CMPG223_Final
                     MessageBox.Show("The following error has occured: " + ex.Message);
                 }
             }
-            else
+            else if (!User.getAdmin())
             {
                 try
                 {
