@@ -734,7 +734,6 @@
             // nudPriceService
             // 
             this.nudPriceService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.nudPriceService.DecimalPlaces = 2;
             this.nudPriceService.ForeColor = System.Drawing.Color.White;
             this.nudPriceService.Location = new System.Drawing.Point(73, 142);
             this.nudPriceService.Maximum = new decimal(new int[] {
@@ -1187,7 +1186,6 @@
             // nudSallaryMech
             // 
             this.nudSallaryMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.nudSallaryMech.DecimalPlaces = 2;
             this.nudSallaryMech.ForeColor = System.Drawing.Color.White;
             this.nudSallaryMech.Location = new System.Drawing.Point(230, 172);
             this.nudSallaryMech.Maximum = new decimal(new int[] {
@@ -1594,16 +1592,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(453, 405);
+            this.Controls.Add(this.pnlAddMechanic);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.pnlAddService);
+            this.Controls.Add(this.pnlAddMake);
+            this.Controls.Add(this.pnlAddModel);
             this.Controls.Add(this.pnlAddColour);
             this.Controls.Add(this.pnlAddAdmin);
             this.Controls.Add(this.pnlAddClient);
             this.Controls.Add(this.pnlAddVehicle);
-            this.Controls.Add(this.pnlAddService);
-            this.Controls.Add(this.pnlAddMechanic);
-            this.Controls.Add(this.pnlAddMake);
-            this.Controls.Add(this.pnlAddModel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Insert";
             this.Text = "frmInsert";

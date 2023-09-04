@@ -115,7 +115,7 @@ namespace CMPG223_Final
             try
             {
                 string serviceName = txtServiceName.Text;
-                decimal servicePrice = nudPriceService.Value;
+                int servicePrice = (int)nudPriceService.Value;
 
                 if (txtServiceName.Text != "")
                 {
@@ -647,7 +647,7 @@ namespace CMPG223_Final
                 string sql = $"INSERT INTO Mechanic(Name, Surname, Age, Gender, Phone_Number, Email, Salary) " +
                              $"VALUES('{txtNameMech.Text}', '{txtSurnameMech.Text}', " +
                              $"{(int)nudAgeMech.Value}, '{cmbGenderMech.Text}', '{txtNumberMech.Text}'," +
-                             $" '{txtEmailMech.Text}', {nudSallaryMech.Value})";
+                             $" '{txtEmailMech.Text}', {(int)nudSallaryMech.Value})";
 
                 cmd = new SqlCommand(sql, con);
                 adapter = new SqlDataAdapter();

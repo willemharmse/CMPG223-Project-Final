@@ -209,7 +209,6 @@
             // nudSallaryMech
             // 
             this.nudSallaryMech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.nudSallaryMech.DecimalPlaces = 2;
             this.nudSallaryMech.Enabled = false;
             this.nudSallaryMech.ForeColor = System.Drawing.Color.White;
             this.nudSallaryMech.Location = new System.Drawing.Point(230, 228);
@@ -1019,7 +1018,6 @@
             // nudPriceService
             // 
             this.nudPriceService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.nudPriceService.DecimalPlaces = 2;
             this.nudPriceService.Enabled = false;
             this.nudPriceService.ForeColor = System.Drawing.Color.White;
             this.nudPriceService.Location = new System.Drawing.Point(73, 233);
@@ -2001,16 +1999,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(450, 407);
-            this.Controls.Add(this.pnlUpdateVehicle);
+            this.Controls.Add(this.pnlUpdateMechanic);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.pnlUpdateService);
+            this.Controls.Add(this.pnlUpdateClient);
+            this.Controls.Add(this.pnlUpdateVehicle);
             this.Controls.Add(this.pnlUpdateMake);
             this.Controls.Add(this.pnlUpdateModel);
             this.Controls.Add(this.pnlUpdateColour);
-            this.Controls.Add(this.pnlUpdateService);
             this.Controls.Add(this.pnlUpdateAdmin);
-            this.Controls.Add(this.pnlUpdateMechanic);
-            this.Controls.Add(this.pnlUpdateClient);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Update";
             this.Text = "Update";

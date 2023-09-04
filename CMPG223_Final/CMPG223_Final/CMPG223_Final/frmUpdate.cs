@@ -682,7 +682,7 @@ namespace CMPG223_Final
             try
             {
                 string serviceName = txtServiceName.Text;
-                decimal servicePrice = nudPriceService.Value;
+                int servicePrice = (int)nudPriceService.Value;
 
                 if (txtServiceName.Text != "")
                 {
@@ -1450,7 +1450,7 @@ namespace CMPG223_Final
                 string sql = $"UPDATE Mechanic SET " +
                              $"Name = '{txtNameMech.Text}', Surname = '{txtSurnameMech.Text}', " +
                              $"Age = {(int)nudAgeMech.Value}, Gender = '{cmbGenderMech.Text}', Phone_Number = '{txtNumberMech.Text}'," +
-                             $" Email = '{txtEmailMech.Text}', Salary = {nudSallaryMech.Value} WHERE MechanicID = {cmbMechID.Text}";
+                             $" Email = '{txtEmailMech.Text}', Salary = {(int)nudSallaryMech.Value} WHERE MechanicID = {cmbMechID.Text}";
 
                 cmd = new SqlCommand(sql, con);
                 adapter = new SqlDataAdapter();
