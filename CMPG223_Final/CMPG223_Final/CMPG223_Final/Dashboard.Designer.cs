@@ -75,6 +75,11 @@
             this.lblMaintainData = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.txtUsernameSU = new System.Windows.Forms.TextBox();
+            this.lblSUUsername = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.gbReports.SuspendLayout();
@@ -508,6 +513,11 @@
             // pnlMaintain
             // 
             this.pnlMaintain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlMaintain.Controls.Add(this.label2);
+            this.pnlMaintain.Controls.Add(this.comboBox1);
+            this.pnlMaintain.Controls.Add(this.txtUsernameSU);
+            this.pnlMaintain.Controls.Add(this.lblSUUsername);
+            this.pnlMaintain.Controls.Add(this.label3);
             this.pnlMaintain.Controls.Add(this.btnUpdate);
             this.pnlMaintain.Controls.Add(this.btnDelete);
             this.pnlMaintain.Controls.Add(this.lblChooseTable);
@@ -552,11 +562,11 @@
             // lblChooseTable
             // 
             this.lblChooseTable.AutoSize = true;
-            this.lblChooseTable.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseTable.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChooseTable.ForeColor = System.Drawing.Color.White;
             this.lblChooseTable.Location = new System.Drawing.Point(45, 70);
             this.lblChooseTable.Name = "lblChooseTable";
-            this.lblChooseTable.Size = new System.Drawing.Size(81, 12);
+            this.lblChooseTable.Size = new System.Drawing.Size(95, 15);
             this.lblChooseTable.TabIndex = 55;
             this.lblChooseTable.Text = "Choose Table";
             // 
@@ -670,6 +680,72 @@
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
             // 
+            // txtUsernameSU
+            // 
+            this.txtUsernameSU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtUsernameSU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsernameSU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsernameSU.ForeColor = System.Drawing.Color.White;
+            this.txtUsernameSU.Location = new System.Drawing.Point(47, 312);
+            this.txtUsernameSU.Name = "txtUsernameSU";
+            this.txtUsernameSU.Size = new System.Drawing.Size(246, 18);
+            this.txtUsernameSU.TabIndex = 58;
+            // 
+            // lblSUUsername
+            // 
+            this.lblSUUsername.AutoSize = true;
+            this.lblSUUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSUUsername.ForeColor = System.Drawing.Color.White;
+            this.lblSUUsername.Location = new System.Drawing.Point(44, 290);
+            this.lblSUUsername.Name = "lblSUUsername";
+            this.lblSUUsername.Size = new System.Drawing.Size(54, 15);
+            this.lblSUUsername.TabIndex = 59;
+            this.lblSUUsername.Text = "Search";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(44, 318);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(259, 13);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "                                                               ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(45, 241);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 15);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Choose Table";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "CarColour",
+            "CarMake",
+            "CarModel",
+            "Clients",
+            "Mechanic",
+            "Service",
+            "Vehicle",
+            "Service_on_Vehicle"});
+            this.comboBox1.Location = new System.Drawing.Point(46, 265);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(247, 20);
+            this.comboBox1.TabIndex = 61;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,5 +828,10 @@
         private System.Windows.Forms.RadioButton rbtnPopularService;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtUsernameSU;
+        private System.Windows.Forms.Label lblSUUsername;
+        private System.Windows.Forms.Label label3;
     }
 }

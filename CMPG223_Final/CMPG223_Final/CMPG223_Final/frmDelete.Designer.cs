@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nudDeleteID = new System.Windows.Forms.NumericUpDown();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblDeleteID = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDeleteID)).BeginInit();
+            this.cbxTable = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // nudDeleteID
-            // 
-            this.nudDeleteID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.nudDeleteID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nudDeleteID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
-            this.nudDeleteID.ForeColor = System.Drawing.Color.White;
-            this.nudDeleteID.Location = new System.Drawing.Point(25, 53);
-            this.nudDeleteID.Name = "nudDeleteID";
-            this.nudDeleteID.Size = new System.Drawing.Size(288, 25);
-            this.nudDeleteID.TabIndex = 3;
             // 
             // btnDelete
             // 
@@ -86,30 +74,51 @@
             this.lblDeleteID.TabIndex = 58;
             this.lblDeleteID.Text = "Choose the ID of the Item to be Deleted";
             // 
+            // cbxTable
+            // 
+            this.cbxTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cbxTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxTable.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTable.ForeColor = System.Drawing.Color.White;
+            this.cbxTable.FormattingEnabled = true;
+            this.cbxTable.Items.AddRange(new object[] {
+            "Admin",
+            "CarColour",
+            "CarMake",
+            "CarModel",
+            "Clients",
+            "Mechanic",
+            "Service",
+            "Vehicle",
+            "Service_on_Vehicle"});
+            this.cbxTable.Location = new System.Drawing.Point(25, 51);
+            this.cbxTable.Name = "cbxTable";
+            this.cbxTable.Size = new System.Drawing.Size(288, 25);
+            this.cbxTable.TabIndex = 59;
+            // 
             // frmDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(336, 150);
+            this.Controls.Add(this.cbxTable);
             this.Controls.Add(this.lblDeleteID);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.nudDeleteID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDelete";
             this.Text = "frmDelete";
             this.Load += new System.EventHandler(this.frmDelete_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudDeleteID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown nudDeleteID;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblDeleteID;
+        private System.Windows.Forms.ComboBox cbxTable;
     }
 }
