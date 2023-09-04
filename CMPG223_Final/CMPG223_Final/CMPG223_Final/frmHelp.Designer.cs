@@ -28,27 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlLogin = new System.Windows.Forms.Panel();
+            System.Windows.Forms.ListBox lstHelp;
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.pnlQuotes = new System.Windows.Forms.Panel();
-            this.pnlPayments = new System.Windows.Forms.Panel();
-            this.pnlReports = new System.Windows.Forms.Panel();
-            this.pnlMaintain = new System.Windows.Forms.Panel();
-            this.pnlDelete = new System.Windows.Forms.Panel();
-            this.pnlUpdate = new System.Windows.Forms.Panel();
-            this.pnlInsert = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.pnlDashboard.SuspendLayout();
+            this.pnlHelp = new System.Windows.Forms.Panel();
+            lstHelp = new System.Windows.Forms.ListBox();
+            this.pnlHelp.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlLogin
-            // 
-            this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlLogin.Location = new System.Drawing.Point(12, 67);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(572, 419);
-            this.pnlLogin.TabIndex = 0;
             // 
             // lblTitle
             // 
@@ -61,74 +47,6 @@
             this.lblTitle.Size = new System.Drawing.Size(132, 55);
             this.lblTitle.TabIndex = 15;
             this.lblTitle.Text = "Help";
-            // 
-            // pnlDashboard
-            // 
-            this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlDashboard.Controls.Add(this.pnlMaintain);
-            this.pnlDashboard.Controls.Add(this.pnlReports);
-            this.pnlDashboard.Controls.Add(this.pnlPayments);
-            this.pnlDashboard.Controls.Add(this.pnlQuotes);
-            this.pnlDashboard.Location = new System.Drawing.Point(12, 67);
-            this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(572, 419);
-            this.pnlDashboard.TabIndex = 16;
-            // 
-            // pnlQuotes
-            // 
-            this.pnlQuotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlQuotes.Location = new System.Drawing.Point(3, 13);
-            this.pnlQuotes.Name = "pnlQuotes";
-            this.pnlQuotes.Size = new System.Drawing.Size(549, 378);
-            this.pnlQuotes.TabIndex = 17;
-            // 
-            // pnlPayments
-            // 
-            this.pnlPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlPayments.Location = new System.Drawing.Point(3, 13);
-            this.pnlPayments.Name = "pnlPayments";
-            this.pnlPayments.Size = new System.Drawing.Size(549, 378);
-            this.pnlPayments.TabIndex = 18;
-            // 
-            // pnlReports
-            // 
-            this.pnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlReports.Location = new System.Drawing.Point(3, 16);
-            this.pnlReports.Name = "pnlReports";
-            this.pnlReports.Size = new System.Drawing.Size(549, 378);
-            this.pnlReports.TabIndex = 19;
-            // 
-            // pnlMaintain
-            // 
-            this.pnlMaintain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlMaintain.Location = new System.Drawing.Point(6, 16);
-            this.pnlMaintain.Name = "pnlMaintain";
-            this.pnlMaintain.Size = new System.Drawing.Size(549, 378);
-            this.pnlMaintain.TabIndex = 20;
-            // 
-            // pnlDelete
-            // 
-            this.pnlDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlDelete.Location = new System.Drawing.Point(12, 64);
-            this.pnlDelete.Name = "pnlDelete";
-            this.pnlDelete.Size = new System.Drawing.Size(572, 419);
-            this.pnlDelete.TabIndex = 17;
-            // 
-            // pnlUpdate
-            // 
-            this.pnlUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlUpdate.Location = new System.Drawing.Point(12, 61);
-            this.pnlUpdate.Name = "pnlUpdate";
-            this.pnlUpdate.Size = new System.Drawing.Size(572, 419);
-            this.pnlUpdate.TabIndex = 18;
-            // 
-            // pnlInsert
-            // 
-            this.pnlInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlInsert.Location = new System.Drawing.Point(12, 61);
-            this.pnlInsert.Name = "pnlInsert";
-            this.pnlInsert.Size = new System.Drawing.Size(572, 419);
-            this.pnlInsert.TabIndex = 19;
             // 
             // btnClose
             // 
@@ -143,6 +61,28 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
+            // pnlHelp
+            // 
+            this.pnlHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlHelp.Controls.Add(lstHelp);
+            this.pnlHelp.Location = new System.Drawing.Point(12, 67);
+            this.pnlHelp.Name = "pnlHelp";
+            this.pnlHelp.Size = new System.Drawing.Size(572, 419);
+            this.pnlHelp.TabIndex = 16;
+            // 
+            // lstHelp
+            // 
+            lstHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            lstHelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lstHelp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lstHelp.ForeColor = System.Drawing.Color.White;
+            lstHelp.FormattingEnabled = true;
+            lstHelp.ItemHeight = 15;
+            lstHelp.Location = new System.Drawing.Point(3, 10);
+            lstHelp.Name = "lstHelp";
+            lstHelp.Size = new System.Drawing.Size(566, 392);
+            lstHelp.TabIndex = 40;
+            // 
             // frmHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,32 +90,19 @@
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(596, 537);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.pnlInsert);
-            this.Controls.Add(this.pnlUpdate);
-            this.Controls.Add(this.pnlDelete);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.pnlDashboard);
+            this.Controls.Add(this.pnlHelp);
             this.Name = "frmHelp";
             this.Text = "Help";
-            this.pnlDashboard.ResumeLayout(false);
+            this.pnlHelp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel pnlDashboard;
-        private System.Windows.Forms.Panel pnlMaintain;
-        private System.Windows.Forms.Panel pnlReports;
-        private System.Windows.Forms.Panel pnlPayments;
-        private System.Windows.Forms.Panel pnlQuotes;
-        private System.Windows.Forms.Panel pnlDelete;
-        private System.Windows.Forms.Panel pnlUpdate;
-        private System.Windows.Forms.Panel pnlInsert;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel pnlHelp;
     }
 }
