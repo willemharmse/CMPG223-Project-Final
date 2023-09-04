@@ -145,3 +145,4 @@ C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\o
 C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.CoreCompileInputs.cache
 C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
 C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
+C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmHelp.resources

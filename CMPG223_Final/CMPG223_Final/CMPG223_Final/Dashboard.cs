@@ -862,6 +862,7 @@ namespace CMPG223_Final
         private void deleteCarModel()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "CarModel";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -905,6 +906,7 @@ namespace CMPG223_Final
         private void deleteCarColour()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "CarColour";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -948,6 +950,7 @@ namespace CMPG223_Final
         private void deleteCarMake()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "CarMake";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -1025,6 +1028,7 @@ namespace CMPG223_Final
         private void deleteClient()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "Clients";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -1068,6 +1072,7 @@ namespace CMPG223_Final
         private void deleteAdmin()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "Admin";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -1138,6 +1143,7 @@ namespace CMPG223_Final
         private void deleteVehicle()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "Vehicle";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -1181,6 +1187,7 @@ namespace CMPG223_Final
         private void deleteMechanic()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "Mechanics";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -1224,6 +1231,7 @@ namespace CMPG223_Final
         private void deleteService()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "Service";
             deleteForm.ShowDialog();
 
             if (deleteForm.id == -1)
@@ -1267,6 +1275,7 @@ namespace CMPG223_Final
         private void deleteVehicleService()
         {
             frmDelete deleteForm = new frmDelete();
+            deleteForm.table = "Service_on_Vehicle";
             deleteForm.ShowDialog();
 
             try
