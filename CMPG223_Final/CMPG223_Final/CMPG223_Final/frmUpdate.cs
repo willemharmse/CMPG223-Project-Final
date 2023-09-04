@@ -1536,5 +1536,10 @@ namespace CMPG223_Final
                 showError(ex.Message);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

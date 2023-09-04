@@ -1044,6 +1044,7 @@
             this.btnCancel.TabIndex = 76;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pnlUpdateVehicle
             // 
