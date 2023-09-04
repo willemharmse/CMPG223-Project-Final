@@ -126,6 +126,119 @@ namespace CMPG223_Final
             fillServiceID();
             fillMechanicID();
             fillAdminID();
+
+            fillColours();
+            fillMakes();
+            fillModels();
+            fillClients();
+        }
+
+        private void fillColours()
+        {
+            try
+            {
+                con.Open();
+
+                DataSet ds = new DataSet();
+
+                string sql = $"SELECT Colour FROM CarColour";
+                cmd = new SqlCommand(sql, con);
+
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "ColourCar");
+
+                cmbColour.DataSource = ds.Tables[0];
+                cmbColour.DisplayMember = "Colour";
+                cmbColour.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void fillClients()
+        {
+            try
+            {
+                con.Open();
+
+                DataSet ds = new DataSet();
+
+                string sql = $"SELECT ClientID FROM Clients";
+                cmd = new SqlCommand(sql, con);
+
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "Clients");
+
+                cmbClientIDVehicle.DataSource = ds.Tables[0];
+                cmbClientIDVehicle.DisplayMember = "ClientID";
+                cmbClientIDVehicle.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void fillModels()
+        {
+            try
+            {
+                con.Open();
+
+                DataSet ds = new DataSet();
+
+                string sql = $"SELECT Model FROM CarModel";
+                cmd = new SqlCommand(sql, con);
+
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "ModelCar");
+
+                cmbModelVehicle.DataSource = ds.Tables[0];
+                cmbModelVehicle.DisplayMember = "Model";
+                cmbModelVehicle.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private void fillMakes()
+        {
+            try
+            {
+                con.Open();
+
+                DataSet ds = new DataSet();
+
+                string sql = $"SELECT Make FROM CarMake";
+                cmd = new SqlCommand(sql, con);
+
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, "MakeCar");
+
+                cmbMakeVehicle.DataSource = ds.Tables[0];
+                cmbMakeVehicle.DisplayMember = "Make";
+                cmbMakeVehicle.SelectedIndex = -1;
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
         }
 
         private void showPanel(string table)
@@ -589,8 +702,8 @@ namespace CMPG223_Final
                             String sql = $"UPDATE Service SET Service = '{serviceName}', Cost = {servicePrice} WHERE ServiceID = {cmbServiceID.Text}";
                             cmd = new SqlCommand(sql, con);
                             adapter = new SqlDataAdapter();
-                            adapter.InsertCommand = cmd;
-                            adapter.InsertCommand.ExecuteNonQuery();
+                            adapter.UpdateCommand = cmd;
+                            adapter.UpdateCommand.ExecuteNonQuery();
 
                             MessageBox.Show("The record has been updated in the database table.");
 
@@ -662,23 +775,11 @@ namespace CMPG223_Final
             {
                 if (cmbVehicleID.Text != "")
                 {
-                    string sql = $"SELECT * FROM Vehicle WHERE VehicleID = {cmbVehicleID.Text}";
-
-                    con.Open();
-
-                    cmd = new SqlCommand(sql, con);
-                    reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        
-                    }
-
-                    con.Close();
-
-                    txtServiceName.Enabled = true;
-                    nudPriceService.Enabled = true;
-                    btnUpdateService.Enabled = true;
+                    cmbModelVehicle.Enabled = true;
+                    cmbMakeVehicle.Enabled = true;
+                    cmbColour.Enabled = true;
+                    cmbClientIDVehicle.Enabled = true;
+                    btnUpdateVehicle.Enabled = true;
                 }
                 else
                 {
@@ -693,7 +794,138 @@ namespace CMPG223_Final
 
         private void btnUpdateVehicle_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (cmbClientIDVehicle.Text != "")
+                {
+                    if (cmbColour.Text != "")
+                    {
+                        if (cmbModelVehicle.Text != "")
+                        {
+                            if (cmbMakeVehicle.Text != "")
+                            {
+                                String sql = $"UPDATE Vehicle SET ClientID = {cmbClientIDVehicle.Text}, " +
+                                             $"ColourID = {getColourID(cmbColour.Text)}, ModelID = " +
+                                             $"{getModelID(cmbModelVehicle.Text)}, MakeID = {getMakeID(cmbMakeVehicle.Text)} WHERE VehicleID = {cmbVehicleID.Text}";
 
+                                con.Open();
+
+                                cmd = new SqlCommand(sql, con);
+                                adapter = new SqlDataAdapter();
+                                adapter.UpdateCommand = cmd;
+                                adapter.UpdateCommand.ExecuteNonQuery();
+
+                                MessageBox.Show("The record has been updated in the database table.");
+
+                                con.Close();
+
+                                this.Close();
+                            }
+                            else
+                            {
+                                showError("Please select a make for the vehicle");
+                            }
+                        }
+                        else
+                        {
+                            showError("Please select a model for the vehicle");
+                        }
+                    }
+                    else
+                    {
+                        showError("Please select a colour for the vehicle");
+                    }
+                }
+                else
+                {
+                    showError("Please select a valid ID for the user");
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private int getColourID(string colour)
+        {
+            int id = 0;
+
+            try
+            {
+                con.Open();
+                string sql = $"SELECT ColourID FROM CarColour WHERE Colour = '{colour}'";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return id;
+        }
+
+        private int getModelID(string model)
+        {
+            int id = 0;
+
+            try
+            {
+                con.Open();
+                string sql = $"SELECT ModelID FROM CarModel WHERE Model = '{model}'";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return id;
+        }
+
+        private int getMakeID(string make)
+        {
+            int id = 0;
+
+            try
+            {
+                con.Open();
+                string sql = $"SELECT MakeID FROM CarMake WHERE Make = '{make}'";
+
+                cmd = new SqlCommand(sql, con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return id;
         }
 
         private void btnChooseAdmin_Click(object sender, EventArgs e)
@@ -862,8 +1094,8 @@ namespace CMPG223_Final
                 cmd = new SqlCommand(sql, con);
                 adapter = new SqlDataAdapter();
 
-                adapter.InsertCommand = cmd;
-                adapter.InsertCommand.ExecuteNonQuery();
+                adapter.UpdateCommand = cmd;
+                adapter.UpdateCommand.ExecuteNonQuery();
 
                 MessageBox.Show("The record has been updated in the database table.");
 
@@ -925,8 +1157,8 @@ namespace CMPG223_Final
                         String sql = $"UPDATE CarMake SET Make = '{carMake}' WHERE MakeID = {cmbMakeID.Text}";
                         cmd = new SqlCommand(sql, con);
                         adapter = new SqlDataAdapter();
-                        adapter.InsertCommand = cmd;
-                        adapter.InsertCommand.ExecuteNonQuery();
+                        adapter.UpdateCommand = cmd;
+                        adapter.UpdateCommand.ExecuteNonQuery();
 
                         MessageBox.Show("The record has been updated in the database table.");
 
@@ -998,8 +1230,8 @@ namespace CMPG223_Final
                         String sql = $"UPDATE CarModel SET Model = '{carModel}' WHERE ModelID = {cmbModelID.Text}";
                         cmd = new SqlCommand(sql, con);
                         adapter = new SqlDataAdapter();
-                        adapter.InsertCommand = cmd;
-                        adapter.InsertCommand.ExecuteNonQuery();
+                        adapter.UpdateCommand = cmd;
+                        adapter.UpdateCommand.ExecuteNonQuery();
 
                         MessageBox.Show("The record has been updated in the database table.");
 
@@ -1037,8 +1269,8 @@ namespace CMPG223_Final
                         String sql = $"UPDATE CarColour SET Colour = '{carColour}' WHERE ColourID = {cmbColourID.Text}";
                         cmd = new SqlCommand(sql, con);
                         adapter = new SqlDataAdapter();
-                        adapter.InsertCommand = cmd;
-                        adapter.InsertCommand.ExecuteNonQuery();
+                        adapter.UpdateCommand = cmd;
+                        adapter.UpdateCommand.ExecuteNonQuery();
 
                         MessageBox.Show("The record has been updated in the database table.");
 
@@ -1237,8 +1469,8 @@ namespace CMPG223_Final
                 cmd = new SqlCommand(sql, con);
                 adapter = new SqlDataAdapter();
 
-                adapter.InsertCommand = cmd;
-                adapter.InsertCommand.ExecuteNonQuery();
+                adapter.UpdateCommand = cmd;
+                adapter.UpdateCommand.ExecuteNonQuery();
 
                 MessageBox.Show("The record has been updated in the database table.");
 
