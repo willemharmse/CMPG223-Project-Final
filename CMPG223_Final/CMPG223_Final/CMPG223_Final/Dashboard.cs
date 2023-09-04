@@ -1417,5 +1417,102 @@ namespace CMPG223_Final
                 cbxTable.Focus();
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = getSQL(cbxTable.Text, txtSearch.Text);
+
+                if (sql != "")
+                {
+                    con.Open();
+
+                    cmd = new SqlCommand(sql, con);
+                    adapter = new SqlDataAdapter();
+
+                    adapter.SelectCommand = cmd;
+
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Values");
+
+                    dataGridView1.DataSource = ds;
+                    dataGridView1.DataMember = "Values";
+
+                    con.Close();
+                }
+                else
+                {
+                    cbxTable.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                showError(ex.Message);
+            }
+        }
+
+        private string getSQL(string table, string value)
+        {
+            string sql = $"SELECT * FROM {table} WHERE ";
+
+            if (cbxTable.Text != "")
+            {
+                switch (cbxTable.Text)
+                {
+                    case "Clients":
+                        sql += $"Name LIKE '%{value}%' OR Surname LIKE '%{value}%' OR Gender LIKE '%{value}%' OR " +
+                               $"Phone_Number LIKE '%{value}%' OR Email LIKE '%{value}%' OR Username LIKE '%{value}%' " +
+                               $"OR Password LIKE '%{value}%'";
+                        break;
+
+                    case "Admin":
+                        sql += $"Name LIKE '%{value}%' OR Surname LIKE '%{value}%' OR Gender LIKE '%{value}%' OR " +
+                               $"Phone_Number LIKE '%{value}%' OR Email LIKE '%{value}%' OR Username LIKE '%{value}%' " +
+                               $"OR Password LIKE '%{value}%'";
+                        break;
+
+                    case "Vehicle":
+                        sql += $"Quote LIKE '%{value}%'";
+                        break;
+
+                    case "CarModel":
+                        sql += $"Model LIKE '%{value}%'";
+                        break;
+
+                    case "CarMake":
+                        sql += $"Make LIKE '%{value}%'";
+                        break;
+
+                    case "CarColour":
+                        sql += $"Colour LIKE '%{value}%'";
+                        break;
+
+                    case "Mechanic":
+                        sql += $"Name LIKE '%{value}%' OR Surname LIKE '%{value}%' OR Gender LIKE '%{value}%' OR " +
+                               $"Phone_Number LIKE '%{value}%' OR Email LIKE '%{value}%'";
+                        break;
+
+                    case "Service":
+                        sql += $"Service LIKE '%{value}%'";
+                        break;
+
+                    case "Service_on_Vehicle":
+                        showError("There cannot be searched within this table based on text.");
+                        return "";
+
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                showError("Please select a valid table");
+                cbxTable.Focus();
+                return "";
+            }
+
+            return sql;
+        }
     }
 }

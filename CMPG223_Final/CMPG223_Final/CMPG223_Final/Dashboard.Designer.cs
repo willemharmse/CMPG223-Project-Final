@@ -66,6 +66,9 @@
             this.lstReportOutput = new System.Windows.Forms.ListBox();
             this.lblMakeReports = new System.Windows.Forms.Label();
             this.pnlMaintain = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSUUsername = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblChooseTable = new System.Windows.Forms.Label();
@@ -75,9 +78,6 @@
             this.lblMaintainData = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.txtUsernameSU = new System.Windows.Forms.TextBox();
-            this.lblSUUsername = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlQuotes.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.gbReports.SuspendLayout();
@@ -511,7 +511,7 @@
             // pnlMaintain
             // 
             this.pnlMaintain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlMaintain.Controls.Add(this.txtUsernameSU);
+            this.pnlMaintain.Controls.Add(this.txtSearch);
             this.pnlMaintain.Controls.Add(this.lblSUUsername);
             this.pnlMaintain.Controls.Add(this.label3);
             this.pnlMaintain.Controls.Add(this.btnUpdate);
@@ -526,6 +526,40 @@
             this.pnlMaintain.Size = new System.Drawing.Size(949, 486);
             this.pnlMaintain.TabIndex = 43;
             this.pnlMaintain.Visible = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.Location = new System.Drawing.Point(47, 271);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(246, 18);
+            this.txtSearch.TabIndex = 58;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblSUUsername
+            // 
+            this.lblSUUsername.AutoSize = true;
+            this.lblSUUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSUUsername.ForeColor = System.Drawing.Color.White;
+            this.lblSUUsername.Location = new System.Drawing.Point(44, 249);
+            this.lblSUUsername.Name = "lblSUUsername";
+            this.lblSUUsername.Size = new System.Drawing.Size(54, 15);
+            this.lblSUUsername.TabIndex = 59;
+            this.lblSUUsername.Text = "Search";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(44, 277);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(259, 13);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "                                                               ";
             // 
             // btnUpdate
             // 
@@ -676,39 +710,6 @@
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
             // 
-            // txtUsernameSU
-            // 
-            this.txtUsernameSU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtUsernameSU.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsernameSU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsernameSU.ForeColor = System.Drawing.Color.White;
-            this.txtUsernameSU.Location = new System.Drawing.Point(47, 271);
-            this.txtUsernameSU.Name = "txtUsernameSU";
-            this.txtUsernameSU.Size = new System.Drawing.Size(246, 18);
-            this.txtUsernameSU.TabIndex = 58;
-            // 
-            // lblSUUsername
-            // 
-            this.lblSUUsername.AutoSize = true;
-            this.lblSUUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSUUsername.ForeColor = System.Drawing.Color.White;
-            this.lblSUUsername.Location = new System.Drawing.Point(44, 249);
-            this.lblSUUsername.Name = "lblSUUsername";
-            this.lblSUUsername.Size = new System.Drawing.Size(54, 15);
-            this.lblSUUsername.TabIndex = 59;
-            this.lblSUUsername.Text = "Search";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(44, 277);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(259, 13);
-            this.label3.TabIndex = 60;
-            this.label3.Text = "                                                               ";
-            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -791,7 +792,7 @@
         private System.Windows.Forms.RadioButton rbtnPopularService;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.TextBox txtUsernameSU;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSUUsername;
         private System.Windows.Forms.Label label3;
     }
