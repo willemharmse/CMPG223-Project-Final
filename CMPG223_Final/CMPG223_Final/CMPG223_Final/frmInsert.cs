@@ -977,5 +977,11 @@ namespace CMPG223_Final
         {
             this.Close();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            frmHelp help = new frmHelp();
+            help.Show();
+        }
     }
 }

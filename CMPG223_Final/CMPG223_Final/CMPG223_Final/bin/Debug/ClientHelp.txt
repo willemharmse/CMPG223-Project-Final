@@ -1,0 +1,15 @@
+Quotes Tab
+When you enter this tab, you will need to fill in your car details and
+choose a service type. You need to press the add button to add a service
+type. A service type can also be removed if you select the service type
+to remove and click on the remove button. The added service types will
+be displayed in the listbox below the buttons. You can then press 
+generate quote when you are finished, then there will display a popup
+message that will ask if your vehicle can be added to the database.
+You can then press the button to approve the quote. You can also email
+the quote to you by pressing on the email quote button.
+
+Pay for Service Tab
+Under this tab you will be required to fill in your card details. When
+you are finished you can press the process payment button, the program
+will then email to confirm the transaction.

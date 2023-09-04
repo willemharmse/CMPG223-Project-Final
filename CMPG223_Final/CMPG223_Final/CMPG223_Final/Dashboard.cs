@@ -749,11 +749,6 @@ namespace CMPG223_Final
                 mail.Subject = subject;
                 mail.Body = text;
 
-               // for (int i = 0; i < counter + 8; i++)
-               // {
-                  //  mail.Body += lstQuote.Items[i].ToString() + "\n";
-                //}
-
                 smpt.Port = 587;
                 smpt.Credentials = new System.Net.NetworkCredential("protechauto.mechanicshop@gmail.com", "jbycypjrtmiybfsr");
                 smpt.EnableSsl = true;
@@ -1341,6 +1336,8 @@ namespace CMPG223_Final
                     lstReportOutput.Items.Add("Report Request: Most Popular Service");
                     lstReportOutput.Items.Add("");
                     lstReportOutput.Items.Add("The most popular service was " + fin_result);
+                    lstReportOutput.Items.Add("");
+                    lstReportOutput.Items.Add("The report was generated on: " + DateTime.Today.ToShortDateString());
                 }
                 else if (rbtnPopularMake.Checked)
                 {
@@ -1352,9 +1349,11 @@ namespace CMPG223_Final
                     cmd = new SqlCommand(sql, con);
                     fin_result = cmd.ExecuteScalar().ToString();
 
-                    lstReportOutput.Items.Add("Report Request: Most Popular Service");
+                    lstReportOutput.Items.Add("Report Request: Most Popular Make");
                     lstReportOutput.Items.Add("");
                     lstReportOutput.Items.Add("The most popular Make was " + fin_result);
+                    lstReportOutput.Items.Add("");
+                    lstReportOutput.Items.Add("The report was generated on: " + DateTime.Today.ToShortDateString());
                 }
 
                 con.Close();
@@ -1626,7 +1625,7 @@ namespace CMPG223_Final
             result += "\nCard Number: " + card;
             result += "\nCVV: " + cvv;
             result += "\nExpire Date: " + expire;
-
+            result += "\nCost: " + determineTotalCost().ToString();
             result += "\n\nThank you for your payment your vehicle will be serviced.";
             result += "\nThe team at PRO-TECH Auto";
 
@@ -1723,6 +1722,12 @@ namespace CMPG223_Final
             }
 
             return sql;
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            frmHelp help = new frmHelp();
+            help.Show();
         }
     }
 }

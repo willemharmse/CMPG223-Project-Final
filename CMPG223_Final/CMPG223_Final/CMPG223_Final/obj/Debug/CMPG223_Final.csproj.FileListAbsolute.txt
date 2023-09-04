@@ -109,7 +109,6 @@ C:\Users\shald\source\repos\New folder (2)\CMPG223_Final\CMPG223_Final\CMPG223_F
 C:\Users\shald\source\repos\New folder (2)\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmDelete.resources
 C:\Users\harms\OneDrive\Desktop\New folder\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmInsert.resources
-C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmInsert.resources
 C:\Users\shald\source\repos\New folder (2)\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmInsert.resources
 C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.AssemblyReference.cache
 C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.csproj.SuggestedBindingRedirects.cache
@@ -146,3 +145,6 @@ C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\o
 C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.exe
 C:\Users\shald\source\repos\CMPG 223\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.pdb
 C:\Users\harms\OneDrive\Desktop\New folder 2\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmHelp.resources
+C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.frmHelp.resources
+C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.Insert.resources
+C:\Users\harms\Desktop\CMPG223\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\CMPG223_Final\obj\Debug\CMPG223_Final.Update.resources

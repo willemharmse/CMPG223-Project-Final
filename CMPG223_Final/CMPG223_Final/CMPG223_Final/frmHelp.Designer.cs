@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListBox lstHelp;
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlHelp = new System.Windows.Forms.Panel();
-            lstHelp = new System.Windows.Forms.ListBox();
-            this.pnlHelp.SuspendLayout();
+            this.lstAssistance = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -60,28 +58,29 @@
             this.btnClose.TabIndex = 77;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlHelp
             // 
             this.pnlHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pnlHelp.Controls.Add(lstHelp);
             this.pnlHelp.Location = new System.Drawing.Point(12, 67);
             this.pnlHelp.Name = "pnlHelp";
             this.pnlHelp.Size = new System.Drawing.Size(572, 419);
             this.pnlHelp.TabIndex = 16;
+            this.pnlHelp.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHelp_Paint);
             // 
-            // lstHelp
+            // lstAssistance
             // 
-            lstHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            lstHelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lstHelp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lstHelp.ForeColor = System.Drawing.Color.White;
-            lstHelp.FormattingEnabled = true;
-            lstHelp.ItemHeight = 15;
-            lstHelp.Location = new System.Drawing.Point(3, 10);
-            lstHelp.Name = "lstHelp";
-            lstHelp.Size = new System.Drawing.Size(566, 392);
-            lstHelp.TabIndex = 40;
+            lstAssistance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            lstAssistance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lstAssistance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lstAssistance.ForeColor = System.Drawing.Color.White;
+            lstAssistance.FormattingEnabled = true;
+            lstAssistance.ItemHeight = 15;
+            lstAssistance.Location = new System.Drawing.Point(15, 77);
+            lstAssistance.Name = "lstAssistance";
+            lstAssistance.Size = new System.Drawing.Size(566, 392);
+            lstAssistance.TabIndex = 41;
             // 
             // frmHelp
             // 
@@ -89,12 +88,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CMPG223_Final.Properties.Resources.CMPG_223_background2;
             this.ClientSize = new System.Drawing.Size(596, 537);
+            this.Controls.Add(this.lstAssistance);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlHelp);
             this.Name = "frmHelp";
             this.Text = "Help";
-            this.pnlHelp.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.frmHelp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +104,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlHelp;
+        private System.Windows.Forms.ListBox lstAssistance;
     }
 }
